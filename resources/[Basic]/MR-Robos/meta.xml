@@ -1,0 +1,9 @@
+<meta>
+    <info author="C'S" name="" type="script" version="1.0" auto='true'/>
+    <oop>true</oop>
+
+    <script src="tablas.lua" type="shared" cache="false"/>
+    <script src="cliente.lua" type="client" cache="false"/>
+    <script src="servidor.lua" type="server"/>
+
+</meta>

@@ -1,0 +1,4 @@
+<meta>
+	<info name="Sistema Anti-lag V2" author="Cramrlos Dev" version="2.0" type="script" />
+	<script src="client.lua" type="client" cache="false" />
+</meta>

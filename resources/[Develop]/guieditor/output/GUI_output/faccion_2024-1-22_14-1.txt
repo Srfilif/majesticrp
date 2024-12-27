@@ -1,0 +1,35 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    tab = {},
+    staticimage = {},
+    tabpanel = {},
+    label = {},
+    button = {},
+    window = {},
+    memo = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        GUIEditor.window[1] = guiCreateWindow((screenW - 677) / 2, (screenH - 387) / 2, 677, 387, "Panel Faccionario (Legal) - F3", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.button[1] = guiCreateButton(20, 352, 170, 19, "Salir de la Faccion", false, GUIEditor.window[1])
+        GUIEditor.button[2] = guiCreateButton(488, 352, 170, 19, "Asender", false, GUIEditor.window[1])
+        GUIEditor.button[3] = guiCreateButton(308, 352, 170, 19, "Degradar", false, GUIEditor.window[1])
+        GUIEditor.tabpanel[1] = guiCreateTabPanel(9, 22, 650, 321, false, GUIEditor.window[1])
+
+        GUIEditor.tab[1] = guiCreateTab("Principal", GUIEditor.tabpanel[1])
+
+        GUIEditor.label[1] = guiCreateLabel(173, 24, 477, 80, "Nombre de la faccion: San Andreas Police Departamente\nTipo de Faccion: Legal\nMiembros: 1/50\nFecha de creacion: 05/02/2025", false, GUIEditor.tab[1])
+        GUIEditor.staticimage[1] = guiCreateStaticImage(10, 10, 163, 137, ":guieditor/images/plus.png", false, GUIEditor.tab[1])
+        GUIEditor.memo[1] = guiCreateMemo(156, 186, 253, 89, "", false, GUIEditor.tab[1])    
+    end
+)

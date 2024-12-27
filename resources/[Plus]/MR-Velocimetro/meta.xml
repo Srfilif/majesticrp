@@ -1,0 +1,27 @@
+<meta>
+	<info name ="DigitalSpeedoMeter" description="Samake´s Digital Speedometer" version="1.0.0" type="script" />
+	
+	<script src="SpeedoMeterGUI.lua" type="client"/>
+	<script src="SpeedoMeterVehicle.lua" type="client"/>
+	<script src="SpeedoMeterUtils.lua" type="client"/>
+	
+	<!-- textures  -->
+	<file src="textures/speedometerBG.png" type="client"/>
+	<file src="textures/speedometerBG2.png" type="client"/>
+	<file src="textures/speedometerNeedleWhite.png" type="client"/>
+	<file src="textures/speedometerNeedleRed.png" type="client"/>
+	<file src="textures/speedometerOverlay.png" type="client"/>
+	<file src="textures/speedometerGlass.png" type="client"/>
+	<file src="textures/carState.png" type="client"/>
+	<file src="textures/nitroState.png" type="client"/>
+	
+	
+	<!-- fonts  -->
+	<file src="fonts/Prototype.ttf"/>
+	<file src="fonts/lcd.ttf"/>
+	
+	<!-- exports  -->
+	<export function="getVehicleSpeed" type="client"/>
+	<export function="getVehicleRPM" type="client"/>
+</meta>
+

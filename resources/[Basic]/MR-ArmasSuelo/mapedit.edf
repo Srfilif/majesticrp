@@ -1,0 +1,12 @@
+<def name="Ground Weapon System">
+	<element name="groundweapon" friendlyname="Weapon Pickup">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="rotation" type="coord3d" default="0,0,0" />
+		<data name="weaponid" type="natural" default="30" />
+		<data name="ammo" type="natural" default="90" />
+		<data name="clip" type="natural" default="0" />
+
+		<object model="355" rotation="!rotation!"/>		
+	</element>
+	<script src="mapedit.lua" />
+</def>

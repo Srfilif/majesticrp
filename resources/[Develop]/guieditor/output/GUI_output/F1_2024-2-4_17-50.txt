@@ -1,0 +1,18 @@
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        Pri_Window = guiCreateWindow((screenW - 280) / 2, (screenH - 276) / 2, 280, 276, "Menu Principal (F1)", false)
+        guiWindowSetSizable(Pri_Window, false)
+        guiSetAlpha(Pri_Window, 0.90)
+
+        Priv_Exit = guiCreateButton(29, 245, 225, 18, "Salir del servidor...", false, Pri_Window)
+        guiSetFont(Priv_Exit, "default-bold-small")
+        Pri_Config = guiCreateButton(29, 96, 221, 17, "Configuracion", false, Pri_Window)
+        Pri_Creditos = guiCreateButton(29, 127, 221, 18, "Creditos", false, Pri_Window)
+        guiSetFont(Pri_Creditos, "default-bold-small")
+        guiSetProperty(Pri_Creditos, "NormalTextColour", "FFF5D609")
+        Pri_Inv = guiCreateButton(29, 155, 221, 17, "Inventario", false, Pri_Window)
+        Pri_Return = guiCreateButton(29, 36, 221, 17, "Volver al juego", false, Pri_Window)    
+    end
+)

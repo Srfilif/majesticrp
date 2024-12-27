@@ -1,0 +1,53 @@
+<meta>
+	<info name="POPLife ~ Sistema de Casas" author="Frank_Orion"/>
+	
+	<script src="creation/creation_gui.lua" type="client" cache="false" />
+	<script src="creation/creation.lua" type="client" cache="false" />
+	<script src="creation/creations.lua" type="server" />
+	
+	<script src="main/main_gui.lua"	type="client" cache="false" />
+	
+	<script src="housing/housing_gui.lua" type="client" cache="false" />
+	<script src="housing/housing.lua" type="client" cache="false" />
+	<script src="housing/housings.lua" type="server" />
+
+	<script src="inventory/inv.lua"	type="server" />
+	
+	<script src="manage/manage_gui.lua"	type="client" cache="false" />
+	<script src="manage/manage.lua"	type="client" cache="false" />
+	<script src="manage/manages.lua" type="server" />
+	
+	<script src="storage/storage.lua" type="client" cache="false" />
+	<script src="storage/storages.lua" type="server" />
+	
+	<script src="weapons/weapons.lua" type="server" />
+	
+	<script src="database.lua" type="server" />
+	<script src="housing.lua" type="server" />
+	<script src="interiors.lua" type="server" />
+	
+	<file src="files/housing.png" />
+	
+	<export function="getHouseData"	type="server" />
+	<export function="setHouseData"	type="server" />
+	<export function="setHouseOwner" type="server" />
+		
+	<export function="warpIntoHouseInterior" type="server" />
+	<export function="removeFromHouseInterior" type="server" />
+	
+	<export function="getPlayerTotalHouses"	type="server" />
+	<export function="getAccountTotalHouses" type="server" />
+	<export function="getPlayerHousingNetWorth"	type="server" />
+   
+	<export function="getWeaponMaxAmmo" 	type="server" />
+
+	<export function="getWeaponsInventory"			type="server" />
+	<export function="getWeaponAmmoFromInventory"	type="server" />
+	<export function="updateWeaponInInventory"		type="server" />
+	<export function="setWeaponsInventory"			type="server" />
+	
+	<export function="getPlayerWeaponNetWorth"	type="server" />
+	<export function="giveWeapon"				type="server" />
+
+	<oop>true</oop>
+</meta>

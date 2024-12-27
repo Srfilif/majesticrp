@@ -1,0 +1,13 @@
+
+:guieditor/output/GUI_output/faccion_2024-1-22_14-1.txt
+:guieditor/output/GUI_output/Facciones/StartGUI_2024-1-22_15-17.txt
+:guieditor/output/GUI_output/Facciones/StartGUI_2024-1-22_15-17_(2).txt
+:guieditor/output/GUI_output/Facciones/StartGUI/Facciones_Crear_2024-1-22_15-41.txt
+:guieditor/output/GUI_output/Bank/Version1_2024-1-27_22-38.txt
+:guieditor/output/GUI_output/F1_2024-2-4_17-50.txt
+:guieditor/output/GUI_output/F12_2024-2-4_17-53.txt
+:guieditor/output/GUI_output/F1Sop_2024-2-4_18-8.txt
+:guieditor/output/GUI_output/thx_2024-2-8_22-23.txt
+:guieditor/output/GUI_output/SistemaCreditos_2024-2-10_22-14.txt
+:guieditor/output/GUI_output/selectorpjultimate_2024-12-26_14-24.txt
+:guieditor/output/GUI_output/saveguuilindo_2024-12-26_16-47.txt

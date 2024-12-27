@@ -1,0 +1,26 @@
+<meta>
+	<info author="Absolut" name="Event System" version="1.0a" />
+	<script src="client.lua" type="client" cache="false" />
+	<script src="server.lua" type="server" />
+	<script src="event/server.lua" type="server"/>
+	<script src="explorer/client.lua" type="client" cache="false" />
+	<script src="explorer/server.lua" type="server" />
+	<script src="objects/client.lua" type="client" cache="false" />
+	<script src="objects/server.lua" type="server" />
+	<script src="pickups/server.lua" type="server" />
+	<script src="races/client.lua" type="client" cache="false" />
+	<script src="races/server.lua" type="server" />
+	<script src="saving/client.lua" type="client" cache="false" />
+	<script src="saving/server.lua" type="server" />
+	<script src="vehicles/client.lua" type="client" cache="false" />
+	<script src="vehicles/server.lua" type="server" />
+	
+	<file src="textures/nitro.dff" />
+	<file src="textures/nitro.txd" />
+	<file src="textures/repair.dff" />
+	<file src="textures/repair.txd" />
+	<file src="textures/vehiclechange.dff" />
+	<file src="textures/vehiclechange.txd" />
+
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+</meta>

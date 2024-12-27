@@ -1,0 +1,8 @@
+<meta>
+    <info author="Absolut" name="Admin System" version="1.0a" />
+		<script src="client.lua" type="client" cache="false" />
+		<script src="misc/admin_levels.lua" type="client" cache="false" />
+		<script src="misc/admin_banlog.lua" type="client" cache="false" />
+		<script src="misc/admin_rules.lua" type="client" cache="false" />
+		<script src="server.lua" type="server" />
+</meta>

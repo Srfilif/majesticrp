@@ -1,0 +1,6 @@
+<meta>
+<info author="Emile" name="Pizza Delivery Job" />
+	<script src="PizzaDeliveryClient.lua" type="client" cache="false"/>
+	<script src="PizzaDeliveryServer.lua" type="server" />
+	<file src="walking.mp3" />
+</meta>

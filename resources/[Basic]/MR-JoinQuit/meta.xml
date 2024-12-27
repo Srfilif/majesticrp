@@ -1,0 +1,8 @@
+<meta>
+    <info name="Sistema de JoinQuit" type="script" />
+    
+    <script src="client.lua" type="client" cache="false" />
+    <script src="server.lua" type="server" />
+
+    <oop>true</oop>
+</meta>

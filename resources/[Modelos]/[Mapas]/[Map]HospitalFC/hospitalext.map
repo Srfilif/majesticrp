@@ -1,0 +1,4 @@
+<map edf:definitions="editor_main">
+    <object id="object (Vgs_guardhouse01) (1)" doublesided="false" model="8168" interior="0" dimension="0" posX="-300.70001220703" posY="1048.1999511719" posZ="20.39999961853" rotX="0" rotY="0" rotZ="106"></object>
+    <object id="object (bar_gatebar01) (1)" doublesided="false" model="966" interior="0" dimension="0" posX="-297.70001220703" posY="1049.3000488281" posZ="18.60000038147" rotX="0" rotY="0" rotZ="180"></object>
+</map>

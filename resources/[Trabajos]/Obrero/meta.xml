@@ -1,0 +1,13 @@
+<meta>
+
+	<info author="SrFilif" name="Trabajo de Obrero" description="Trabajo de Obrero" type="script" version="2.0" autostart="true"/>
+
+	<script src="table_obrero.lua" type="shared" cache="false"/>
+	<script src="obrero_cliente.lua" type="client" cache="false"/>
+	<script src="obrero_server.lua" type="server"/>
+	<script src="save.lua" type="server"/>
+	<file src="pala.mp3"/>
+
+	<oop>true</oop>
+
+</meta>

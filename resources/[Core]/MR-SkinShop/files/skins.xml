@@ -1,0 +1,67 @@
+<skins>
+    <!-- Masculinos -->
+    <group name="Masculinos">
+        <!-- Agrega las skins masculinas -->
+        <skin model="0" name="CJ" />
+        <skin model="1" name="Truth" />
+        <skin model="2" name="Maccer" />
+        <skin model="3" name="Black Beachguy" />
+        <skin model="4" name="Beach Mustache" />
+        <skin model="5" name="Rollergirl" />
+        <skin model="7" name="Casual Jeanjacket" />
+        <skin model="8" name="Old Fat Lady" />
+        <skin model="14" name="Prostitute" />
+        <skin model="15" name="Business Lady" />
+        <skin model="16" name="Golf Lady" />
+        <skin model="17" name="Nursey" />
+        <skin model="18" name="Valet" />
+        <skin model="19" name="Ninja" />
+        <skin model="307" name="Lifeguard" />
+        <skin model="308" name="Fireman LS" />
+        <skin model="309" name="Fireman LV" />
+        <skin model="310" name="Black Cop" />
+        <skin model="311" name="White Cop" />
+        <skin model="312" name="S.W.A.T." />
+        <!-- Agrega las demás skins masculinas -->
+    </group>
+
+    <!-- Femeninos -->
+    <group name="Femeninos">
+        <!-- Agrega las skins femeninas -->
+        <skin model="6" name="Barbara Schternvart" />
+        <skin model="9" name="Helena Wankstein" />
+        <skin model="10" name="Michelle Cannes" />
+        <skin model="11" name="Katie Zhan" />
+        <skin model="12" name="Millie Perkins" />
+        <skin model="13" name="Denise Robinson" />
+        <skin model="31" name="Fat Cowgirl" />
+        <skin model="33" name="Bounty Hunter" />
+        <skin model="34" name="Marlboro Man" />
+        <skin model="44" name="Tatooed Plaid" />
+        <skin model="128" name="Native Rancher" />
+        <skin model="129" name="Native Librarian" />
+        <skin model="130" name="Native Ugly" />
+        <skin model="131" name="Native Sexy" />
+        <skin model="132" name="Native Geezer" />
+        <skin model="133" name="Furys Trucker" />
+        <skin model="157" name="Farmer Girl" />
+        <skin model="158" name="Farmer" />
+        <skin model="159" name="Farmer Redneck" />
+        <skin model="160" name="Bald Redneck" />
+        <skin model="161" name="Smoking Cowboy" />
+        <skin model="162" name="Inbred" />
+        <skin model="196" name="Aunt May" />
+        <skin model="197" name="Smoking Maid" />
+        <skin model="198" name="Ranch Cowgirl" />
+        <skin model="199" name="Heidi" />
+        <skin model="200" name="Hairy Redneck" />
+        <skin model="201" name="Trucker Girl" />
+        <skin model="202" name="Beer Trucker" />
+        <skin model="203" name="Ninja 1" />
+        <skin model="204" name="Ninja 2" />
+        <skin model="236" name="Happy Old Man" />
+        <skin model="261" name="Southerner" />
+        <skin model="298" name="Schoolgirl 2" />
+        <skin model="304" name="Bondage Girl" />
+    </group>
+</skins>

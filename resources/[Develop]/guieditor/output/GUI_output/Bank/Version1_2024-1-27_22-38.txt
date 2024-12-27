@@ -1,0 +1,49 @@
+
+GUIEditor = {
+    tab = {},
+    tabpanel = {},
+    edit = {},
+    button = {},
+    window = {},
+    label = {},
+    gridlist = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        GUIEditor.window[1] = guiCreateWindow((screenW - 336) / 2, (screenH - 278) / 2, 336, 278, "Sistema bancario - Majestic Roleplay", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.label[1] = guiCreateLabel(0, 17, 336, 44, "Titular: Andres_Angel\nN*Cuenta: 10001\nBalance: 100000$", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        GUIEditor.tabpanel[1] = guiCreateTabPanel(10, 65, 315, 174, false, GUIEditor.window[1])
+
+        GUIEditor.tab[1] = guiCreateTab("Retirar", GUIEditor.tabpanel[1])
+
+        GUIEditor.label[2] = guiCreateLabel(10, 10, 295, 26, "Cantidad:", false, GUIEditor.tab[1])
+        guiSetFont(GUIEditor.label[2], "default-bold-small")
+        GUIEditor.edit[1] = guiCreateEdit(10, 36, 295, 35, "", false, GUIEditor.tab[1])
+        GUIEditor.button[1] = guiCreateButton(10, 89, 139, 38, "Depositar todo", false, GUIEditor.tab[1])
+        GUIEditor.button[2] = guiCreateButton(166, 89, 139, 38, "Depositar", false, GUIEditor.tab[1])
+
+        GUIEditor.tab[2] = guiCreateTab("Depositar", GUIEditor.tabpanel[1])
+        GUIEditor.tab[3] = guiCreateTab("Transferir", GUIEditor.tabpanel[1])
+
+        GUIEditor.label[3] = guiCreateLabel(6, 8, 309, 19, "Cuenta:", false, GUIEditor.tab[3])
+        guiSetFont(GUIEditor.label[3], "default-bold-small")
+        GUIEditor.edit[2] = guiCreateEdit(6, 27, 297, 24, "", false, GUIEditor.tab[3])
+        GUIEditor.label[4] = guiCreateLabel(6, 51, 309, 19, "Cantidad", false, GUIEditor.tab[3])
+        guiSetFont(GUIEditor.label[4], "default-bold-small")
+        GUIEditor.edit[3] = guiCreateEdit(6, 70, 297, 24, "", false, GUIEditor.tab[3])
+        GUIEditor.button[3] = guiCreateButton(63, 104, 184, 29, "Transferir", false, GUIEditor.tab[3])
+
+        GUIEditor.tab[4] = guiCreateTab("Registros", GUIEditor.tabpanel[1])
+
+        GUIEditor.gridlist[1] = guiCreateGridList(7, 5, 298, 135, false, GUIEditor.tab[4])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Registro", 0.9)
+
+
+        GUIEditor.button[4] = guiCreateButton(10, 249, 94, 19, "Ayuda", false, GUIEditor.window[1])
+        GUIEditor.button[5] = guiCreateButton(231, 249, 94, 19, "Cerrar", false, GUIEditor.window[1])    
+    end
+)

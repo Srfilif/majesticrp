@@ -1,0 +1,7 @@
+<map edf:definitions="editor_main">
+    <object id="object (CJ_DF_WORKTOP_3) (1)" breakable="false" interior="0" alpha="255" dimension="0" model="941" scale="1" doublesided="true" collisions="true" frozen="true" posX="-231.2" posY="1403.2" posZ="69.4" rotX="0" rotY="0" rotZ="90"></object>
+    <object id="object (kmb_deadhead) (1)" breakable="true" interior="0" alpha="255" dimension="0" model="2908" scale="1" doublesided="false" collisions="true" frozen="true" posX="-230.89999" posY="1404.5" posZ="70" rotX="0" rotY="0" rotZ="240"></object>
+    <object id="object (kmb_deadtorso) (1)" breakable="false" interior="0" alpha="255" dimension="0" model="2907" scale="1" doublesided="true" collisions="true" frozen="true" posX="-231.39999" posY="1404" posZ="70" rotX="0" rotY="0" rotZ="26.75"></object>
+    <object id="object (kmb_deadarm) (1)" breakable="true" interior="0" alpha="255" dimension="0" model="2906" scale="1" doublesided="false" collisions="true" frozen="true" posX="-231.50003" posY="1403.1" posZ="69.9001" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (kmb_deadleg) (1)" breakable="true" interior="0" alpha="255" dimension="0" model="2905" scale="1" doublesided="false" collisions="true" frozen="true" posX="-231.10001" posY="1402.8" posZ="70" rotX="0" rotY="0" rotZ="320"></object>
+</map>

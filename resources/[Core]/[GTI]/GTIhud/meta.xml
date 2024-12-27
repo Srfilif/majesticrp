@@ -1,0 +1,39 @@
+<meta>
+	<info author="JTPenn" version="1.0" name="Custom HUD and HUD Functions" autostart="true" />
+	
+	<!--Custom HUD-->
+	<script src="draw.lua" 						/>
+	
+	<!--HUD Function Scripts-->
+	<script src="dm/displayMessage.lua" 					type="client" />
+	<script src="drawNote/drawNotification.lua" 			type="client" />
+	<script src="drawStat/drawStat.lua" 					type="client" />
+	<script src="drawMissionText/drawMissionText.lua" 		type="client" />
+	<script src="drawMissionEvent/drawMissionEvent.lua" 	type="client" />
+	
+	<!--HUD Function Exports-->
+	<export function="isCustomHudEnabled" 	type="client" />
+	<export function="showHud" 				type="client" />
+	<export function="dm" 					type="client" />
+	<export function="drawMissionText" 		type="client" />
+	<export function="drawNote" 			type="client" />
+	<export function="drawProgressBar" 		type="client" />
+	<export function="drawStat" 			type="client" />
+	<export function="drawMissionEvent"		type="client" />
+	
+	<export function="showHud" 				type="server" />
+	<export function="dm" 					type="server" />
+	<export function="drawMissionText" 		type="server" />
+	<export function="drawNote" 			type="server" />
+	<export function="drawProgressBar" 		type="server" />
+	<export function="drawStat" 			type="server" />
+	<export function="drawMissionEvent"		type="server" />
+	
+	<!--Audio-->
+	<file src="audio/story_miss_complete.mp3" />
+	<file src="audio/side_miss_complete.mp3" />
+	<!--Fonts-->
+	<file src="fonts/cambria.ttf" />
+	<file src="fonts/signpainter.ttf" />
+	<file src="fonts/verdana.ttf" />
+</meta>

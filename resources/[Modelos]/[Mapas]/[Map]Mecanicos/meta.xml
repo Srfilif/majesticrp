@@ -1,0 +1,8 @@
+<meta>
+    <oop>true</oop>
+    <info type="map" version="1.0.0"></info>
+    <map src="MecanicosNv2.map" dimension="0"></map>
+    <script src="mapEditorScriptingExtension_s.lua" type="server"></script>
+    <script src="mapEditorScriptingExtension_c.lua" type="client" validate="false"></script>
+    <file src="archivos/garaje.txd" />
+</meta>

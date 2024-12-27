@@ -1,0 +1,7 @@
+<meta>
+	<info author="Thehacker5" name="Duty Staff	" version="1.5" type="script"/>
+	
+	<script src="DutyS.lua" type="server"/>
+	<script src="server_S.lua" type="server"/>
+	<script src="DutyC.lua" type="client" cache= "false"/>
+</meta>

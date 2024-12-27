@@ -1,0 +1,48 @@
+
+GUIEditor = {
+    edit = {},
+    button = {},
+    window = {},
+    label = {},
+    radiobutton = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(70, 367, 270, 347, "Creacion de Personakje", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.label[1] = guiCreateLabel(3, 25, 257, 23, "¡Acontinuacion Crearas tu personaje!", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        GUIEditor.label[2] = guiCreateLabel(3, 48, 151, 23, "Nombre:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[2], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        GUIEditor.edit[1] = guiCreateEdit(13, 75, 131, 26, "Andres_Angel", false, GUIEditor.window[1])
+        GUIEditor.label[3] = guiCreateLabel(3, 107, 257, 23, "Nacionalidad:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[3], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
+        GUIEditor.edit[2] = guiCreateEdit(13, 130, 237, 26, "Colombiano", false, GUIEditor.window[1])
+        GUIEditor.label[4] = guiCreateLabel(3, 160, 257, 23, "Sexo:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[4], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[4], "center", false)
+        GUIEditor.radiobutton[1] = guiCreateRadioButton(33, 183, 96, 26, "Masculino", false, GUIEditor.window[1])
+        GUIEditor.radiobutton[2] = guiCreateRadioButton(149, 183, 111, 26, "Femenino", false, GUIEditor.window[1])
+        guiRadioButtonSetSelected(GUIEditor.radiobutton[2], true)
+        GUIEditor.label[5] = guiCreateLabel(154, 48, 106, 23, "Edad:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[5], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[5], "center", false)
+        GUIEditor.edit[3] = guiCreateEdit(155, 75, 105, 26, "118", false, GUIEditor.window[1])
+        GUIEditor.label[6] = guiCreateLabel(3, 209, 257, 23, "==========================", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[6], "center", false)
+        GUIEditor.label[7] = guiCreateLabel(3, 232, 151, 23, "Contraseña:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[7], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[7], "center", false)
+        GUIEditor.label[8] = guiCreateLabel(154, 232, 106, 23, "Contraseña:", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[8], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[8], "center", false)
+        GUIEditor.edit[4] = guiCreateEdit(13, 255, 131, 26, "Andres_Angel", false, GUIEditor.window[1])
+        GUIEditor.edit[5] = guiCreateEdit(154, 255, 105, 26, "12345ANDRES12$", false, GUIEditor.window[1])
+        GUIEditor.button[1] = guiCreateButton(76, 296, 123, 39, "CREAR PERSONAJE", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.button[1], "default-bold-small")
+        guiSetProperty(GUIEditor.button[1], "NormalTextColour", "FFFFFFFF")    
+    end
+)

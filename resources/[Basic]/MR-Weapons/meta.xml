@@ -1,0 +1,10 @@
+<meta>
+	<info author="Alex:D and Sticmy" name=" Edited Sticmy xd" type="script" version="1.0" autostart="true"/>
+
+	<script src="cliente.lua" type="client" cache="false"/>
+	<script src="server.lua" type="server"/>
+
+	<export function="createWeaponGround" type="server"/>
+
+	<oop>true</oop>
+</meta>

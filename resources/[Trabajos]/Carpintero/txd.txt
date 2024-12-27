@@ -1,0 +1,57 @@
+addEventHandler("onResourceStart", resourceRoot, function()
+	for i, v in ipairs(Element.getAllByType("player")) do
+		bindKey(v, "mouse1", "down", function(player)
+		if not player:isInVehicle() then
+			if player:isWithinMarker(Marcador) then
+				print(1)
+				local job = player:getData("Roleplay:trabajo")
+				if job == "Carpintero" then
+					print(2)
+					local ob = getElementData(player,"objeto") or 0
+					if (ob >= 1) then
+					print(3)
+					player:outputChat("Ya tienes madera",255,0,0,true)
+					else
+					print(4)
+					setPedAnimation( player, "CARRY", "liftup", 1.0, false )
+				--	player:outputChat("Ya tienes 111111",255,0,0,true)
+					 setTimer( function()
+					print(5)
+					setPedAnimation( player, nil )
+					setPedAnimation( player, "CARRY", "crry_prtial", 4.1, true, true, true )
+		--			player:outputChat("Ya tienes madera222",255,0,0,true)
+					local x,y,z = getElementPosition(player)
+					gruz = createObject ( 1463, x, y, z )
+					local a = getPlayerName(player)
+					player:setData("TextInfo", {"> "..a.." recoje madera",255, 0, 216})
+					player:outputChat("#ffff3d[Carpintero]#ffFFff Has recogido una pila de #ffff3dMadera #ffFFffVe a la mesa para elaborar algo", 150, 50, 50, true)
+					setTimer(function(p)
+					if isElement(p) then
+					print(6)
+					p:setData("TextInfo", {"",255, 0, 216})
+					end
+					end, 4000, 1, player)
+					attachElements ( gruz, player, 0,0.4,0.5)
+					if ( gruz ) then -- if it was created
+					print(7)
+					setObjectScale ( gruz, 0.5)
+       					setElementCollisionsEnabled (gruz, false)
+					end
+					  setPedAnimation(player, nil )
+					--toggleControl( "jump", true )
+					--toggleControl(player, "fire", true )
+					--toggleControl( "sprint", true )
+					end,700,1)
+					setElementData(player,"objeto",1)
+					end
+					 else
+				--	print(8)
+				--	player:outputChat("¡Tu no trabajas aquí!", 150, 50, 50, true)
+					
+					end
+				end
+			end
+		end)
+	end
+end
+)

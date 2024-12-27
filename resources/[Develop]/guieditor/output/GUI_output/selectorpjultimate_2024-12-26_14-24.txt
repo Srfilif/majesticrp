@@ -1,0 +1,40 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    button = {},
+    window = {},
+    staticimage = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(0.42, 0.30, 0.15, 0.40, "Andres_Angel", true)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.staticimage[1] = guiCreateStaticImage(19, 27, 255, 255, ":guieditor/images/examples/comi.png", false, GUIEditor.window[1])
+        GUIEditor.label[1] = guiCreateLabel(19, 282, 255, 26, "Andres_Angel (Nivel 1)", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[1], "default-bold-small")
+        guiLabelSetColor(GUIEditor.label[1], 244, 208, 10)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+        GUIEditor.label[2] = guiCreateLabel(19, 308, 255, 60, "Salud: 50%\nChaleco: 100%\nJail OCC: NO\nPrision: NO", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[2], "center")
+        GUIEditor.button[1] = guiCreateButton(65, 385, 155, 34, "INGRESAR", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.button[1], "default-bold-small")
+
+
+        GUIEditor.window[2] = guiCreateWindow(0.19, 0.30, 0.15, 0.40, "Andres_Angel", true)
+        guiWindowSetSizable(GUIEditor.window[2], false)
+
+
+        GUIEditor.window[3] = guiCreateWindow(0.70, 0.30, 0.15, 0.40, "Andres_Angel", true)
+        guiWindowSetSizable(GUIEditor.window[3], false)    
+    end
+)

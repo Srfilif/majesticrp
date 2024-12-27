@@ -1,0 +1,13 @@
+<meta>
+	<info author="Bronimo" version="1.0"/>
+
+	<script src="server.lua" type="server" cache="false" />
+
+	<script src="mision_pos.lua" type="shared" />
+
+	<script src="cliente.lua" type="client" cache="false" />
+
+	<script src="save.lua" type="server" cache="false" />
+	
+	<oop>true</oop>
+</meta>

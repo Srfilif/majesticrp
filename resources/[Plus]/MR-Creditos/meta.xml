@@ -1,0 +1,8 @@
+<meta>
+	<info author="SrFilif Dev </>" name="Sistema de creditos" description="Help panel For F1" type="script" version="1" autostart="true"/>
+	
+	<script src="client.lua" type="client" cache="false"/>
+	<script src="server.lua" type="server"/>
+ <file src="extra.xml" />
+	<oop>true</oop>
+</meta>

@@ -1,0 +1,18 @@
+<meta>
+	<info author="Sticmy" name="Login Roleplay" description="Login Roleplay" version="1.5" type="script" autostart="true"/>
+
+	<script src="TestRol/testRoleplay.lua" type="client" cache="false"/>
+	<script src="TestRol/testRoleplay_server.lua" type="server"/>
+	<!-- Información para el Skin y Selector de skin -->
+
+	<script src="login_cliente.lua" type="client" cache="false"/>
+	<script src="login_server.lua" type="server"/>
+	<script src="guardarDatos.lua" type="server"/>
+	<script src="cameras.lua" type="client" cache="false"/>
+
+
+	<script src="skin_selector_info/info_cliente.lua" type="client" cache="false"/>
+	<script src="skin_selector_info/info_server.lua" type="server"/>
+
+	<oop>true</oop>
+</meta>

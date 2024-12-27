@@ -1,0 +1,6 @@
+<meta>
+    <info author='[M]atheus' name='Comandos Staffs' />
+    <script src='global-side.lua' type='shared' />
+    <script src='server-side.lua' type='server' />
+    <min_mta_version server='1.5.4-9.11413' />
+</meta>

@@ -1,0 +1,7 @@
+<meta>
+    <info author="Absolut" name="Slot Machine" version="1.0a" />
+    <script src="slot_client.lua" type="client" />
+    <script src="slot_server.lua" type="server" />
+    <file src="images/lane.png" />
+    <file src="images/bg.png" />
+</meta>

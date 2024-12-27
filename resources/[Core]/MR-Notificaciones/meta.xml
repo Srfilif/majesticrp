@@ -1,0 +1,9 @@
+<meta>
+    <info author="Absolut" name="Sistema Notificaciones" version="1.0a" />
+    <script src="Text/text_c.luac" type="client" cache="false" />
+    <script src="Text/text_s.luac" type="server" />
+    
+    <export function="outputDXMessage" type="client" />
+    <export function="outputDXMessage" type="server" />
+    <min_mta_version server="1.5.2-9.07903" client="1.5.2-9.07903"></min_mta_version>
+</meta>

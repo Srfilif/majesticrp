@@ -1,0 +1,159 @@
+colShapeArmeria = createColCuboid(1575.3505859375, -1688.9697265625, 15.1953125, 7, 1.5, 2) -- Cambia las coordenadas y dimensiones según sea necesario
+
+local ventanaAbierta = false
+
+-- Comando para abrir la ventana
+addCommandHandler("armeria", function()
+    if isElementWithinColShape(localPlayer, colShapeArmeria) then
+        if not ventanaAbierta then
+            mostrarVentanaArmeria()
+        else
+            outputChatBox("#FF3D3D* La ventana de armería ya está abierta.", 255, 0, 0, true)
+        end
+    else
+        outputChatBox("#FF3D3D* Debes estar en la zona de la armería para usar este comando.", 255, 0, 0, true)
+    end
+end)
+
+function mostrarVentanaArmeria()
+    local screenW, screenH = guiGetScreenSize()
+
+    Armeria_Panel = guiCreateWindow((screenW - 424) / 2, (screenH - 324) / 2, 424, 324, "Armeria - SAPD", false)
+    guiWindowSetSizable(Armeria_Panel, false)
+
+    Armeria_Label1 = guiCreateLabel(12, 21, 403, 36,
+        "¡Bienvenido a la armeria policial!\nSelecciona el arma que quieras y dale clic a Tomar", false, Armeria_Panel)
+    guiLabelSetHorizontalAlign(Armeria_Label1, "center", false)
+    Armeria_gridlist = guiCreateGridList(10, 54, 266, 260, false, Armeria_Panel)
+    guiGridListAddColumn(Armeria_gridlist, "ID", 0.2)
+    guiGridListAddColumn(Armeria_gridlist, "Arma", 0.4)
+    guiGridListAddColumn(Armeria_gridlist, "Rango", 0.5)
+    local armas = {
+        {
+            id = 3,
+            nombre = "Bolillo",
+            rango = "Cadete"
+        },
+        {
+            id = 22,
+            nombre = "Pistola",
+            rango = "Cadete"
+        },
+        {
+            id = 24,
+            nombre = "Desert Eagle",
+            rango = "Sargento 1"
+        },
+        {
+            id = 25,
+            nombre = "Escopeta",
+            rango = "Oficial 2"
+        },
+        {
+            id = 28,
+            nombre = "MP5",
+            rango = "Teniente"
+        },
+        {
+            id = 30,
+            nombre = "M4",
+            rango = "Coronel"
+        },
+        {
+            id = 34,
+            nombre = "Rifle de Francotirador",
+            rango = "Comandante"
+        },
+        {
+            id = 0,
+            nombre = "Chaleco Anti-Balas",
+            rango = "Todos los rangos"
+        }
+    }
+    
+
+    for _, arma in ipairs(armas) do
+        local row = guiGridListAddRow(Armeria_gridlist)
+        guiGridListSetItemText(Armeria_gridlist, row, 1, tostring(arma.id), false, true)
+        guiGridListSetItemText(Armeria_gridlist, row, 2, arma.nombre, false, false)
+        guiGridListSetItemText(Armeria_gridlist, row, 3, arma.rango, false, false)
+    end
+
+    Armeria_Tomar = guiCreateButton(281, 57, 133, 22, "Tomar", false, Armeria_Panel)
+    Armeria_Devolver = guiCreateButton(280, 89, 135, 22, "Devolver", false, Armeria_Panel)
+    Armeria_TomarTodo = guiCreateButton(279, 121, 136, 22, "Tomar Todo", false, Armeria_Panel)
+    Armeria_DevolverTodo = guiCreateButton(276, 153, 137, 22, "Devolver Todo", false, Armeria_Panel)
+    Armeria_Cerrar = guiCreateButton(281, 292, 134, 22, "Cerrar", false, Armeria_Panel)
+    guiSetProperty(Armeria_Cerrar, "NormalTextColour", "FFFF0000")
+    showCursor(true)
+    ventanaAbierta = true
+
+    addEventHandler("onClientGUIClick", Armeria_Cerrar, function()
+        if Armeria_Panel then
+            destroyElement(Armeria_Panel)
+            showCursor(false)
+            ventanaAbierta = false
+
+        end
+    end, false)
+
+    addEventHandler("onClientGUIClick", Armeria_Tomar, function()
+        local selectedRow = guiGridListGetSelectedItem(Armeria_gridlist)
+        if selectedRow ~= -1 then
+            local armaID = guiGridListGetItemText(Armeria_gridlist, selectedRow, 1)
+            if armaID then
+                if tonumber(armaID) == 0 then
+                    local armor = getPlayerArmor(getLocalPlayer())
+                    if armor >= 50 then
+                        outputChatBox("#ff3d3d* No puedes llevar más armadura.", 255, 0, 0, true)
+                    else
+                        triggerServerEvent("Armeria-DarChaleco", localPlayer)
+                    end
+                else
+                    triggerServerEvent("Armeria-darArma", localPlayer, tonumber(armaID))
+                end
+            else
+                outputChatBox("#ff3d3d* Selecciona un arma para tomar.", 255, 0, 0, true)
+            end
+        else
+            outputChatBox("#ff3d3d* Selecciona un arma para tomar.", 255, 0, 0, true)
+        end
+    end, false)
+
+    addEventHandler("onClientGUIClick", Armeria_Devolver, function()
+        local selectedRow = guiGridListGetSelectedItem(Armeria_gridlist)
+        if selectedRow ~= -1 then
+            local armaID = guiGridListGetItemText(Armeria_gridlist, selectedRow, 1)
+            if armaID then
+                triggerServerEvent("Armeria-devolverArma", localPlayer, tonumber(armaID))
+            else
+                outputChatBox("#ff3d3d* Selecciona un arma para devolver.", 255, 0, 0, true)
+            end
+        else
+            outputChatBox("#ff3d3d* Selecciona un arma para devolver.", 255, 0, 0, true)
+        end
+    end, false)
+
+    addEventHandler("onClientGUIClick", Armeria_TomarTodo, function()
+        for i = 0, guiGridListGetRowCount(Armeria_gridlist) - 1 do
+            local armaID = guiGridListGetItemText(Armeria_gridlist, i, 1)
+            if tonumber(armaID) == 0 then
+                local armor = getPlayerArmor(getLocalPlayer())
+                if armor < 50 then
+                    triggerServerEvent("Armeria-DarChaleco", localPlayer)
+                end
+            else
+                triggerServerEvent("Armeria-darArma", localPlayer, tonumber(armaID))
+            end
+        end
+        outputChatBox("#00ff00* Todas las armas han sido tomadas.", 255, 255, 255, true)
+    end, false)
+
+    addEventHandler("onClientGUIClick", Armeria_DevolverTodo, function()
+        for i = 0, guiGridListGetRowCount(Armeria_gridlist) - 1 do
+            local armaID = guiGridListGetItemText(Armeria_gridlist, i, 1)
+            triggerServerEvent("Armeria-devolverArma", localPlayer, tonumber(armaID))
+        end
+        outputChatBox("#00ff00* Todas las armas han sido devueltas.", 255, 255, 255, true)
+    end, false)
+end

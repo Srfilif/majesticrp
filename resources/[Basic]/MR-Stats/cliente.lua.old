@@ -1,0 +1,175 @@
+        local PHealth = (getElementHealth(getLocalPlayer()))
+        local PArmor = math.floor(getPedArmor(getLocalPlayer()))
+        local PLevel = getElementData (localPlayer,"Nivel") or 0
+        local PExp = getElementData (localPlayer,"Roleplay:reputacion") or 0
+        local PHunger = getElementData ( localPlayer, "hambre" ) or 100
+        local PSed = getElementData ( localPlayer, "sed" ) or 100	
+        local PWanted = getPlayerWantedLevel(getLocalPlayer())
+        local PID = getElementData(localPlayer, "ID") or "0"
+        local PBMoney = tonumber(getElementData ( getLocalPlayer(), "Roleplay:bank_balance"  )) or 0
+        local PMoney = getPlayerMoney ( localPlayer ) or 0
+        local arma = getPlayerWeapon(localPlayer) or "ninguna"
+		local PName = getPlayerName(localPlayer) or "Desconocido"
+	    local PSexo = getElementData ( getLocalPlayer(), "Roleplay:Genero"  ) or "Desconocido"
+		local PEdad = getElementData ( getLocalPlayer(), "Roleplay:Edad"  ) or "Desconocido"
+		local PNacionalidad = getElementData ( getLocalPlayer(), "Roleplay:Nacionalidad"  ) or "Desconocido"
+		local PinJailOCC = getElementData ( getLocalPlayer(), "Roleplay:InJailOCC"  ) or "Sin Jail OCC"
+		local PnJailIC = getElementData ( getLocalPlayer(), "Roleplay:InJailIC"  ) or "Sin Jail IC"
+		local PSkin = getElementModel (localPlayer) or "Desconcodio"
+		
+		local PStaff = getElementData ( getLocalPlayer(), "Roleplay:IsStaff"  ) or "No pertenece"
+		local PVip = getElementData ( getLocalPlayer(), "Roleplay:IsVIP"  ) or "Sin Membrecia"
+		local PBio = getElementData ( getLocalPlayer(), "Roleplay:Biografia"  ) or "Sin Biografia"
+
+
+
+
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+	    
+		local screenW, screenH = guiGetScreenSize()
+	
+
+		
+		
+	    -- Aca empieza la creacion de la gui
+        winstats = guiCreateWindow((screenW - 581) / 2, (screenH - 383) / 2, 581, 383, "Estadisticas de "..PName.."", false)
+        guiWindowSetMovable(winstats, false)
+        guiWindowSetSizable(winstats, false)
+        guiSetAlpha(winstats, 0.90)
+
+        Estadisticas_Tab = guiCreateTabPanel(11, 28, 560, 345, false, winstats)
+
+        STab_General = guiCreateTab("General", Estadisticas_Tab)
+
+        SG_Name = guiCreateLabel(18, 14, 206, 15, "Nombre Completo: "..PName.."", false, STab_General)
+        guiSetFont(SG_Name, "clear-normal")
+        SG_Sexo = guiCreateLabel(18, 48, 189, 17, "Sexo: "..PSexo.."", false, STab_General)
+        guiSetFont(SG_Sexo, "clear-normal")
+        SG_Age = guiCreateLabel(18, 65, 189, 17, "Edad: "..PEdad.." años", false, STab_General)
+        guiSetFont(SG_Age, "clear-normal")
+        SG_Nacionalidad = guiCreateLabel(18, 82, 189, 17, "Nacionalidad: "..PNacionalidad.."", false, STab_General)
+        guiSetFont(SG_Nacionalidad, "clear-normal")
+        SG_Level = guiCreateLabel(18, 116, 189, 17, "Nivel: "..PLevel.."", false, STab_General)
+        guiSetFont(SG_Level, "clear-normal")
+        SG_Experience = guiCreateLabel(18, 133, 189, 17, "Experiencia: "..PExp.."", false, STab_General)
+        guiSetFont(SG_Experience, "clear-normal")
+        SG_Health = guiCreateLabel(18, 167, 189, 17, "Salud: "..PHealth.."%", false, STab_General)
+        guiSetFont(SG_Health, "clear-normal")
+        SG_Armor = guiCreateLabel(18, 184, 189, 17, "Chaleco: "..PArmor.."%", false, STab_General)
+        guiSetFont(SG_Armor, "clear-normal")
+        SG_Skin = guiCreateLabel(18, 201, 189, 17, "Skin: "..PSkin.."", false, STab_General)
+        guiSetFont(SG_Skin, "clear-normal")
+        SG_Money = guiCreateLabel(18, 243, 189, 17, "Dinero en Mano: "..PMoney.."$", false, STab_General)
+        guiSetFont(SG_Money, "clear-normal")
+        SG_Backmoney = guiCreateLabel(18, 260, 189, 17, "Dinero en Banco: "..PBMoney.."$", false, STab_General)
+        guiSetFont(SG_Backmoney, "clear-normal")
+        SG_InOCCPrison = guiCreateLabel(339, 10, 182, 17, "En Prisión OCC: No", false, STab_General)
+        SG_InICPrison = guiCreateLabel(339, 27, 182, 17, "En Prisión IC: No", false, STab_General)
+        SG_StaffMember = guiCreateLabel(339, 65, 182, 17, "Miembro del Staff: No pertenece", false, STab_General)
+        SG_VIPMember = guiCreateLabel(339, 82, 182, 17, "Miembro VIP: Sin Membresía", false, STab_General)
+        SG_Biogra = guiCreateLabel(339, 120, 196, 134, "Biografía de personaje:\n\n".. PBio .."  ", false, STab_General)
+		       guiLabelSetHorizontalAlign(SG_Biogra, "left", true)    
+        SG_EditBio = guiCreateButton(387, 291, 163, 20, "Editar biografia", false, STab_General)
+        guiSetFont(SG_EditBio, "default-bold-small")
+        guiSetProperty(SG_EditBio, "NormalTextColour", "ECE27500")
+
+        Stab_Sanciones = guiCreateTab("Sanciones", Estadisticas_Tab)
+
+        Gridlist_Sanciones = guiCreateGridList(11, 9, 404, 302, false, Stab_Sanciones)
+        guiGridListAddColumn(Gridlist_Sanciones, "Fecha", 0.3)
+        guiGridListAddColumn(Gridlist_Sanciones, "Razon", 0.3)
+        guiGridListAddColumn(Gridlist_Sanciones, "Staff", 0.3)
+        SS_View = guiCreateButton(419, 19, 136, 24, "Inspecionar", false, Stab_Sanciones)
+        SS_Clear = guiCreateButton(419, 53, 136, 24, "Limpiar (250$)", false, Stab_Sanciones)
+        guiSetFont(SS_Clear, "default-bold-small")
+        guiSetProperty(SS_Clear, "NormalTextColour", "ECE27500")
+
+        Stab_propiedades = guiCreateTab("Propiedades", Estadisticas_Tab)
+
+        SP_Vehicle1 = guiCreateLabel(14, 156, 154, 21, "Vehiculo I: Sin Vehiculo I", false, Stab_propiedades)
+        guiSetFont(SP_Vehicle1, "clear-normal")
+        SP_House1 = guiCreateLabel(13, 47, 141, 21, "Casa I: Sin Casa I", false, Stab_propiedades)
+        guiSetFont(SP_House1, "clear-normal")
+        SP_Lhouse = guiCreateLabel(13, 16, 141, 21, "Casas", false, Stab_propiedades)
+        guiSetFont(SP_Lhouse, "default-bold-small")
+        SP_LVehicle = guiCreateLabel(13, 123, 141, 21, "Vehiculos", false, Stab_propiedades)
+        guiSetFont(SP_LVehicle, "default-bold-small")
+        SP_House3 = guiCreateLabel(13, 92, 141, 21, "Casa III: Sin Casa III", false, Stab_propiedades)
+        guiSetFont(SP_House3, "clear-normal")
+        guiLabelSetColor(SP_House3, 60, 60, 60)
+        SP_House2 = guiCreateLabel(13, 71, 141, 21, "Casa II: Sin Casa II", false, Stab_propiedades)
+        guiSetFont(SP_House2, "clear-normal")
+        SP_Vehicle2 = guiCreateLabel(14, 177, 164, 21, "Vehiculo II: Sin Vehiculo II", false, Stab_propiedades)
+        guiSetFont(SP_Vehicle2, "clear-normal")
+        SP_Vehicle3 = guiCreateLabel(14, 198, 181, 21, "Vehiculo III: Sin Vehiculo III", false, Stab_propiedades)
+        guiSetFont(SP_Vehicle3, "clear-normal")
+        guiLabelSetColor(SP_Vehicle3, 60, 60, 60)
+        SP_History = guiCreateButton(395, 16, 155, 21, "Historial de propiedades", false, Stab_propiedades)
+        guiSetFont(SP_History, "default-bold-small")
+        guiSetProperty(SP_History, "NormalTextColour", "ECE27500")
+
+        Stab_Extra = guiCreateTab("Extra", Estadisticas_Tab)
+
+        SE_Copy = guiCreateLabel(0, 302, 560, 15, "Developed by SrFilif Dev </>", false, Stab_Extra)
+        guiSetFont(SE_Copy, "default-small")
+        guiLabelSetHorizontalAlign(SE_Copy, "center", false)
+        SE_Extra = guiCreateLabel(0, 0, 560, 302, "Próximamente...", false, Stab_Extra)
+        guiLabelSetHorizontalAlign(SE_Extra, "center", false)
+        guiLabelSetVerticalAlign(SE_Extra, "center")    
+		
+		cerrar = guiCreateButton(546, 23, 25, 22, "X", false,winstats)
+        guiSetFont(cerrar, "default-bold-small")
+        guiSetProperty(cerrar, "NormalTextColour", "FEE20000") 
+        guiSetVisible(winstats,false)   
+        guiSetVisible(cerrar,false) 
+    end
+)
+
+
+
+
+addEvent("winstats",true)
+addEventHandler("winstats",root,function(pe,n,s,e)
+	guiSetVisible(winstats,true)
+	showCursor(true)
+	guiSetVisible(cerrar,true)
+	guiSetText(winstats,"Estadisticas de: "..getPlayerName(localPlayer):gsub("_"," "))
+	guiSetText(SG_Name,"Nombre Completo: "..getPlayerName(localPlayer):gsub("_"," "))
+	guiSetText(SG_Sexo,"Sexo: "..s)
+	guiSetText(SG_Nacionalidad,"Nacionalidad: "..n)
+	guiSetText(SG_Age,"Edad: "..e.." años")
+	guiSetText(SG_Level,"Nivel: "..(getElementData(localPlayer,"Nivel")or 1))
+	guiSetText(SG_Experience,"Experiencia: "..(getElementData(localPlayer,"Roleplay:reputacion")or 1))
+    guiSetText(SG_Health,"Salud: "..math.floor(localPlayer:getHealth()).."%")
+	guiSetText(SG_Armor,"Chaleco: "..math.floor((getPedArmor(localPlayer)or 1)).."%")
+
+--
+    guiSetText(skin,"Skin: #"..getElementModel(localPlayer))
+    guiSetText(SG_Money,"Dinero en Mano: "..getPlayerMoney())
+    guiSetText(SG_Backmoney,"Dinero en Banco: "..(getElementData(localPlayer,"Roleplay:bank_balance") or 0))
+    guiSetText(radio,"Radio: "..(getElementData(localPlayer,"frecuencia") or 0).." Hz")
+    guiSetText(tele,"Telefono: "..(getElementData(localPlayer,"Roleplay:NumeroTelefono") or 0))
+    guiSetText(rol,"Puntos de rol: +"..(localPlayer:getData("+rol") or 0).."  "..(localPlayer:getData("-rol") or 0))
+    guiSetText(adv,"Advertencias: #"..(localPlayer:getData("warn") or 0))
+	
+	guiSetText(serial, getPlayerSerial())
+	guiGridListClear(perso)
+	for i,v in ipairs(pe) do
+		local row = guiGridListAddRow(perso)
+		guiGridListSetItemText(perso, row, 1, v.Cuenta, false, true)
+		guiGridListSetItemData(perso, row, 1, v.Cuenta)
+	end
+
+end)
+
+
+
+addEventHandler("onClientGUIClick",resourceRoot,function()
+	if source == cerrar then
+		guiSetVisible(winstats,false)
+		guiSetVisible(cerrar,false)
+		showCursor(false)
+	end
+end)

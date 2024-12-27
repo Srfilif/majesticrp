@@ -1,0 +1,4 @@
+﻿<meta>
+    <info author="[PoP]Frapsito" name="PoP Life ~ Shaders" version="1.0a" />   
+    <script src="blur/noblur.luac" type="server" />
+</meta>

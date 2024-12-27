@@ -1,0 +1,9 @@
+<meta>
+    <info author="Absolut" name="Faccion Criminal" version="1.0a" />
+        <script src="client.lua" type="client" cache="false" /> 
+		<script src="server.lua" type="server" />
+
+        <map src="organos.map" dimension="0"></map>
+   
+		<oop>true</oop>
+</meta>

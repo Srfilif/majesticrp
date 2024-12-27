@@ -1,0 +1,17 @@
+<meta>
+	<script src="sourceg.lua" type="server"/>
+	<script src="sourceg.lua" type="client"/>
+	<script src="sources.lua" type="server"/>
+	<script src="sourcec.lua" type="client"/>
+
+	<file src="files/btn.png" />
+	<file src="files/btn_on.png" />
+	<file src="files/btn_active.png" />
+	
+	<file src="files/taximeter.png" />
+	<file src="files/started.png" />
+	<file src="files/stopped.png" />
+	
+	<file src="files/taxibutton.mp3" />
+	<file src="files/counter.ttf" />
+</meta>

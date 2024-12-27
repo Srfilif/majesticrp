@@ -1,0 +1,6 @@
+<meta>
+    <info author="Absolut" name="Comandos" version="1.0a" />
+        <script src="crearVehiculos/client.lua" type="client" cache="false" /> 
+		<script src="crearVehiculos/server.lua" type="server" />
+		<oop>true</oop>
+</meta>

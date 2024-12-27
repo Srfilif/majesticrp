@@ -1,0 +1,14 @@
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        F_PreGUI = guiCreateWindow((screenW - 403) / 2, (screenH - 145) / 2, 403, 145, "No formas parte de ninguna Faccion", false)
+        guiWindowSetSizable(F_PreGUI, false)
+        guiSetAlpha(F_PreGUI, 0.90)
+
+        F_PreGui_Label = guiCreateLabel(4, 26, 395, 83, "No formas parte de ninguna Faccion. Para formar una nueva Faccion\nlegal debes postularte podras ver el link en discord.\n\nSi quieres formas una Faccion ilegal puedes hacerlo en cualquier\nmomento, siempre y cuando cumplas los requisitos.", false, F_PreGUI)
+        guiLabelSetHorizontalAlign(F_PreGui_Label, "center", false)
+        F_PreGui_cerrar = guiCreateButton(12, 117, 71, 18, "cerrar", false, F_PreGUI)
+        F_PreGui_new = guiCreateButton(112, 113, 180, 22, "Formar Faccion ilegal", false, F_PreGUI)    
+    end
+)

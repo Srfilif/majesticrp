@@ -1,0 +1,50 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a custom font. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move custom fonts into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    gridlist = {},
+    window = {},
+    button = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        GUIEditor.window[1] = guiCreateWindow((screenW - 700) / 2, (screenH - 434) / 2, 700, 434, "Majestic Roleplay - Sistema de Creditos", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.label[1] = guiCreateLabel(10, 23, 678, 42, "Bienvenid@ al sistema de creditos de Majestic Roleplay, Desde aqui podras adquirir diversos paquetes, los cuales podras usar en el servidor, ademas con cualquier compra estaras apoyando a el servidor asi contribuyendo a que este sigua activo.", false, GUIEditor.window[1])
+        local font0_cambria = guiCreateFont(":GTIhud/fonts/cambria.ttf", 10)
+        guiSetFont(GUIEditor.label[1], font0_cambria)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", true)
+        GUIEditor.gridlist[1] = guiCreateGridList(219, 75, 469, 314, false, GUIEditor.window[1])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Nombre", 0.5)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Creditos", 0.5)
+        for i = 1, 2 do
+            guiGridListAddRow(GUIEditor.gridlist[1])
+        end
+        guiGridListSetItemText(GUIEditor.gridlist[1], 0, 1, "-", false, false)
+        guiGridListSetItemText(GUIEditor.gridlist[1], 0, 2, "-", false, false)
+        guiGridListSetItemText(GUIEditor.gridlist[1], 1, 1, "-", false, false)
+        guiGridListSetItemText(GUIEditor.gridlist[1], 1, 2, "-", false, false)
+        GUIEditor.label[2] = guiCreateLabel(0, 75, 209, 41, "Creditos", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[2], font0_cambria)
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        GUIEditor.button[1] = guiCreateButton(19, 126, 170, 34, "VIP\n100 Creditos", false, GUIEditor.window[1])
+        GUIEditor.button[2] = guiCreateButton(21, 179, 170, 34, "VIP+\n150 Creditos", false, GUIEditor.window[1])
+        GUIEditor.button[3] = guiCreateButton(21, 228, 170, 34, "MVP\n300 Creditos", false, GUIEditor.window[1])
+        GUIEditor.button[4] = guiCreateButton(20, 280, 170, 34, "MVP+\n500 Creditos", false, GUIEditor.window[1])
+        GUIEditor.button[5] = guiCreateButton(20, 332, 170, 34, "MVP++\n1000 Creditos", false, GUIEditor.window[1])
+        GUIEditor.button[6] = guiCreateButton(20, 404, 171, 20, "Comprar Creditos", false, GUIEditor.window[1])
+        GUIEditor.label[3] = guiCreateLabel(47, 388, 110, 16, "No tienes Creditos?", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.label[3], "default-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
+        GUIEditor.button[7] = guiCreateButton(514, 409, 171, 15, "Cerrar", false, GUIEditor.window[1])
+        GUIEditor.button[8] = guiCreateButton(219, 410, 171, 14, "Comprar paquete", false, GUIEditor.window[1])    
+    end
+)

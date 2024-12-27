@@ -1,0 +1,38 @@
+
+GUIEditor = {
+    edit = {},
+    label = {},
+    combobox = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        F_PreGUI = guiCreateWindow((screenW - 421) / 2, (screenH - 332) / 2, 421, 332, "Crear Faccion Legal", false)
+        guiWindowSetSizable(F_PreGUI, false)
+        guiSetAlpha(F_PreGUI, 0.90)
+
+        F_PreGui_Label = guiCreateLabel(0, 197, 421, 66, "Una vez elijas un tipo de Faccion ilegal no podras cambiarlo. Tampoco podras cambiar el nombre\nni su abreviacion.\n\nDependiendo de que elijas podras tener distintas posibilidades. Es posible que mas tipos de\nFaccion ilegal se agregen en proximas actualizaciones.", false, F_PreGUI)
+        guiSetFont(F_PreGui_Label, "default-small")
+        guiLabelSetHorizontalAlign(F_PreGui_Label, "center", false)
+        F_PreGui_cerrar = guiCreateButton(10, 301, 71, 18, "cerrar", false, F_PreGUI)
+        F_PreGui_new = guiCreateButton(119, 298, 180, 21, "Crear Faccion", false, F_PreGUI)
+        GUIEditor.label[1] = guiCreateLabel(0, 99, 128, 88, "Precio por  creacion:\nNivel necesario:", false, F_PreGUI)
+        guiSetFont(GUIEditor.label[1], "default-bold-small")
+        guiLabelSetColor(GUIEditor.label[1], 255, 185, 35)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "right", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+        GUIEditor.edit[1] = guiCreateEdit(21, 51, 372, 19, "", false, F_PreGUI)
+        GUIEditor.label[2] = guiCreateLabel(0, 24, 421, 23, "Nombre", false, F_PreGUI)
+        guiSetFont(GUIEditor.label[2], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        GUIEditor.label[3] = guiCreateLabel(0, 76, 421, 23, "Tipo", false, F_PreGUI)
+        guiSetFont(GUIEditor.label[3], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
+        GUIEditor.combobox[1] = guiCreateComboBox(249, 105, 157, 82, "Organizacion Criminal", false, F_PreGUI)
+        guiComboBoxAddItem(GUIEditor.combobox[1], "Pandilla")
+        guiComboBoxAddItem(GUIEditor.combobox[1], "Organizacion Criminal")
+        GUIEditor.label[4] = guiCreateLabel(132, 99, 117, 88, "25.000$ dolares\nNivel 10", false, F_PreGUI)
+        guiSetFont(GUIEditor.label[4], "default-bold-small")
+        guiLabelSetVerticalAlign(GUIEditor.label[4], "center")    
+    end
+)

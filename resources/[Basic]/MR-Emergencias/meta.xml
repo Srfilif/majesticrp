@@ -1,0 +1,9 @@
+<meta>
+	<info author="SrFilif" version="1.0.3" name="Emergencias RP" description="Curarcion + 50 de vida" type="script"/>
+
+	<script src="Edit.lua" type="shared"/>
+
+	<script src="CuracionC.lua" type="client" cache="false"/>
+	<script src="CuracionS.lua" type="server"/>
+	<file src="Color_negro.png" />
+</meta>

@@ -1,0 +1,20 @@
+<meta>
+	<info author="SrFilif Dev </>" type="script" version="1.0.0" name="Sistema de Materiales" />
+	
+	<!-- Client side files -->
+		<script src="Client.lua" type="client" />
+	<!-- Server side Files -->
+		<script src="Server.lua" type="server" />
+	<!-- Data Files -->	
+		<file src="data/10.png" />
+		<file src="data/22.png" />
+		<file src="data/24.png" />
+		<file src="data/28.png" />
+		<file src="data/29.png" />
+		<file src="data/30.png" />
+		<file src="data/32.png" />
+		<file src="data/5.png" />
+		<file src="data/chaleco.png" />
+		<file src="data/martillo.mp3" />
+
+</meta>

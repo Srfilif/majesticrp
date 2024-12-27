@@ -1,0 +1,11 @@
+<meta>
+    <info author="Absolut" name="Donator Moderate" version="1.0a" />
+    <script src="admin_c.lua" type="client" cache="false" />
+    <script src="admin_s.lua" type="server" cache="false" />
+    
+    <aclrequest>
+        <right name="function.aclCreateGroup" access="true" />
+        <right name="function.aclGroupRemoveObject" access="true" />
+        <right name="function.aclGroupAddObject" access="true" />
+    </aclrequest>
+</meta>

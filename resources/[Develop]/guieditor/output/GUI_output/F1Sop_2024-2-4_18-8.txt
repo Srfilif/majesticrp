@@ -1,0 +1,21 @@
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        So_Gui = guiCreateWindow((screenW - 280) / 2, (screenH - 276) / 2, 280, 276, "Soporte (F1)", false)
+        guiWindowSetSizable(So_Gui, false)
+        guiSetAlpha(So_Gui, 0.90)
+
+        So_Back = guiCreateButton(29, 245, 225, 18, "Volver atras..", false, So_Gui)
+        guiSetFont(So_Back, "default-bold-small")
+        So_HPanel = guiCreateButton(29, 112, 221, 17, "Panel de Ayuda", false, So_Gui)
+        guiSetFont(So_HPanel, "clear-normal")
+        So_Norm = guiCreateButton(29, 139, 221, 18, "Normativa General", false, So_Gui)
+        guiSetFont(So_Norm, "clear-normal")
+        guiSetProperty(So_Norm, "NormalTextColour", "C8FFFFFF")
+        So_Dis = guiCreateButton(29, 167, 221, 17, "Copiar URL de discord", false, So_Gui)
+        So_ReBug = guiCreateButton(29, 36, 221, 17, "Reportar un Bug", false, So_Gui)
+        So_For = guiCreateButton(29, 194, 221, 17, "Copiar URL de Foro", false, So_Gui)
+        So_ReUser = guiCreateButton(29, 63, 221, 17, "Reportar a un Usuario", false, So_Gui)    
+    end
+)

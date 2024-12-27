@@ -1,0 +1,7 @@
+<meta>
+    <info type="map" version="1.0.0" autostart="true"></info>
+    <map src="InteriorMedico.map" dimension="0"></map>
+    <map src="InteriorMedico2.map" dimension="1"></map>
+    <script src="mapEditorScriptingExtension_s.lua" type="server"></script>
+    <script src="mapEditorScriptingExtension_c.lua" type="client" validate="false"></script>
+</meta>

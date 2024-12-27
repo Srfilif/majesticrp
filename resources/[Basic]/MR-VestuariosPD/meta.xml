@@ -1,0 +1,14 @@
+<meta>
+    <info name="MR-Vestuarios" author="SrFilif" description="Un sistema de vestuarios basico para SAPD" version="1.1" type="script" autostart="true"></info>
+
+
+    <script src="mapeo.lua" type="server" ></script>
+
+
+    <script src="client/c_armas.lua" type="client" cache="false"></script>
+    <script src="server/s_armas.lua" type="server" ></script>
+
+    <script src="client/c_skin.lua" type="client" cache="false"></script>
+    <script src="server/s_skin.lua" type="server" ></script>
+    <oop>true</oop>
+</meta>

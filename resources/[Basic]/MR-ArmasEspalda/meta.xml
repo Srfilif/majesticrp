@@ -1,0 +1,4 @@
+<meta>
+	<info author="Supe y Bronimo" name="armas en la Espalda" version="1.5" autostart="true"/>
+	<script src="carmas.lua" type="client"/>
+</meta>
