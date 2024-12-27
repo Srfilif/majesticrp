@@ -55,6 +55,8 @@ addEvent("onPlayerAttemptLogin", true)
 addEventHandler("onPlayerAttemptLogin", root, function(username, password)
     if not username or not password then
         triggerClientEvent(client, "onLoginResponse", client, false, "Los campos no pueden estar vacíos.")
+    exports["MR-Notify"]:addNotification(client, "Los campos no pueden estar vacíos.", "info")
+
         return
     end
 
@@ -91,7 +93,7 @@ addEventHandler("onPlayerAttemptLogin", root, function(username, password)
     else
         -- Notificar error de inicio de sesión
         triggerClientEvent(client, "onLoginResponse", client, false, "Usuario o contraseña incorrectos.")
-    exports["MR-InfoBox"]:addNotification(client, "Usuario o contraseña incorrectos.", "error")
+    exports["MR-Notify"]:addNotification(client, "Usuario o contraseña incorrectos.", "error")
 
     end
 end)
@@ -100,6 +102,8 @@ addEvent("onPlayerRegister", true)
 addEventHandler("onPlayerRegister", root, function(username, password, email)
     if not username or not password or not email then
         triggerClientEvent(client, "onRegisterResponse", client, false, "Los datos enviados son inválidos.")
+    exports["MR-Notify"]:addNotification(client, "Los datos enviados son inválidos.", "error")
+
         return
     end
 
@@ -109,6 +113,8 @@ addEventHandler("onPlayerRegister", root, function(username, password, email)
 
     if result and #result > 0 then
         triggerClientEvent(client, "onRegisterResponse", client, false, "El nombre de usuario ya está en uso.")
+    exports["MR-Notify"]:addNotification(client, "El nombre de usuario ya está en uso.", "error")
+        
         return
     end
 
@@ -120,7 +126,11 @@ addEventHandler("onPlayerRegister", root, function(username, password, email)
 
     if success then
         triggerClientEvent(client, "onRegisterResponse", client, true, "Registro exitoso. Ahora puedes iniciar sesión.")
+    exports["MR-Notify"]:addNotification(client, "Registro exitoso. Ahora puedes iniciar sesión.", "error")
+
     else
+    exports["MR-Notify"]:addNotification(client, "Error al registrar la cuenta. Intenta de nuevo.", "error")
+
         triggerClientEvent(client, "onRegisterResponse", client, false,
             "Error al registrar la cuenta. Intenta de nuevo.")
     end
@@ -232,11 +242,15 @@ addEventHandler("onCreateCharacter", root, function(name, age, gender, nationali
         if result and #result > 0 then
             -- Si ya existe un personaje con ese nombre
             outputChatBox("Ya tienes un personaje con ese nombre. Elige otro.", client, 255, 0, 0)
+    exports["MR-Notify"]:addNotification(client, "Ya tienes un personaje con ese nombre. Elige otro.", "error")
+
         else
 
             -- Crear el nuevo personaje
              if getAccount(name)then 
                 outputChatBox("Ya existe una cuenta con ese nombre.", client, 255, 0, 0)
+    exports["MR-Notify"]:addNotification(client, "Ya existe una cuenta con ese nombre.", "error")
+
                 return
              end
             local accc = addAccount(name, password)
@@ -257,29 +271,40 @@ addEventHandler("onCreateCharacter", root, function(name, age, gender, nationali
                         if userAccount then
                             setAccountPassword(userAccount, password)
             print("Se ha creado una nueva cuenta"..name )
+            exports["MR-Notify"]:addNotification(client, "Personaje creado exitosamente y contraseña configurada.", "error")
 
                             outputChatBox("Personaje creado exitosamente y contraseña configurada.", client, 0, 255, 0)
                             triggerClientEvent(client, "onCharacterCreationFinished", client)
                         else
+            exports["MR-Notify"]:addNotification(client, "Error al crear la cuenta (F8 para mas detalles).", "error")
+
                             outputChatBox("Error al asociar la cuenta al personaje. Inténtalo nuevamente.", client,
                                 255, 0, 0)
                         end
                     else
                         outputChatBox("Error al obtener la cuenta asociada. Inténtalo nuevamente.", client, 255, 0, 0)
+            exports["MR-Notify"]:addNotification(client, "Error al crear la cuenta (F8 para mas detalles).", "error")
+
                     end
 
                     -- Opcional: Notificar al cliente que el personaje fue creado
                     triggerClientEvent(client, "onCharacterCreated", client)
                 else
                     outputChatBox("Error al crear el personaje. Inténtalo nuevamente.", client, 255, 0, 0)
+            exports["MR-Notify"]:addNotification(client, "Error al crear el personaje (F8 para mas detalles).", "error")
+
                 end
 
             else
                 outputChatBox("Error al crear el personaje. Inténtalo nuevamente.", client, 255, 0, 0)
+            exports["MR-Notify"]:addNotification(client, "Error al crear el personaje (F8 para mas detalles).", "error")
+
 
             end
         end
     else
         outputChatBox("Error: No se pudo encontrar la cuenta.", client, 255, 0, 0)
+        exports["MR-Notify"]:addNotification(client, "No se pudo encontrar la cuenta.", "error")
+
     end
 end)

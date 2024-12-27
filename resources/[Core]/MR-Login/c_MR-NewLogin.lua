@@ -39,7 +39,7 @@ function login_action_login_click()
 
     if user == "" or pass == "" then
         outputChatBox("Por favor, completa todos los campos.", 255, 0, 0)
-        exports["MR-InfoBox"]:addNotification("Por favor rellena todos los campos.", "error")
+        exports["MR-Notify"]:addNotification("Por favor rellena todos los campos.", "error")
 
         return
     end
@@ -49,9 +49,7 @@ function login_action_login_click()
 
 end
 
-function login_action_register_click()
-    outputChatBox("Función de registro aún no implementada.", 255, 255, 0)
-end
+
 
 addEvent("onLoginResponse", true)
 addEventHandler("onLoginResponse", root, function(success, message)
@@ -155,14 +153,15 @@ function registro()
 
         if user == "" or pass == "" or pass_repeat == "" or mail == "" then
             outputChatBox("Por favor, completa todos los campos.", 255, 0, 0)
-            exports["MR-InfoBox"]:addNotification("Por favor rellena todos los campos.", "info")
+        exports["MR-Notify"]:addNotification("Por favor rellena todos los campos.", "info")
+
 
             return
         end
 
         if pass ~= pass_repeat then
             outputChatBox("Las contraseñas no coinciden.", 255, 0, 0)
-            exports["MR-InfoBox"]:addNotification("Las contraseñas no coinciden.", "error")
+            exports["MR-Notify"]:addNotification("Las contraseñas no coinciden.", "error")
 
             return
         end
@@ -214,9 +213,14 @@ function showCharacterSelector(characters)
         guiWindowSetMovable(GUIEditor.window[i], false)
        
 
-       
-        local imagenpj = guiCreateStaticImage(19, 27, 255, 255, "images/skins/"..character.Skin..".png", false,
-            GUIEditor.window[i])
+        local skinPath = "images/skins/" .. character.Skin .. ".png"
+        local imagenpj
+        
+        if fileExists(skinPath) then
+            imagenpj = guiCreateStaticImage(19, 27, 255, 255, skinPath, false, GUIEditor.window[i])
+        else
+            imagenpj = guiCreateStaticImage(19, 27, 255, 255, "images/skins/0.png", false, GUIEditor.window[i])
+        end
         local labelName = guiCreateLabel(19, 282, 255, 26,
             character.nombre_apellido .. " (Nivel " .. character.nivel .. ")", false, GUIEditor.window[i])
         guiSetFont(labelName, "default-bold-small")
@@ -318,6 +322,8 @@ function crearpj()
     -- Verificar si la ventana de creación de personajes ya está abierta
     if newCharacterWindow then
         outputChatBox("Ya tienes una ventana de creación de personaje abierta.", 255, 0, 0)
+        exports["MR-Notify"]:addNotification("Ya tienes una ventana de creación de personaje abierta.", "info")
+
         return
     end
 
@@ -406,15 +412,21 @@ function crearpj()
 
         -- Validaciones
         if name == "" or nationality == "" or not age or password == "" then
+        exports["MR-Notify"]:addNotification("Por favor, completa todos los campos correctamente.", "info")
+
             outputChatBox("Por favor, completa todos los campos correctamente.", 255, 0, 0)
             return
         end
 
         if password ~= confirmPassword then
+        exports["MR-Notify"]:addNotification("Las contraseñas no coinciden.", "error")
+
             outputChatBox("Las contraseñas no coinciden.", 255, 0, 0)
             return
         end
         if not name:match("(%u%l*_%u%l*)") then
+        exports["MR-Notify"]:addNotification("Formato de nombre erroneo.", "error")
+
             outputChatBox("Formato de nombre erroneo.", 255, 0, 0)
         
             return
