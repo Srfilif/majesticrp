@@ -6,7 +6,6 @@ if not db then
 else
     outputDebugString("Conexión a la base de datos del login exitosa.", 3)
 end
-
 -- Crear tablas si no existen
 if db then
     dbExec(db, [[
@@ -17,7 +16,8 @@ if db then
             fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
             staff TINYINT(1) DEFAULT 0,
             vip TINYINT(1) DEFAULT 0,
-            creditos INT DEFAULT 0
+            creditos INT DEFAULT 0,
+            email VARCHAR(50) NOT NULL
         )
     ]])
 
@@ -36,11 +36,20 @@ if db then
             ubicacion_z FLOAT DEFAULT 0,
             salud FLOAT DEFAULT 100,
             armadura FLOAT DEFAULT 0,
+            Sexo TEXT NOT NULL DEFAULT 'Masculino',
+            TestRoleplay TEXT NOT NULL DEFAULT 'No',
+            Nacionalidad TEXT NOT NULL,
+            Edad INT NOT NULL,
+            DNI INT NOT NULL,
+            armas TEXT DEFAULT NULL,
+            Trabajo TEXT NOT NULL,
+            Skin INT NOT NULL DEFAULT 2,
+            interior INT NOT NULL,
+            dimencion INT NOT NULL,
             FOREIGN KEY (cuenta_id) REFERENCES cuentas(id) ON DELETE CASCADE
         )
     ]])
 end
-
 -- Manejar intento de inicio de sesión para cuentas-- Manejar intento de inicio de sesión para cuentas
 addEvent("onPlayerAttemptLogin", true)
 addEventHandler("onPlayerAttemptLogin", root, function(username, password)
