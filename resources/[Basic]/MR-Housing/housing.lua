@@ -16,6 +16,10 @@ HOUSE_LIMIT_DONOR = 5	-- House Limit (Premium Feature)
 local house_acl = {
 	["Admin"] = true,
 	["Carlos_Mulet"] = true,
+	["Andres_Angel"] = true,
+	["Amado_Camarillo"] = true,
+
+
 }
 
 -- Load Houses

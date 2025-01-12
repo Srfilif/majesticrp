@@ -1,0 +1,7 @@
+<meta>
+    <info author="TuNombre" version="1.0" type="script" description="Script de estilos de caminata"/>
+    
+    <!-- Scripts -->
+    <script src="server.lua" type="server"/> <!-- Define lógica del servidor -->
+
+</meta>

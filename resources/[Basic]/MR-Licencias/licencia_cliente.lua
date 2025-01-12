@@ -17,7 +17,7 @@ local tabla_licencias = {
 
 addEventHandler("onClientResourceStart", resourceRoot,
     function()
-        PanelLicencieros = guiCreateWindow(0.38, 0.23, 0.24, 0.54, "Flame Roleplay ~ Licencias", true)
+        PanelLicencieros = guiCreateWindow(0.38, 0.23, 0.24, 0.54, "GreenWood Roleplay ~ Licencias", true)
         guiWindowSetSizable(PanelLicencieros, false)
         guiSetVisible(PanelLicencieros, false)
         guiSetAlpha(PanelLicencieros, 1.00)

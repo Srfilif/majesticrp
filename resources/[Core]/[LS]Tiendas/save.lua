@@ -1,71 +1,73 @@
--- save system in data account
+-- Obtener la conexión a la base de datos
+local db = exports["MR-Gamemode"]:getDatabase() -- Asegúrate de que el recurso tenga la exportación configurada
 
-function saveAllDatas( p, t, a )
-	if not notIsGuest( source ) then
-		-- celular
-		local telefono = t:getData("Roleplay:Telefono")
-		if ( telefono ) then
-			local telefonoxd = t:getData ("Roleplay:Telefono")
-			source:setData("Roleplay:Telefono", telefonoxd)
-		else
-			source:setData("Roleplay:Telefono", "No")
-		end
-		-- numero celular
-		local telefonoNumber = t:getData("Roleplay:NumeroTelefono")
-		if ( telefonoNumber ) then
-			local telefonoNumber2 = t:getData ("Roleplay:NumeroTelefono")
-			source:setData("Roleplay:NumeroTelefono", telefonoNumber2)
-		else
-			source:setData("Roleplay:NumeroTelefono", 0)
-		end
-		-- agenda
-		local agenda = t:getData("Roleplay:Agenda")
-		if ( agenda ) then
-			local agenda2 = t:getData ("Roleplay:Agenda")
-			source:setData("Roleplay:Agenda", agenda2)
-		else
-			source:setData("Roleplay:Agenda", "No")
-		end
-		-- agenda texto
-		local agendatext = t:getData("Roleplay:AgendaTexto")--
-		if ( agendatext ) then
-			local agendatext = t:getData ("Roleplay:AgendaTexto")
-			source:setData("Roleplay:AgendaTexto", agendatext)
-		else
-			source:setData("Roleplay:AgendaTexto", "")
-		end
-	end
+-- Verifica si un jugador es invitado
+function notIsGuest(player)
+    local account = player:getAccount()
+    return not account or isGuestAccount(account)
 end
-addEventHandler("onPlayerLogin", getRootElement(), saveAllDatas)
 
-function quitDatas( q, r, e )
-	if not notIsGuest( source ) then
-		local account = source:getAccount()
-		if ( account ) then
-			local telefono = source:getData("Roleplay:Telefono")
-			account:setData("Roleplay:Telefono", telefono)
-			--
-			local telefonoNumber = source:getData("Roleplay:NumeroTelefono")
-			account:setData("Roleplay:NumeroTelefono", telefonoNumber)
-			--
-			local agenda = source:getData("Roleplay:Agenda")
-			account:setData("Roleplay:Agenda", agenda)
-			--
-			local agendatext = source:getData("Roleplay:AgendaTexto")
-			account:setData("Roleplay:AgendaTexto", agendatext)
-		end
-	end--
-end
-addEvent("onPlayerSaveQuit", true)
-addEventHandler("onPlayerQuit", getRootElement(), quitDatas)
-addEventHandler("onPlayerSaveQuit", getRootElement(), quitDatas)
+-- Función para cargar los datos del inventario desde la base de datos
+function loadPlayerData(player)
+    if not db or not player then return end
 
---- onResourceStop
-function stopDatas( )
-	for i, v in ipairs( Element.getAllByType("player") ) do
-		if not notIsGuest( v ) then
-			triggerEvent("onPlayerSaveQuit", v)
-		end
-	end
+    local accountName = getAccountName(getAccount(getPlayerName(player)))
+    if not accountName then return end
+
+    -- Cargar datos del inventario
+    local queryHandle = dbQuery(db, "SELECT Item, Value FROM Inventario WHERE Jugador=?", accountName)
+    local result = dbPoll(queryHandle, -1)
+
+    if result and #result > 0 then
+        for _, row in ipairs(result) do
+            player:setData("Inventory:" .. row.Item, row.Value)
+        end
+    end
 end
-addEventHandler("onResourceStop", resourceRoot, stopDatas)
+
+-- Función para guardar los datos del inventario en la base de datos
+function savePlayerData(player)
+    if not db or not player  then return end
+
+    local accountName = getAccountName(getAccount(getPlayerName(player)))
+    if not accountName then return end
+
+    -- Guardar datos del inventario
+    for key, value in pairs(player:getAllData()) do
+        if key:sub(1, 10) == "Inventory:" then
+            local itemName = key:sub(11) -- Extraer el nombre del ítem
+            local itemValue = tonumber(value) or 0
+
+            if itemValue > 0 then
+                dbExec(db, "INSERT INTO Inventario (Jugador, Item, Value) VALUES (?, ?, ?) ON CONFLICT(Item) DO UPDATE SET Value=?", accountName, itemName, itemValue, itemValue)
+            else
+                dbExec(db, "DELETE FROM Inventario WHERE Jugador=? AND Item=?", accountName, itemName)
+            end
+        end
+    end
+end
+
+-- Evento al iniciar sesión
+addEventHandler("onPlayerLogin", root, function()
+    if not notIsGuest(source) then
+        loadPlayerData(source)
+    end
+end)
+
+-- Evento al guardar datos al salir
+function quitPlayerData()
+    if not notIsGuest(source) then
+        savePlayerData(source)
+    end
+end
+addEventHandler("onPlayerQuit", root, quitPlayerData)
+
+-- Guardar todos los datos al detener el recurso
+function saveAllPlayerData()
+    for _, player in ipairs(getElementsByType("player")) do
+        if not notIsGuest(player) then
+            savePlayerData(player)
+        end
+    end
+end
+addEventHandler("onResourceStop", resourceRoot, saveAllPlayerData)

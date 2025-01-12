@@ -146,13 +146,10 @@ local anims =
 	sentar =
 	{
 		{ block = "ped", anim = "seat_idle", time = -1 },
-		{ block = "food", anim = "ff_Sit_eat1", time = -1 },
 		{ block = "beach", anim = "parksit_m_loop", time = -1 },
 		{ block = "beach", anim = "parksit_w_loop", time = -1 },
-		{ block = "sunbathe", anim = "parksit_m_idlec", time = -1 },
 		{ block = "sunbathe", anim = "parksit_w_idlea", time = -1 },
 		{ { block = "attractors", anim = "stepsit_in", time = 1200 }, { block = "attractors", anim = "stepsit_loop", time = -1 } },
-		{ block = "int_house", anim = "lou_loop", time = -1 },
 		{ block = "int_office", anim = "off_sit_drink", time = -1 },
 		{ block = "int_office", anim = "off_sit_idle_loop", time = -1 },
 		{ block = "int_office", anim = "off_sit_read", time = -1 },
@@ -197,15 +194,22 @@ local anims =
 		{ block = "ped", anim = "FLOOR_hit", time = 1000000000000000000000 },
 		{ block = "ped", anim = "FLOOR_hit_f", time = 1000000000000000000000 },
 	},
+	acotarse =
+	{
+		{ block = "sunbathe", anim = "parksit_m_idlec", time = -1 },
+		{ block = "int_house", anim = "lou_loop", time = -1 },
+	},
 }
 
 
 local function setAnim( player, anim )
 	if isElement( player ) and anim and not isPedInVehicle( player ) then
-		if getElementHealth(player) < 2 then
-			outputChatBox("* No puedes usar esto estando inconciente", player, 255, 200, 0)
+		if getElementData(player,"Muerto") == 1 then
+			outputChatBox("#ff3d3d* No puedes usar esto estando inconciente", player, 255, 200, 0,true)
+
 			return
 		end
+		
 		setPedAnimation( player, anim.block, anim.anim, -1,true, false, false)
 		player:setData("animPlayer", true)
 	end

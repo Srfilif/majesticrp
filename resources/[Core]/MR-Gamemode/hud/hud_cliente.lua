@@ -697,27 +697,27 @@ addEventHandler("onClientRender", getRootElement(), function()
 
 			--Agua
 
-				local water = localPlayer:getData("need.thirsty") or 100
+			--	local water = localPlayer:getData("need.thirsty") or 100
 
-				dxDrawRectangle( 1161*sx, 77*sy, 131*sx, 15*sy, tocolor(0, 0, 0, 255), false )
-
-
-				dxDrawRectangle( 1165*sx, 80*sy, 123*sx, 9*sy, tocolor(0, 100, 255, 100), false )
+			---	dxDrawRectangle( 1161*sx, 77*sy, 131*sx, 15*sy, tocolor(0, 0, 0, 255), false )
 
 
-				dxDrawRectangle( 1165*sx, 80*sy, 122*sx*(water/100), 9*sy, tocolor(0, 100, 255, 255), false )
+				---dxDrawRectangle( 1165*sx, 80*sy, 123*sx, 9*sy, tocolor(0, 100, 255, 100), false )
+
+
+			---	dxDrawRectangle( 1165*sx, 80*sy, 122*sx*(water/100), 9*sy, tocolor(0, 100, 255, 255), false )
 
 			--Comida
 
-				local eat = localPlayer:getData("need.hungry") or 100
+				--local eat = localPlayer:getData("need.hungry") or 100
 
-				dxDrawRectangle( 1161*sx, 57*sy, 131*sx, 15*sy, tocolor(0, 0, 0, 255), false )
-
-
-				dxDrawRectangle( 1165*sx, 60*sy, 123*sx, 9*sy, tocolor(255, 107, 0, 100), false )
+			--	dxDrawRectangle( 1161*sx, 57*sy, 131*sx, 15*sy, tocolor(0, 0, 0, 255), false )
 
 
-				dxDrawRectangle( 1165*sx, 60*sy, 122*sx*(eat/100), 9*sy, tocolor(255, 107, 0, 255), false )
+			--	dxDrawRectangle( 1165*sx, 60*sy, 123*sx, 9*sy, tocolor(255, 107, 0, 100), false )
+
+
+			--	dxDrawRectangle( 1165*sx, 60*sy, 122*sx*(eat/100), 9*sy, tocolor(255, 107, 0, 255), false )
 
 			-- Dinero en Banco
 

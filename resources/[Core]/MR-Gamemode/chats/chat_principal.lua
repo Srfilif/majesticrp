@@ -1,5 +1,4 @@
 local antiSpam  = {} 
-mysql = exports.MySQL
 
 addEventHandler("onPlayerChat", root, function( message, _type )
 	cancelEvent()
@@ -10,11 +9,15 @@ addEventHandler("onPlayerChat", root, function( message, _type )
 		end
 		local tick = getTickCount()
 		if (antiSpam[source] and antiSpam[source][1] and tick - antiSpam[source][1] < 2000) then
-			source:outputChat("Espera 2 segundos para enviar un mensaje", 150, 0, 0)
+			source:outputChat("#ff3d3d* Espera 2 segundos para enviar un mensaje", 150, 0, 0,true)
 			return
 		end
 		if _type == 0 then
 			if message ~= "" and message ~= " " and message:len() >= 1 then
+				if getElementData(source,"Muerto") == 1 then
+                    outputChatBox("#ff3d3d* Tu personaje esta muerto o inconciente, no puedes hablar.",source,255,255,255,true)
+                    return
+                end
 				local pos = Vector3(source:getPosition())
 				local x, y, z = pos.x, pos.y, pos.z
 				local nick = _getPlayerNameR( source )

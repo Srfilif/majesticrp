@@ -1,9 +1,10 @@
 loadstring(exports.MySQL:getMyCode())()
-import('*'):init('MySQL')
+import('*'):init('[LS]Tiendas')
+local db = exports["[LS]Tiendas"]:getDatabase() -- Obtener la conexión centralizada
 
 function agenda_open( source )
 	if not notIsGuest( source ) then
-		if source:getData("Roleplay:Agenda") == "Si" then
+		if getPlayerItem("Agenda") == "Si" then
 			local texto = source:getData("Roleplay:AgendaTexto") or ""
 			source:triggerEvent("abrir_window", source, texto)
 		else

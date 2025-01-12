@@ -1,5 +1,6 @@
-loadstring(exports.MySQL:getMyCode())()
-import('*'):init('MySQL')
+
+
+
 
 _addCommandHandler = addCommandHandler
 function addCommandHandler(comando, func)
@@ -45,22 +46,7 @@ addEventHandler("onPlayerJoin", getRootElement(), function()
     end
 end)
 
-function desbug(source)
-    local x, y, z = getElementPosition(source)
-    local CanDesbug = getElementData(source, "Desbug") or 0
-    if CanDesbug == 0 then
-        outputChatBox("#ff3d3d[DESBUG]#ffFFffHas usado /desbug Correctamente", source, 255, 255, 255, true)
-        setElementPosition(source, x, y, z + 2)
-        setElementData(source, "Desbug", 1)
-        setTimer(function()
-            setPedAnimation(source, false)
-            setElementData(source, "Desbug", 0)
-        end, 5000, 1)
-    else
-        outputChatBox("#ff3d3d[DESBUG]#ffFFffNo puedes usar este comando espera un poco...", source, 255, 255, 255, true)
-    end
-end
-addCommandHandler("desbug", desbug)
+
 function removeColorCoding(name)
     return type(name) == 'string' and string.gsub(name, '#%x%x%x%x%x%x', '') or name
 end
@@ -117,19 +103,18 @@ addEventHandler("onResourceStart", resourceRoot, function(resource)
         outputDebugString("")
         outputDebugString("Gamemode Majestic Roleplay Cargada con exito")
         outputDebugString("")
+        outputDebugString("")                             
+        outputDebugString(" _____ _____ _____ _____ _____ _ _ _ _____ _____ ____     _____ _____ ")
+        outputDebugString("|   __| __  |   __|   __|   | | | | |     |     |    \   | __  |  _  |")
+        outputDebugString("|  |  |    -|   __|   __| | | | | | |  |  |  |  |  |  |  |    -|   __|")
+        outputDebugString("|_____|__|__|_____|_____|_|___|_____|_____|_____|____/   |__|__|__|   ")
         outputDebugString("")
-        outputDebugString(" _____       _         _   _        _____ _____ ")
-        outputDebugString("|     |___  |_|___ ___| |_|_|___   | __  |  _  |")
-        outputDebugString("| | | | .'| | | -_|_ -|  _| |  _|  |    -|   __|")
-        outputDebugString("|_|_|_|__,|_| |___|___|_| |_|___|  |__|__|__|   ")
-        outputDebugString("          |___|                                 ")
-        outputDebugString("")
-        outputDebugString("© Copyright Majestic Roleplay - Developed by SrFilif")
-        outputDebugString("Ths is an open source gamemode | github.com/srfilif/majesticrp")
-        outputDebugString("")
+        outputDebugString("© Copyright GreenWood Roleplay - Developed by SrFilif")
+        outputDebugString("Ths is a premium gamemode - buy by srcamarillo")
         outputDebugString("")
         outputDebugString("")
-        outputDebugString("Servidor Inciado correctamente - Majestic Roleplay")
+        outputDebugString("")
+        outputDebugString("Servidor Inciado correctamente - Greenwood Roleplay")
         outputDebugString("")
         outputDebugString("")
     end, 2000, 1)
@@ -257,6 +242,7 @@ function aiudaa(source, cmd, ayuda)
 end
 addCommandHandler("ayuda", aiudaa)
 
+
 local caminatas = {
     ["Hombre"] = {"Hombre", 118},
     ["Mujer"] = {"Mujer", 129},
@@ -269,27 +255,38 @@ local caminatas = {
     ["Gordo"] = {"Gordo", 55},
     ["Viejo"] = {"Viejo", 120}
 }
-addCommandHandler({"caminar", "walk", "caminata"}, function(p, cmd, ...)
+addCommandHandler({"caminar", "walk", "caminata"}, function(p, cmd, walkype)
     if not notIsGuest(p) then
-        local walk = table.concat({...}, " ")
-        if walk ~= "" and walk ~= " " then
+        local walk = walkype
+        if walk then
             local s = trunklateText(p, walk)
             if s:find("Hombre") or s:find("hombre") or s:find("Mujer") or s:find("mujer") or s:find("Borracho") or
                 s:find("borracho") or s:find("Prostituta") or s:find("prostituta") or s:find("Gang") or s:find("gang") or
                 s:find("Gang2") or s:find("gang2") or s:find("Gordo") or s:find("Mujer2") or s:find("Mujer3") or
                 s:find("Viejo") then
-                p:outputChat("Estilo de caminar: #FF0033" .. tostring(caminatas[s][1]), 30, 150, 30, true)
+                local pname = getAccountName(getAccount(getPlayerName(p)))
+                local query = dbQuery(db, "UPDATE personajes SET caminata = ? WHERE nombre_apellido = ?", caminatas[s][2], pname)
+
+                if not query then
+                    p:outputChat("#ff3d3d* Ha ocurrido un error en la actualizacion del estilo de caminata en la base de datos", 255, 50, 50, true)
+                    return
+                end
+
+                p:outputChat("#FF8801[CAMINAR]#ffFFff Tu estilo de caminar ha sido cambiado a: #FFff3d" .. tostring(caminatas[s][1]).." #ffFFff.", 30, 150, 30, true)
                 p:setWalkingStyle(caminatas[s][2])
             else
-                p:outputChat("Solamente puedes poner estos estilos: ", 255, 100, 100, true)
-                for i, v in pairs(caminatas) do
-                    p:outputChat("#FF9000" .. caminatas[i][1], 60, 30, 100, true)
-                end
+                p:outputChat("#ff3d3d* Estilo de caminata invalido, estilos validos:  ", 255, 100, 100, true)
+                p:outputChat("#ffFFffEstilos Masculinos: #00ff00| hombre | gordo | gang | gang2 | borracho | viejo |#ffFFff.", 255, 100, 100, true)
+                p:outputChat("#ffFFffEstilos Femeninos #00ff00| mujer | mujer2 | mujer3 | sexy | gorda | prostituta | vieja |#ffFFff.", 255, 100, 100, true)
+                p:outputChat("#ffFFffEstilos Mixtos #00ff00| gopnik |#ffFFff.", 255, 100, 100, true)
             end
         else
-            p:outputChat("Syntax: /caminar [texto]", 255, 50, 50, true)
+            p:outputChat("#ff3d3d* Uso de comando invalido!", 255, 50, 50, true)
+            p:outputChat("#ff3d3d* Deberias usar /caminar <Estilo de caminar>", 255, 50, 50, true)
 
         end
     end
 end)
+
+
 

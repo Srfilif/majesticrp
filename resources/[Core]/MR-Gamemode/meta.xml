@@ -1,5 +1,5 @@
 <meta>
-	<info author="Sticmy" name="Roleplay 1.0" description="Gamemode Roleplay" type="gamemode" version="1.5" autostart="true"/>
+	<info author="SrFilif" name="Majestic Roleplay Core" description="El core de Majestic Roleplay" type="gamemode" version="1.5" autostart="true"/>
 
 	<script src="gamemode.lua" type="server"/>
 	<script src="sacar_identificacion.lua" type="server"/>
@@ -32,6 +32,8 @@
 	<script src="pickups_info/pickups_info.lua" type="client" cache="false"/>
 	<!---->
 
+
+
 	<export function="MensajeRoleplay" type="server"/>
 	
 	<export function="addhudPlayer" type="server"/>
@@ -40,6 +42,42 @@
 	<export function="removeHudPlayer" type="server"/>
 	<export function="removeHudPlayer" type="client"/>
 	
+	
+		<!-- DATABASE SYSTEM-->
+	 <script src="database/conexion.lua" type="server"/>
+	 <export function="getDatabase" type="server" />
+		<!-- exports SYSTEM-->
+
+
+	<script src="functions/exports.lua" type="server"/>
+	<script src="functions/getmap.lua" type="client"/>
+	<script src="functions/exports_shared.lua" type="shared"/>
+	 
+    
+    
+    
+    <export function="AccountName" type="server"/>
+	<export function="notIsGuest" type="server"/>
+	<export function="isPlayerInACL" type="server"/>
+	<export function="isPlayerInTeam" type="server"/>
+	<export function="isPlayerStaff" type="server"/>
+	<export function="getPlayerFromPartialNameID" type="server"/>
+	<export function="getPlayerFromPartialName" type="server"/>
+	<export function="removeColorCoding" type="server"/>
+	<export function='getACLFromPlayer' type='server' />
+	<export function="isVehicleEmpty" type="shared"/>
+	<export function='getPlayerNearbyVehicle' type='shared' />
+	<export function='getPlayerLeader' type='server' />
+	<export function='getPlayerLeaderDivision' type='server' />
+	<export function='getPlayerFaction' type='server' />
+	<export function='getPlayerDivision' type='server' />
+	<export function='inPlayerVehiclePolice' type='server' />
+	<export function='_getPlayerNameR' type='shared' />
+	<export function='convertNumber' type='shared' />
+	<export function='getMapFromWorldPosition' type='client' />
+	<export function='inPlayerVehiclePolice' type='server' />
+	<export function='getPedWeapons' type='server' />
+
 	
 	<oop>true</oop>
 </meta>

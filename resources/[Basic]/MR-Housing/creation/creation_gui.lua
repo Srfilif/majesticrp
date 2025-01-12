@@ -15,7 +15,7 @@ local sX, sY = guiGetScreenSize()
 local wX, wY = 235, 264
 local sX, sY, wX, wY = 10,(sY/2)-(wY/2),wX,wY
 -- sX, sY, wX, wY = 1357, 310, 235, 264
-creation.window[1] = guiCreateWindow(sX, sY, wX, wY, "POPLife ~ Creacion de Casas", false)
+creation.window[1] = guiCreateWindow(sX, sY, wX, wY, "GreenWood ~ Creacion de Casas", false)
 guiWindowSetSizable(creation.window[1], false)
 guiSetAlpha(creation.window[1], 0.90)
 guiSetVisible(creation.window[1], false)

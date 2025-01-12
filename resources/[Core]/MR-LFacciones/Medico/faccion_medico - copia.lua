@@ -445,3 +445,16 @@ function move_back_gate2()
 	 
 end 
 addEventHandler("onMarkerLeave", marker2, move_back_gate2) 
+
+
+function getPlayerNameFromID(theID, theElement)
+	if isElement(theElement) and getElementType(theElement) == "player" and tonumber(theID) then
+	   for k, v in ipairs(getElementsByType("player")) do
+		   if getElementData(v, "ID") == getElementData(theElement, "ID") then
+			  return getPlayerName(v)
+		   else
+			  iprint("Player not found")
+		   end
+		end
+	 end
+ end

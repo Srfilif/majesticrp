@@ -11,3 +11,5 @@
 :guieditor/output/GUI_output/SistemaCreditos_2024-2-10_22-14.txt
 :guieditor/output/GUI_output/selectorpjultimate_2024-12-26_14-24.txt
 :guieditor/output/GUI_output/saveguuilindo_2024-12-26_16-47.txt
+:guieditor/output/GUI_output/inv2_2024-12-29_11-0.txt
+:guieditor/output/GUI_output/MR-Staff/resportes_2025-1-6_5-0.txt

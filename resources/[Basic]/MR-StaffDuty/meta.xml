@@ -4,4 +4,10 @@
 	<script src="DutyS.lua" type="server"/>
 	<script src="server_S.lua" type="server"/>
 	<script src="DutyC.lua" type="client" cache= "false"/>
+
+	<script src="reports/server.lua" type="server"/>
+	<script src="reports/client.lua" type="client" cache= "false"/>
+
+	<script src="dudas/server.lua" type="server"/>
+	<script src="dudas/client.lua" type="client" cache= "false"/>
 </meta>

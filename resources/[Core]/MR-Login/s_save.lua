@@ -1,9 +1,4 @@
-local db = dbConnect("mysql", "dbname=majestic_rp;host=localhost;charset=utf8", "root", "")
-
-if not db then
-    outputDebugString(
-        "No se pudo conectar a la base de datos. Verifique las credenciales y la configuración de MySQL.", 1)
-end
+local db = exports["MR-Gamemode"]:getDatabase()
 
 function saveCharacterData(player)
     if not isElement(player) then
@@ -25,6 +20,9 @@ function saveCharacterData(player)
     local dinero = getPlayerMoney(player)
     local weapons = {}
     local skin = getElementModel(player)
+    local portearmas = getElementData(player, "Roleplay:Licencia_Arma")
+
+
 
     -- Guardar las armas
     for slot = 0, 12 do
@@ -44,11 +42,11 @@ function saveCharacterData(player)
     -- Actualizar en la base de datos
     local query = [[
         UPDATE personajes
-        SET ubicacion_x = ?, ubicacion_y = ?, ubicacion_z = ?, salud = ?, armadura = ?, dinero = ?, experiencia = ?, nivel = ?, armas = ?, Skin = ?, interior = ?, dimencion = ?
+        SET ubicacion_x = ?, ubicacion_y = ?, ubicacion_z = ?, salud = ?, armadura = ?, dinero = ?, experiencia = ?, nivel = ?, armas = ?, Skin = ?, interior = ?, dimencion = ?, portearma = ?
         WHERE id = ?
     ]]
-    dbExec(db, query, x, y+0.5, z, health, armor, dinero, getElementData(player, "experiencia") or 0,
-        getElementData(player, "nivel") or 1, weaponsJSON, skin, int,dim,characterId)
+    dbExec(db, query, x, y+0.5, z, health, armor, dinero, getElementData(player, "Roleplay:Reputacion") or 0,
+        getElementData(player, "Nivel") or 1, weaponsJSON, skin, int,dim,portearmas,characterId)
 end
 
 addEventHandler("onPlayerQuit", root, function()
@@ -147,14 +145,18 @@ addEventHandler("onPlayerSelectCharacter", root, function(characterId)
         setElementData(client, "cuenta_id", character.cuenta_id)
         setElementData(client, "nombre_apellido", character.nombre_apellido)
         setElementData(client, "Sexo", character.Sexo)
-        setElementData(client, "experiencia", character.experiencia)
         setElementData(client, "nivel", character.nivel)
         setElementData(client, "Roleplay:Nacionalidad", character.Nacionalidad)
         setElementData(client, "Roleplay:Trabajo", character.Trabajo)
         setElementData(client, "Skin", character.Skin)
         setElementData(client, "Edad", character.Edad)
         setElementData(client, "DNI", character.DNI)
+        setElementData(client, "Roleplay:Licencia_Arma", character.portearma)
+        setElementData(client, "Roleplay:Reputacion",character.experiencia)
+        setElementData(client, "Nivel", character.nivel)
+
         setElementModel(client, character.Skin)
+        setPedWalkingStyle ( client,character.caminata )
 
         -- Enviar mensajes al jugador
 

@@ -1,0 +1,10 @@
+<meta>
+    <script src="client.lua" type="client" cache="false"/>
+    <script src="server.lua" type="server"/>
+    
+    <script src="conf/countryCodes.lua" type="client" cache="false"/>
+    
+    <config src="conf/interiors.xml" type="client"/>
+    
+    <file src="conf/map.png"/>
+</meta>

@@ -1,4 +1,4 @@
-local colSphere = createColSphere(1291.078125, -985.7060546875, 32.6953125, 3)
+local colSphere = createColSphere(2447.92578125, -1963.3017578125, 13.546875, 3)
 
 function accionarMercadoNegro(source)
 	if not isElementWithinColShape(source, colSphere) then

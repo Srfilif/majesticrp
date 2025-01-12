@@ -56,7 +56,7 @@ function pagarJugadores()
 				local vehs = exports.MySQL:query("SELECT * FROM vehicles WHERE Owner=?", getAccountName(getPlayerAccount(player)))
 				local faccion = player:getData("Roleplay:faccion") or ""
 				local rango = player:getData("Roleplay:faccion_rango") or ""
-				local reputacion = player:getData("Roleplay:reputacion") or 0
+				local reputacion = player:getData("Roleplay:Reputacion") or 0
 				player:outputChat("#FF0033", 255, 255, 255, true)
 				player:outputChat("#eff542=== DIA DE PAGA ===", 255, 255, 255, true)
 				player:outputChat("#FF0033", 255, 255, 255, true)
@@ -70,14 +70,14 @@ function pagarJugadores()
 					player:outputChat("#F8ed04Total: #2f9c14$"..convertNumber(28 + (math.random(100,500) * 30) + rangosMoney[tostring(faccion)][tostring(rango)]), 255, 255, 255, true)
 					player:outputChat("#FF0033==================", 255, 255, 255, true)
 					player:giveMoney(tonumber(math.ceil(1000 + (math.random(100,500) * 30) + rangosMoney[tostring(faccion)][tostring(rango)])))
-					player:setData("Roleplay:reputacion",reputacion+1)
+					player:setData("Roleplay:Reputacion",reputacion+1)
 					triggerClientEvent("[Poplife]Payday:ticket",player)
 				else
 					player:outputChat("#F8ed04Total: #2f9c14$"..convertNumber(28 + (math.random(100,500) * 30)), 255, 255, 255, true)
 					player:outputChat("#FF0033==================", 255, 255, 255, true)
 					local dineroTotal = tonumber(math.ceil(1000 + (math.random(100,500) * 30)))
 					player:giveMoney(dineroTotal)
-					player:setData("Roleplay:reputacion",reputacion+1)
+					player:setData("Roleplay:Reputacion",reputacion+1)
 					triggerClientEvent("[Poplife]Payday:ticket",player) 
 				end
 			end
@@ -88,136 +88,68 @@ setTimer(pagarJugadores, 3600000, 0)
 
 addCommandHandler("gpayday",pagarJugadores)
 
-
-function nivel()
-    for index, player in ipairs(Element.getAllByType("player")) do
-        local reputacion = player:getData("Roleplay:reputacion") or 0
+function actualizarNiveles()
+    for _, player in ipairs(Element.getAllByType("player")) do
+        local reputacion = player:getData("Roleplay:Reputacion") or 0
         local nivel = player:getData("Nivel") or 0
+        local nivelSiguiente = nivel + 1
+        local reputacionRequerida = nivel <= 9 and 8 or 15
 
-        if nivel <= 9 and reputacion > 8 then
-            player:setData("Roleplay:reputacion", reputacion - 8)
-            player:setData("Nivel", nivel + 1)
-			player:setData("ScoreBoard_Level", "Nivel "..nivel + 1)
-            player:outputChat("#ffff00[LevelUP] #ffffff¡Felicidades! Has subido al nivel#00ff00 " .. (nivel + 1),255,255,255,true)
-			triggerClientEvent("[Poplife]Payday:levelup",player) 
-        elseif nivel > 9 and reputacion > 15 then
-            player:setData("Roleplay:reputacion", reputacion - 15)
-            player:setData("Nivel", nivel + 1)
-			player:setData("ScoreBoard_Level", "Nivel "..nivel + 1)
-            player:outputChat("#ffff00[LevelUP] #ffffff¡Felicidades! Has subido al nivel #00ff00" .. (nivel + 1),255,255,255,true)
-			triggerClientEvent("[Poplife]Payday:levelup",player) 
+        if reputacion >= reputacionRequerida then
+            player:setData("Roleplay:Reputacion", reputacion - reputacionRequerida)
+            player:setData("Nivel", nivelSiguiente)
+            player:setData("ScoreBoard_Level", "Nivel " .. nivelSiguiente)
+            player:outputChat(
+                string.format(
+                    "#ffff00[Level UP] #ffffff¡Felicidades! Has alcanzado el #00ff00Nivel %d#ffffff. ¡Sigue progresando!",
+                    nivelSiguiente
+                ),
+                255, 255, 255, true
+            )
+            triggerClientEvent("[Poplife]Payday:levelup", player)
         end
     end
 end
+local nivelTimer = setTimer(actualizarNiveles, 1000, 0)
 
-local refreshTimer1 = setTimer(nivel, 1000, 0)
-
-function nivel1()
-    for index, player in ipairs(Element.getAllByType("player")) do
+function actualizarScoreboard()
+    for _, player in ipairs(Element.getAllByType("player")) do
         local nivel = player:getData("Nivel") or 0
         player:setData("ScoreBoard_Level", "Nivel " .. nivel)
     end
 end
+local scoreboardTimer = setTimer(actualizarScoreboard, 1000, 0)
 
-local refreshTimer12 = setTimer(nivel1, 1000, 0)
+function mostrarReputacion()
+    for _, player in ipairs(Element.getAllByType("player")) do
+        local reputacion = player:getData("Roleplay:Reputacion") or 0
+        local nivel = player:getData("Nivel") or 0
+        local reputacionRequerida = nivel <= 9 and 8 or 15
 
-
-
-function verrep()
-for index, player in ipairs(Element.getAllByType("player")) do
-local reputacion = player:getData("Roleplay:reputacion")  or 0
-local nivel = player:getData("Nivel")  or 0
-
-if nivel <= 9 then
-player:outputChat("#fcba03[NIVEL] #ffffffActalmente tienes #00ff00("..reputacion.."/8) #ffffffReputacion para el siguiente nivel.",255,255,255,true)
+        player:outputChat(
+            string.format(
+                "#ffffff* Tienes actualmente #00ff00(%d/%d) #ffffffreputación para alcanzar el siguiente nivel.",
+                reputacion, reputacionRequerida
+            ),
+            255, 255, 255, true
+        )
+    end
 end
-if nivel >= 10 then
-player:outputChat("#fcba03[NIVEL] #ffffffActalmente tienes #00ff00("..reputacion.."/15) #ffffffReputacion para el siguiente nivel.",255,255,255,true)
+addCommandHandler("reputacion", mostrarReputacion)
+
+function mostrarNivel()
+    for _, player in ipairs(Element.getAllByType("player")) do
+        local nivel = player:getData("Nivel") or 0
+        player:outputChat(
+            string.format(
+                "#ffFFff* Tu nivel actual es: #00ff00Nivel %d#ffffff.",
+                nivel
+            ),
+            255, 255, 255, true
+        )
+    end
 end
-end
-end
-addCommandHandler("reputacion",verrep)
-
-
-function vernivel()
-for index, player in ipairs(Element.getAllByType("player")) do
-local reputacion = player:getData("Roleplay:reputacion")  or 0
-local nivel = player:getData("Nivel")  or 0
-player:outputChat("#fcba03[Nivel] #ffffffActalmente eres Nivel #00ff00"..nivel.."",255,255,255,true)
-end
-end
-addCommandHandler("nivel",vernivel)
+addCommandHandler("nivel", mostrarNivel)
 
 
 
---[[=======================================================================
-                            IGNORAR-SAVE DATA
-=======================================================================]]--
-function salvardados(conta)
-	if conta then
-	local source = getAccountPlayer(conta)
-	local ObterGalao = getElementData ( source, "Nivel" ) or 0
-	local ObterGalao1 = getElementData ( source, "Roleplay:reputacion" ) or 0
-	setAccountData ( conta, "Nivel", ObterGalao )
-	setAccountData ( conta, "Roleplay:reputacion", ObterGalao1 )
-	end	
-end
-
-function dardados(conta)
-	if not (isGuestAccount (conta)) then
-		if (conta) then	
-			local source = getAccountPlayer(conta)	
-			local ObterGalao = getAccountData ( conta, "Nivel" ) or 0
-			local ObterGalao1 = getAccountData ( conta, "Nivel" ) or 0
-			setElementData ( source, "Nivel", ObterGalao )
-			setElementData ( source, "Roleplay:reputacion", ObterGalao1 )
-		end
-	end	
-end
-
-addEventHandler("onPlayerLogin", root,
-  function( _, acc )
-	setTimer(dardados,50,1,acc)
-  end
-)
-
-function startScript ( res )
-	if res == getThisResource() then
-		for i, player in ipairs(getElementsByType("player")) do
-			local acc = getPlayerAccount(player)
-			if not isGuestAccount(acc) then
-				dardados(acc)
-			end
-		end
-	end
-end
-addEventHandler ( "onResourceStart", getRootElement(), startScript )
-
-function stopScript( res )
-    if res == getThisResource() then
-		for i, player in ipairs(getElementsByType("player")) do
-			local acc = getPlayerAccount(player)
-			if not isGuestAccount(acc) then
-				salvardados(acc)
-			end
-		end
-	end
-end 
-addEventHandler ( "onResourceStop", getRootElement(), stopScript )
-
-function sair ( quitType )
-	local acc = getPlayerAccount(source)
-	if not (isGuestAccount (acc)) then
-		if acc then
-			salvardados(acc)
-		end
-	end
-end
-addEventHandler ( "onPlayerQuit", getRootElement(), sair )
-
-
---[[=======================================================================
-                        LICENCIA DE ARMAS
-                                                  -No borrar los creditos :3
-                        BY: Thehacker5#0777                       
-=======================================================================]]--

@@ -35,7 +35,6 @@ function OpenWindowArmas(player, nombre)
         if isElement(coldat) then
             local infos = coldat:getData("pickup.tableinfo")
             triggerClientEvent(player, "abrirVen", player, nombre)
-            print("Ventana abierta para", nombre)
         end
     end
 end

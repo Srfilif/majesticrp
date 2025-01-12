@@ -100,81 +100,182 @@ function bajarTimeArresto(player)
 		end
 	end
 end
-
 local barras = {}
+local nextID = 1 -- Contador para asignar IDs únicos a las barreras
 
-addCommandHandler("barrera", function(p, cmd)
-	if not notIsGuest( p ) then
-		if getPlayerFaction( p, "Policia" ) or getPlayerFaction( p, "S.W.A.T." ) or getPlayerFaction( p, "DIC" ) then
-			maxBarras = #barras
-			local pos = Vector3(p:getPosition())
-			local x, y, z = pos.x, pos.y, pos.z
-			local rot = Vector3(p:getRotation())
-			local rx, ry, rz = rot.x, rot.y, rot.z
-			local dim = p:getDimension()
-			local int = p:getInterior()
-			barras[maxBarras + 1] = Object(1459, x, y, z-0.6, 0, 0, rz, false)
-			--
-			barras[maxBarras + 1]:setData("Object:Barra", true)
-			--
-			barras[maxBarras + 1]:setCollisionsEnabled(true)
-			barras[maxBarras + 1]:setDimension(dim)
-			barras[maxBarras + 1]:setInterior(int)
-		end
-	end
+addCommandHandler("barra", function(p, cmd)
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            local pos = Vector3(p:getPosition())
+            local x, y, z = pos.x, pos.y, pos.z
+            local rot = Vector3(p:getRotation())
+            local rz = rot.z
+            local dim = p:getDimension()
+            local int = p:getInterior()
+            
+            -- Crear la barrera con ID único
+            local barrera = Object(1459, x, y, z - 0.45, 0, 0, rz, false)
+            barrera:setData("Object:Barra", true)
+            barrera:setData("Barra:ID", nextID)
+            barrera:setCollisionsEnabled(true)
+            barrera:setFrozen(true)
+            barrera:setDimension(dim)
+            barrera:setInterior(int)
+			barrera:setBreakable(false)
+            
+            barras[nextID] = barrera
+            outputChatBox("#3458eb[SAPD]#ffFFff* Barrera creada con ID: " .. nextID, p, 0, 255, 0,true)
+            nextID = nextID + 1
+        end
+    end
 end)
 
-addCommandHandler("eliminarbarrera", function(p, cmd)
-	if not notIsGuest( p ) then
-		if getPlayerFaction( p, "Policia" ) or getPlayerFaction( p, "S.W.A.T." ) or getPlayerFaction( p, "DIC" ) then
-			local pos = Vector3(p:getPosition())
-			local x, y, z = pos.x, pos.y, pos.z
-			for i, v in ipairs(Element.getWithinRange(x, y, z, 1, "object")) do
-				if v:getData("Object:Barra") == true then
-					if isElement(v) then
-						destroyElement(v)
-					end
-				end
-			end
-		end
-	end
+addCommandHandler("eliminarbarra", function(p, cmd, id)
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            if id then
+                -- Buscar y eliminar barrera por ID
+                id = tonumber(id)
+                local barrera = barras[id]
+                if barrera and isElement(barrera) then
+                    destroyElement(barrera)
+                    barras[id] = nil
+                    outputChatBox("#ff3d3d* Barrera con ID " .. id .. " eliminada.", p, 0, 255, 0,true)
+                else
+                    outputChatBox("#ff3d3d* No se encontró una barrera con el ID especificado.", p, 255, 0, 0,true)
+                end
+            else
+                -- Eliminar la barrera más cercana
+                local pos = Vector3(p:getPosition())
+                local closestBarrera, closestDistance = nil, 1 -- Rango de 1 unidad
+                for _, barrera in pairs(barras) do
+                    if isElement(barrera) then
+                        local dist = (Vector3(barrera:getPosition()) - pos).length
+                        if dist < closestDistance then
+                            closestBarrera = barrera
+                            closestDistance = dist
+                        end
+                    end
+                end
+                
+                if closestBarrera then
+                    local id = closestBarrera:getData("Barra:ID")
+                    destroyElement(closestBarrera)
+                    barras[id] = nil
+                    outputChatBox("#3458eb[SAPD]#ffFFff* Se eliminó la barrera más cercana con ID: " .. id, p, 0, 255, 0,true)
+                else
+                    outputChatBox("#ff3d3d* No se encontró ninguna barrera cercana.", p, 255, 0, 0,true)
+                end
+            end
+        end
+    end
 end)
 
-local cono = {}
+
+addCommandHandler("barreras", function(p, cmd)
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            local count = 0
+            outputChatBox("#ffff3d=== Barreras Activas ===", p, 0, 255, 255,true)
+            for id, barrera in pairs(barras) do
+                if isElement(barrera) then
+                    local pos = Vector3(barrera:getPosition())
+                    outputChatBox("ID: " .. id .. " | Posición: " .. string.format("%.2f, %.2f, %.2f", pos.x, pos.y, pos.z), p, 0, 255, 0,true)
+                    count = count + 1
+                end
+            end
+            if count == 0 then
+                outputChatBox("#ff3d3d* No hay barreras activas.", p, 255, 0, 0,true)
+            end
+        end
+    end
+end)
+local conos = {}
+local nextConoID = 1 -- Contador para asignar IDs únicos a los conos
 
 addCommandHandler("cono", function(p, cmd)
-	if not notIsGuest( p ) then
-		if getPlayerFaction( p, "Policia" ) or getPlayerFaction( p, "S.W.A.T." ) or getPlayerFaction( p, "DIC" ) then
-			maxBarras = #barras
-			local pos = Vector3(p:getPosition())
-			local x, y, z = pos.x, pos.y, pos.z
-			local rot = Vector3(p:getRotation())
-			local rx, ry, rz = rot.x, rot.y, rot.z
-			local dim = p:getDimension()
-			local int = p:getInterior()
-			barras[maxBarras + 1] = Object(1238 ,x, y, z-0.6, 0, 0, rz, false)
-			--
-			barras[maxBarras + 1]:setData("Object:Cono", true)
-			--
-			barras[maxBarras + 1]:setCollisionsEnabled(true)
-			barras[maxBarras + 1]:setDimension(dim)
-			barras[maxBarras + 1]:setInterior(int)
-		end
-	end
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            local pos = Vector3(p:getPosition())
+            local x, y, z = pos.x, pos.y, pos.z
+            local rot = Vector3(p:getRotation())
+            local rz = rot.z
+            local dim = p:getDimension()
+            local int = p:getInterior()
+
+            -- Crear el cono con ID único
+            local cono = Object(1238, x, y, z - 0.6, 0, 0, rz, false)
+            cono:setData("Object:Cono", true)
+            cono:setData("Cono:ID", nextConoID)
+            cono:setCollisionsEnabled(true)
+            cono:setFrozen(true)
+            cono:setDimension(dim)
+            cono:setInterior(int)
+            cono:setData("destructible", false) -- Evitar destrucción manual
+
+            conos[nextConoID] = cono
+            outputChatBox("Cono creado con ID: " .. nextConoID, p, 0, 255, 0)
+            nextConoID = nextConoID + 1
+        end
+    end
 end)
 
-addCommandHandler("eliminarcono", function(p, cmd)
-	if not notIsGuest( p ) then
-		if getPlayerFaction( p, "Policia" ) or getPlayerFaction( p, "S.W.A.T." ) or getPlayerFaction( p, "DIC" ) then
-			local pos = Vector3(p:getPosition())
-			local x, y, z = pos.x, pos.y, pos.z
-			for i, v in ipairs(Element.getWithinRange(x, y, z, 1, "object")) do
-				if v:getData("Object:Cono") == true then
-					if isElement(v) then
-						destroyElement(v)
-					end
-				end
-			end
-		end
-	end
+addCommandHandler("eliminarcono", function(p, cmd, id)
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            if id then
+                -- Buscar y eliminar cono por ID
+                id = tonumber(id)
+                local cono = conos[id]
+                if cono and isElement(cono) then
+                    destroyElement(cono)
+                    conos[id] = nil
+                    outputChatBox("Cono con ID " .. id .. " eliminado.", p, 0, 255, 0)
+                else
+                    outputChatBox("No se encontró un cono con el ID especificado.", p, 255, 0, 0)
+                end
+            else
+                -- Eliminar el cono más cercano
+                local pos = Vector3(p:getPosition())
+                local closestCono, closestDistance = nil, 1 -- Rango de 1 unidad
+                for _, cono in pairs(conos) do
+                    if isElement(cono) then
+                        local dist = (Vector3(cono:getPosition()) - pos).length
+                        if dist < closestDistance then
+                            closestCono = cono
+                            closestDistance = dist
+                        end
+                    end
+                end
+
+                if closestCono then
+                    local id = closestCono:getData("Cono:ID")
+                    destroyElement(closestCono)
+                    conos[id] = nil
+                    outputChatBox("Se eliminó el cono más cercano con ID: " .. id, p, 0, 255, 0)
+                else
+                    outputChatBox("No se encontró ningún cono cercano.", p, 255, 0, 0)
+                end
+            end
+        end
+    end
+end)
+
+addCommandHandler("conos", function(p, cmd)
+    if not notIsGuest(p) then
+        if getPlayerFaction(p, "Policia") or getPlayerFaction(p, "S.W.A.T.") or getPlayerFaction(p, "DIC") then
+            local count = 0
+            outputChatBox("=== Conos Activos ===", p, 0, 255, 255)
+            for id, cono in pairs(conos) do
+                if isElement(cono) then
+                    local pos = Vector3(cono:getPosition())
+                    outputChatBox("ID: " .. id .. " | Posición: " .. string.format("%.2f, %.2f, %.2f", pos.x, pos.y, pos.z), p, 0, 255, 0)
+                    count = count + 1
+                end
+            end
+            if count == 0 then
+                outputChatBox("No hay conos activos.", p, 255, 0, 0)
+            end
+        end
+    end
 end)

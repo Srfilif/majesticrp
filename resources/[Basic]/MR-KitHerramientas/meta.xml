@@ -1,0 +1,5 @@
+<meta>
+	<info author="VSCode MTA:SA Lua" type="script" name="fixcar" />
+	<script src="c_fixcar.lua" type="client" cache="false" />
+	<script src="s_fixcar.lua" type="server" />
+</meta>

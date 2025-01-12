@@ -1,4 +1,3 @@
-loadstring(exports.dgs:dgsImportFunction())()
 
 local r, g, b = 255, 255, 255
 

@@ -1,0 +1,5 @@
+<meta>
+	<info author="SrFilif" type="script" name="Garaje" />
+	<script src="c_Garaje.lua" type="client" cache="false" />
+	<script src="s_Garaje.lua" type="server" />
+</meta>

@@ -405,10 +405,48 @@ function abrirMyVehicle(p, cmd)
 				end, 2000, 1, p)
 
 			end
+        elseif getElementData(p,"Roleplay:Mision") == "Licencia" then
+            local cx,cy,cz = getElementPosition(veh)
+
+				for i, v in ipairs(getPlayersOverArea(p, 5)) do
+					v:triggerEvent('BloquearVeh', v,cx,cy,cz)
+				end
+			local state = getElementData(veh, 'Locked')
+
+			if state == 'Abierto' then
+
+				
+			
+				setVehicleLocked(veh, true) -- lock it
+
+				setVehicleDoorOpenRatio(veh, 2, 0)
+				setVehicleDoorOpenRatio(veh, 3, 0)
+				setVehicleDoorOpenRatio(veh, 4, 0)
+				setVehicleDoorOpenRatio(veh, 5, 0)
+				veh:setData('Locked', 'Cerrado')
+				p:setData("TextInfo", {"> cerro el " .. getVehicleNameFromModel(veh:getModel()), 255, 0, 216})
+				p:outputChat("> cerro el " .. getVehicleNameFromModel(veh:getModel()), 255, 0, 216, true)
+				setTimer(function(p)
+					p:setData("TextInfo", {"", 255, 0, 216})
+				end, 2000, 1, p)
+
+			else
+
+				
+				setVehicleLocked(veh, false) -- lock it
+
+				veh:setData('Locked', 'Abierto')
+				p:setData("TextInfo", {"> abrio el " .. getVehicleNameFromModel(veh:getModel()), 255, 0, 216})
+				p:outputChat("> abrio el " .. getVehicleNameFromModel(veh:getModel()), 255, 0, 216, true)
+				setTimer(function(p)
+					p:setData("TextInfo", {"", 255, 0, 216})
+				end, 2000, 1, p)
+
+			end
 		else
 
 			  
-		p:outputChat("#ff3d3d* No puedes abrir este vehiculo, No tienes sus llaves", 255, 0, 216, true)
+		--p:outputChat("#ff3d3d* No puedes abrir este vehiculo, No tienes sus llaves", 255, 0, 216, true)
 	    
         end
     end

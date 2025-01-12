@@ -1,0 +1,1914 @@
+<meta>
+	<!-- Auto generated using VSCode MTA:SA Lua by Subtixx -->
+	<info author="VSCode MTA:SA Lua" type="script" name="resources" version="0.1.0" />
+	<script src="client.lua" type="client" />
+	<script src="MR-Walk/server.lua" type="server" />
+	<script src="startup/startList.lua" type="both" />
+	<script src="[Basic]/MR-ArmasEspalda/carmas.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<file src="[Basic]/MR-ArmasSuelo/img/0.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/1.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/10.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/11.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/12.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/13.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/14.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/15.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/16.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/17.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/18.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/2.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/22.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/23.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/24.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/25.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/26.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/27.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/28.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/29.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/3.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/30.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/31.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/32.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/33.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/34.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/35.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/36.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/37.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/38.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/39.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/4.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/41.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/42.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/44.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/45.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/46.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/5.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/6.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/7.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/8.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/9.png" />
+	<file src="[Basic]/MR-ArmasSuelo/img/swap.png" />
+	<script src="[Basic]/MR-ArmasSuelo/mapedit.lua" type="both" />
+	<script src="[Basic]/MR-ArmasSuelo/server.lua" type="server" />
+	<file src="[Basic]/MR-Emergencias/Color_negro.png" />
+	<script src="[Basic]/MR-Emergencias/CuracionC.lua" type="both" />
+	<script src="[Basic]/MR-Emergencias/CuracionS.lua" type="both" />
+	<script src="[Basic]/MR-Emergencias/Edit.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/event/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/explorer/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/objects/server.lua" type="server" />
+	<script src="[Basic]/MR-Eventos/pickups/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/races/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/saving/server.lua" type="server" />
+	<script src="[Basic]/MR-Eventos/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Eventos/vehicles/server.lua" type="server" />
+	<script src="[Basic]/MR-Glue/glue.lua" type="both" />
+	<script src="[Basic]/MR-Glue/glueS.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/farmer_c.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/farmer_plant.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/farmer_s.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/farmer_veh.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/farm_map.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/ui/dx_c.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/ui/functions.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/ui/guide/guide.lua" type="both" />
+	<file src="[Basic]/MR-Granjero/ui/guide/l_mouse.png" />
+	<file src="[Basic]/MR-Granjero/ui/guide/m_mouse.png" />
+	<file src="[Basic]/MR-Granjero/ui/guide/r_mouse.png" />
+	<file src="[Basic]/MR-Granjero/ui/images/d.png" />
+	<file src="[Basic]/MR-Granjero/ui/images/logo.png" />
+	<file src="[Basic]/MR-Granjero/ui/images/ttile.png" />
+	<file src="[Basic]/MR-Granjero/ui/images/u.png" />
+	<script src="[Basic]/MR-Granjero/ui/tables.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/ui/utils.lua" type="both" />
+	<script src="[Basic]/MR-Granjero/utils_c.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Gym/server.lua" type="server" />
+	<script src="[Basic]/MR-Housing/creation/creation.lua" type="both" />
+	<script src="[Basic]/MR-Housing/creation/creations.lua" type="both" />
+	<script src="[Basic]/MR-Housing/creation/creation_gui.lua" type="both" />
+	<script src="[Basic]/MR-Housing/database.lua" type="both" />
+	<file src="[Basic]/MR-Housing/files/housing.png" />
+	<script src="[Basic]/MR-Housing/housing/housing.lua" type="both" />
+	<script src="[Basic]/MR-Housing/housing/housings.lua" type="both" />
+	<script src="[Basic]/MR-Housing/housing/housing_gui.lua" type="both" />
+	<script src="[Basic]/MR-Housing/housing.lua" type="both" />
+	<script src="[Basic]/MR-Housing/interiors.lua" type="both" />
+	<script src="[Basic]/MR-Housing/inventory/inv.lua" type="both" />
+	<script src="[Basic]/MR-Housing/main/main_gui.lua" type="both" />
+	<script src="[Basic]/MR-Housing/manage/manage.lua" type="both" />
+	<script src="[Basic]/MR-Housing/manage/manages.lua" type="both" />
+	<script src="[Basic]/MR-Housing/manage/manage_gui.lua" type="both" />
+	<script src="[Basic]/MR-Housing/storage/storage.lua" type="both" />
+	<script src="[Basic]/MR-Housing/storage/storages.lua" type="both" />
+	<script src="[Basic]/MR-Housing/vehicles/vehicles.lua" type="both" />
+	<script src="[Basic]/MR-Housing/vehicles/vehicless.lua" type="both" />
+	<script src="[Basic]/MR-Housing/weapons/weapons.lua" type="both" />
+	<script src="[Basic]/MR-Interiores/interiores.lua" type="both" />
+	<script src="[Basic]/MR-Interiores/interiores_cliente.lua" type="both" />
+	<script src="[Basic]/MR-Interiores/interiores_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-istemaOrganos/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-JoinQuit/server.lua" type="server" />
+	<script src="c_fixcar.lua" type="client" />
+	<script src="[Basic]/MR-KitHerramientas/g_fixcar.lua" type="both" />
+	<script src="[Basic]/MR-KitHerramientas/s_fixcar.lua" type="server" />
+	<script src="[Basic]/MR-Licencias/Arma/licencia_arma_cliente.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/Arma/licencia_arma_server.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/Arma/tablepos.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/ConducirMision/Conducir_Cliente.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/licencia_cliente.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/licencia_server.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/marcadores.lua" type="both" />
+	<script src="[Basic]/MR-Licencias/saves.lua" type="both" />
+	<script src="[Basic]/MR-Lumberjack/lumberjack_client.lua" type="both" />
+	<script src="[Basic]/MR-Lumberjack/lumberjack_server.lua" type="both" />
+	<script src="[Basic]/MR-Materiales/Client.lua" type="both" />
+	<file src="[Basic]/MR-Materiales/data/10.png" />
+	<file src="[Basic]/MR-Materiales/data/22.png" />
+	<file src="[Basic]/MR-Materiales/data/24.png" />
+	<file src="[Basic]/MR-Materiales/data/28.png" />
+	<file src="[Basic]/MR-Materiales/data/29.png" />
+	<file src="[Basic]/MR-Materiales/data/30.png" />
+	<file src="[Basic]/MR-Materiales/data/32.png" />
+	<file src="[Basic]/MR-Materiales/data/5.png" />
+	<file src="[Basic]/MR-Materiales/data/chaleco.png" />
+	<file src="[Basic]/MR-Materiales/data/martillo.mp3" />
+	<script src="[Basic]/MR-Materiales/Server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Mercado/server.lua" type="server" />
+	<file src="[Basic]/MR-Minero/misc/element.png" />
+	<file src="[Basic]/MR-Minero/misc/element2.png" />
+	<file src="[Basic]/MR-Minero/misc/element3.png" />
+	<file src="[Basic]/MR-Minero/misc/element4.png" />
+	<file src="[Basic]/MR-Minero/misc/element5.png" />
+	<file src="[Basic]/MR-Minero/misc/EmblemaOne.ttf" />
+	<file src="[Basic]/MR-Minero/misc/PetitFormalScript.ttf" />
+	<file src="[Basic]/MR-Minero/misc/robo.ttf" />
+	<file src="[Basic]/MR-Minero/misc/throw.mp3" />
+	<script src="[Basic]/MR-Minero/quarry_client.lua" type="both" />
+	<script src="[Basic]/MR-Minero/quarry_sell.lua" type="both" />
+	<script src="[Basic]/MR-Minero/quarry_server.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/gui_client.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/gui_client_dgs.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/permissions_client.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/permissions_server.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/system_client.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/system_server.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/teleport_client.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/teleport_server.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/testing_client.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/testing_server.lua" type="both" />
+	<script src="[Basic]/MR-modloader/main/updater_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Parlante/server.lua" type="server" />
+	<script src="[Basic]/MR-Pizzero/PizzaDeliveryClient.lua" type="both" />
+	<script src="[Basic]/MR-Pizzero/PizzaDeliveryServer.lua" type="both" />
+	<file src="[Basic]/MR-Pizzero/walking.mp3" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/1.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/13.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/15.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/gasolina.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_BIGSMOKE.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_bulldozer.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_modGarageAzul.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_RYDER.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_school.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_SWEET.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/blips/radar_SWEET1.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar00.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar01.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar02.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar03.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar04.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar05.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar06.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar07.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar08.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar09.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar10.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar100.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar101.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar102.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar103.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar104.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar105.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar106.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar107.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar108.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar109.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar11.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar110.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar111.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar112.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar113.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar114.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar115.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar116.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar117.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar118.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar119.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar12.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar120.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar121.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar122.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar123.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar124.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar125.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar126.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar127.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar128.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar129.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar13.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar130.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar131.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar132.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar133.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar134.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar135.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar136.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar137.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar138.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar139.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar14.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar140.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar141.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar142.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar143.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar15.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar16.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar17.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar18.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar19.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar20.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar21.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar22.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar23.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar24.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar25.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar26.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar27.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar28.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar29.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar30.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar31.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar32.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar33.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar34.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar35.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar36.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar37.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar38.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar39.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar40.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar41.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar42.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar43.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar44.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar45.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar46.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar47.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar48.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar49.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar50.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar51.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar52.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar53.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar54.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar55.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar56.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar57.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar58.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar59.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar60.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar61.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar62.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar63.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar64.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar65.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar66.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar67.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar68.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar69.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar70.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar71.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar72.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar73.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar74.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar75.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar76.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar77.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar78.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar79.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar80.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar81.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar82.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar83.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar84.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar85.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar86.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar87.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar88.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar89.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar90.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar91.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar92.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar93.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar94.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar95.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar96.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar97.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar98.png" />
+	<file src="[Basic]/MR-Radar/client/img/radar/map/radar99.png" />
+	<script src="[Basic]/MR-Radar/client/main.lua" type="both" />
+	<script src="[Basic]/MR-Radar/client/server.lua" type="server" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Basic]/MR-Robos/servidor.lua" type="both" />
+	<script src="[Basic]/MR-Robos/tablas.lua" type="both" />
+	<file src="[Basic]/MR-Scoreboard/arrow.png" />
+	<file src="[Basic]/MR-Scoreboard/colorpicker/alpha.png" />
+	<script src="[Basic]/MR-Scoreboard/colorpicker/colorpicker.lua" type="both" />
+	<file src="[Basic]/MR-Scoreboard/colorpicker/palette.png" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_client.lua" type="both" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_clientsettings.lua" type="both" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_exports.lua" type="both" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_http.lua" type="both" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_rt.lua" type="both" />
+	<script src="[Basic]/MR-Scoreboard/dxscoreboard_shared.lua" type="both" />
+	<script src="[Basic]/MR-StaffDuty/DutyC.lua" type="both" />
+	<script src="[Basic]/MR-StaffDuty/DutyS.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-StaffDuty/reports/server.lua" type="server" />
+	<script src="[Basic]/MR-StaffDuty/server_S.lua" type="server" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Basic]/MR-Stats/server.lua" type="server" />
+	<script src="[Basic]/MR-Status/presence-s.lua" type="both" />
+	<script src="[Basic]/MR-Status/presence.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-Superman/server.lua" type="server" />
+	<file src="[Basic]/MR-Taximetro/files/btn.png" />
+	<file src="[Basic]/MR-Taximetro/files/btn_active.png" />
+	<file src="[Basic]/MR-Taximetro/files/btn_on.png" />
+	<file src="[Basic]/MR-Taximetro/files/counter.ttf" />
+	<file src="[Basic]/MR-Taximetro/files/started.png" />
+	<file src="[Basic]/MR-Taximetro/files/stopped.png" />
+	<file src="[Basic]/MR-Taximetro/files/taxibutton.mp3" />
+	<file src="[Basic]/MR-Taximetro/files/taximeter.png" />
+	<script src="[Basic]/MR-Taximetro/sourcec.lua" type="both" />
+	<script src="[Basic]/MR-Taximetro/sourceg.lua" type="both" />
+	<script src="[Basic]/MR-Taximetro/sources.lua" type="both" />
+	<script src="[Basic]/MR-Tiempo/script.lua" type="both" />
+	<file src="[Basic]/MR-Tragamonedas/images/bg.png" />
+	<file src="[Basic]/MR-Tragamonedas/images/lane.png" />
+	<script src="[Basic]/MR-Tragamonedas/slot_client.lua" type="both" />
+	<script src="[Basic]/MR-Tragamonedas/slot_server.lua" type="both" />
+	<script src="[Basic]/MR-VehSusios/carwashC.lua" type="both" />
+	<file src="[Basic]/MR-VehSusios/files/images/biggrunge.png" />
+	<file src="[Basic]/MR-VehSusios/files/images/default/biggrunge.jpg" />
+	<file src="[Basic]/MR-VehSusios/files/images/default/defaultgrunge.jpg" />
+	<file src="[Basic]/MR-VehSusios/files/images/default/lowgrunge.jpg" />
+	<file src="[Basic]/MR-VehSusios/files/images/default/megagrunge.jpg" />
+	<file src="[Basic]/MR-VehSusios/files/images/default/nogrunge.jpg" />
+	<file src="[Basic]/MR-VehSusios/files/images/defaultgrunge.png" />
+	<file src="[Basic]/MR-VehSusios/files/images/lowgrunge.png" />
+	<file src="[Basic]/MR-VehSusios/files/images/megagrunge.png" />
+	<file src="[Basic]/MR-VehSusios/files/images/nogrunge.png" />
+	<script src="[Basic]/MR-VehSusios/grungeC.lua" type="both" />
+	<script src="[Basic]/MR-VehSusios/grungeG.lua" type="both" />
+	<script src="[Basic]/MR-VehSusios/grungeS.lua" type="both" />
+	<script src="[Basic]/MR-VehSusios/settingsG.lua" type="both" />
+	<script src="c_armas.lua" type="client" />
+	<script src="c_skin.lua" type="client" />
+	<script src="client.lua" type="client" />
+	<script src="[Basic]/MR-VestuariosPD/mapeo.lua" type="both" />
+	<script src="[Basic]/MR-VestuariosPD/server/s_armas.lua" type="server" />
+	<script src="[Basic]/MR-VestuariosPD/server/s_skin.lua" type="server" />
+	<script src="[Basic]/MR-VestuariosPD/server.lua" type="server" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Basic]/MR-Weapons/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-AdminP/misc/admin_banlog.lua" type="both" />
+	<script src="[Core]/MR-AdminP/misc/admin_levels.lua" type="both" />
+	<script src="[Core]/MR-AdminP/misc/admin_rules.lua" type="both" />
+	<script src="[Core]/MR-AdminP/server.lua" type="server" />
+	<script src="[Core]/MR-Banco/banco_server.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="c_hidehud.lua" type="client" />
+	<script src="[Core]/MR-Banco/save.lua" type="both" />
+	<script src="[Core]/MR-Banco/table_atm.lua" type="both" />
+	<script src="[Core]/MR-Bank/client/bank.blips.client.lua" type="both" />
+	<script src="[Core]/MR-Bank/client/bank.collision.client.lua" type="both" />
+	<script src="[Core]/MR-Bank/client/bank.gui.client.lua" type="both" />
+	<file src="[Core]/MR-Bank/client/warning.png" />
+	<script src="[Core]/MR-Bank/server/bank.events.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/bank.exported.funcs.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/bank.funcs.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/bank.script.server.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/bank.sendATMs.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/bank.xml.server.lua" type="both" />
+	<script src="[Core]/MR-Bank/server/test.eventsAndFunctions.lua" type="both" />
+	<script src="[Core]/MR-Bank/table_atm.lua" type="both" />
+	<script src="[Core]/MR-Donadores/admin_c.lua" type="both" />
+	<script src="[Core]/MR-Donadores/admin_s.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/anti_ip.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/chat_administrativo.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/chat_do.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/chat_grito.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/chat_ooc.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/chat_principal.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/chats/describir_personaje.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/commands/anims_server.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/commands/datos.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/commands/dni.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/commands/duda_pm_utils.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/database/conexion.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/functions/exports.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/functions/exports_shared.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/functions/getmap.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/gamemode.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/gui_empezar/empezar_cliente.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/gui_empezar/empezar_server.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/hud/hud_cliente.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/hud/hud_new.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/hud/hud_server.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/peds_and_yo/peds_cliente.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/pickups_info/pickups_info.lua" type="both" />
+	<script src="[Core]/MR-Gamemode/sacar_identificacion.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-IFacciones/client/interfaces/gui.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/creditos/mensajes.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/colors.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/cpn.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/create_delete_groups.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/events.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/invitations.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/join_quit.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/kick_player.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/start.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/tables.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/triggers.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/update_info.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/server/update_rank.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/adm_panel/adminpanel_gui.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/adm_panel/admin_panel_querys.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/adm_panel/admin_panel_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-IFacciones/sistemas/alianza/server.lua" type="server" />
+	<script src="[Core]/MR-IFacciones/sistemas/chatsystem/group_chat.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/chatsystem/group_chat_client.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/empty_groups/server.lua" type="server" />
+	<script src="[Core]/MR-IFacciones/sistemas/events_system/system.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/logsystem/logclient.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/logsystem/logserver.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/mapnames/mapnames_c.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/notify/c.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-IFacciones/sistemas/notify/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-IFacciones/sistemas/rangos/server.lua" type="server" />
+	<script src="[Core]/MR-IFacciones/sistemas/sql/create_functions.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/sql/delete_functions.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/sql/query_functions.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/sql/tables/sql_tables.lua" type="both" />
+	<script src="[Core]/MR-IFacciones/sistemas/sql/update_functions.lua" type="both" />
+	<script src="client_functions.lua" type="client" />
+	<script src="[Core]/MR-IFacciones/usefull/server_functions.lua" type="server" />
+	<script src="[Core]/MR-IFacciones/usefull/shared_functions.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Divisiones/divisiones_server.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/faccion_cliente.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/faccion__server.lua" type="both" />
+	<file src="[Core]/MR-LFacciones/files/dee5cc340eb4d.mp3" />
+	<file src="[Core]/MR-LFacciones/files/Fire.wav" />
+	<script src="[Core]/MR-LFacciones/Gobierno/faccion_gobierno.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Mecanico/faccion_mecanico.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Core]/MR-LFacciones/Medico/faccion_medico - copia.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Medico/faccion_medico.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Policia/comandos_policia_utils.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Policia/faccion_policia.lua" type="both" />
+	<script src="[Core]/MR-LFacciones/Policia/pinchos.lua" type="both" />
+	<script src="c_MR-NewLogin.lua" type="client" />
+	<script src="[Core]/MR-Login/g_MR-NewLogin.lua" type="both" />
+	<file src="[Core]/MR-Login/images/skins/-1.png" />
+	<file src="[Core]/MR-Login/images/skins/-2.png" />
+	<file src="[Core]/MR-Login/images/skins/0.png" />
+	<file src="[Core]/MR-Login/images/skins/10.png" />
+	<file src="[Core]/MR-Login/images/skins/100.png" />
+	<file src="[Core]/MR-Login/images/skins/101.png" />
+	<file src="[Core]/MR-Login/images/skins/102.png" />
+	<file src="[Core]/MR-Login/images/skins/103.png" />
+	<file src="[Core]/MR-Login/images/skins/104.png" />
+	<file src="[Core]/MR-Login/images/skins/105.png" />
+	<file src="[Core]/MR-Login/images/skins/106.png" />
+	<file src="[Core]/MR-Login/images/skins/107.png" />
+	<file src="[Core]/MR-Login/images/skins/108.png" />
+	<file src="[Core]/MR-Login/images/skins/109.png" />
+	<file src="[Core]/MR-Login/images/skins/11.png" />
+	<file src="[Core]/MR-Login/images/skins/110.png" />
+	<file src="[Core]/MR-Login/images/skins/111.png" />
+	<file src="[Core]/MR-Login/images/skins/112.png" />
+	<file src="[Core]/MR-Login/images/skins/113.png" />
+	<file src="[Core]/MR-Login/images/skins/114.png" />
+	<file src="[Core]/MR-Login/images/skins/115.png" />
+	<file src="[Core]/MR-Login/images/skins/116.png" />
+	<file src="[Core]/MR-Login/images/skins/117.png" />
+	<file src="[Core]/MR-Login/images/skins/118.png" />
+	<file src="[Core]/MR-Login/images/skins/12.png" />
+	<file src="[Core]/MR-Login/images/skins/120.png" />
+	<file src="[Core]/MR-Login/images/skins/121.png" />
+	<file src="[Core]/MR-Login/images/skins/122.png" />
+	<file src="[Core]/MR-Login/images/skins/123.png" />
+	<file src="[Core]/MR-Login/images/skins/124.png" />
+	<file src="[Core]/MR-Login/images/skins/125.png" />
+	<file src="[Core]/MR-Login/images/skins/126.png" />
+	<file src="[Core]/MR-Login/images/skins/127.png" />
+	<file src="[Core]/MR-Login/images/skins/128.png" />
+	<file src="[Core]/MR-Login/images/skins/129.png" />
+	<file src="[Core]/MR-Login/images/skins/13.png" />
+	<file src="[Core]/MR-Login/images/skins/130.png" />
+	<file src="[Core]/MR-Login/images/skins/131.png" />
+	<file src="[Core]/MR-Login/images/skins/132.png" />
+	<file src="[Core]/MR-Login/images/skins/133.png" />
+	<file src="[Core]/MR-Login/images/skins/134.png" />
+	<file src="[Core]/MR-Login/images/skins/135.png" />
+	<file src="[Core]/MR-Login/images/skins/136.png" />
+	<file src="[Core]/MR-Login/images/skins/137.png" />
+	<file src="[Core]/MR-Login/images/skins/138.png" />
+	<file src="[Core]/MR-Login/images/skins/139.png" />
+	<file src="[Core]/MR-Login/images/skins/14.png" />
+	<file src="[Core]/MR-Login/images/skins/140.png" />
+	<file src="[Core]/MR-Login/images/skins/141.png" />
+	<file src="[Core]/MR-Login/images/skins/142.png" />
+	<file src="[Core]/MR-Login/images/skins/143.png" />
+	<file src="[Core]/MR-Login/images/skins/144.png" />
+	<file src="[Core]/MR-Login/images/skins/145.png" />
+	<file src="[Core]/MR-Login/images/skins/146.png" />
+	<file src="[Core]/MR-Login/images/skins/147.png" />
+	<file src="[Core]/MR-Login/images/skins/148.png" />
+	<file src="[Core]/MR-Login/images/skins/15.png" />
+	<file src="[Core]/MR-Login/images/skins/150.png" />
+	<file src="[Core]/MR-Login/images/skins/151.png" />
+	<file src="[Core]/MR-Login/images/skins/152.png" />
+	<file src="[Core]/MR-Login/images/skins/153.png" />
+	<file src="[Core]/MR-Login/images/skins/154.png" />
+	<file src="[Core]/MR-Login/images/skins/155.png" />
+	<file src="[Core]/MR-Login/images/skins/156.png" />
+	<file src="[Core]/MR-Login/images/skins/157.png" />
+	<file src="[Core]/MR-Login/images/skins/158.png" />
+	<file src="[Core]/MR-Login/images/skins/159.png" />
+	<file src="[Core]/MR-Login/images/skins/16.png" />
+	<file src="[Core]/MR-Login/images/skins/160.png" />
+	<file src="[Core]/MR-Login/images/skins/161.png" />
+	<file src="[Core]/MR-Login/images/skins/162.png" />
+	<file src="[Core]/MR-Login/images/skins/163.png" />
+	<file src="[Core]/MR-Login/images/skins/164.png" />
+	<file src="[Core]/MR-Login/images/skins/165.png" />
+	<file src="[Core]/MR-Login/images/skins/166.png" />
+	<file src="[Core]/MR-Login/images/skins/167.png" />
+	<file src="[Core]/MR-Login/images/skins/168.png" />
+	<file src="[Core]/MR-Login/images/skins/169.png" />
+	<file src="[Core]/MR-Login/images/skins/17.png" />
+	<file src="[Core]/MR-Login/images/skins/170.png" />
+	<file src="[Core]/MR-Login/images/skins/171.png" />
+	<file src="[Core]/MR-Login/images/skins/172.png" />
+	<file src="[Core]/MR-Login/images/skins/173.png" />
+	<file src="[Core]/MR-Login/images/skins/174.png" />
+	<file src="[Core]/MR-Login/images/skins/175.png" />
+	<file src="[Core]/MR-Login/images/skins/176.png" />
+	<file src="[Core]/MR-Login/images/skins/177.png" />
+	<file src="[Core]/MR-Login/images/skins/178.png" />
+	<file src="[Core]/MR-Login/images/skins/179.png" />
+	<file src="[Core]/MR-Login/images/skins/18.png" />
+	<file src="[Core]/MR-Login/images/skins/180.png" />
+	<file src="[Core]/MR-Login/images/skins/181.png" />
+	<file src="[Core]/MR-Login/images/skins/182.png" />
+	<file src="[Core]/MR-Login/images/skins/183.png" />
+	<file src="[Core]/MR-Login/images/skins/184.png" />
+	<file src="[Core]/MR-Login/images/skins/185.png" />
+	<file src="[Core]/MR-Login/images/skins/186.png" />
+	<file src="[Core]/MR-Login/images/skins/187.png" />
+	<file src="[Core]/MR-Login/images/skins/188.png" />
+	<file src="[Core]/MR-Login/images/skins/189.png" />
+	<file src="[Core]/MR-Login/images/skins/19.png" />
+	<file src="[Core]/MR-Login/images/skins/190.png" />
+	<file src="[Core]/MR-Login/images/skins/191.png" />
+	<file src="[Core]/MR-Login/images/skins/192.png" />
+	<file src="[Core]/MR-Login/images/skins/193.png" />
+	<file src="[Core]/MR-Login/images/skins/194.png" />
+	<file src="[Core]/MR-Login/images/skins/195.png" />
+	<file src="[Core]/MR-Login/images/skins/196.png" />
+	<file src="[Core]/MR-Login/images/skins/197.png" />
+	<file src="[Core]/MR-Login/images/skins/198.png" />
+	<file src="[Core]/MR-Login/images/skins/199.png" />
+	<file src="[Core]/MR-Login/images/skins/20.png" />
+	<file src="[Core]/MR-Login/images/skins/200.png" />
+	<file src="[Core]/MR-Login/images/skins/201.png" />
+	<file src="[Core]/MR-Login/images/skins/202.png" />
+	<file src="[Core]/MR-Login/images/skins/203.png" />
+	<file src="[Core]/MR-Login/images/skins/204.png" />
+	<file src="[Core]/MR-Login/images/skins/205.png" />
+	<file src="[Core]/MR-Login/images/skins/206.png" />
+	<file src="[Core]/MR-Login/images/skins/207.png" />
+	<file src="[Core]/MR-Login/images/skins/209.png" />
+	<file src="[Core]/MR-Login/images/skins/21.png" />
+	<file src="[Core]/MR-Login/images/skins/210.png" />
+	<file src="[Core]/MR-Login/images/skins/211.png" />
+	<file src="[Core]/MR-Login/images/skins/212.png" />
+	<file src="[Core]/MR-Login/images/skins/213.png" />
+	<file src="[Core]/MR-Login/images/skins/214.png" />
+	<file src="[Core]/MR-Login/images/skins/215.png" />
+	<file src="[Core]/MR-Login/images/skins/216.png" />
+	<file src="[Core]/MR-Login/images/skins/217.png" />
+	<file src="[Core]/MR-Login/images/skins/218.png" />
+	<file src="[Core]/MR-Login/images/skins/219.png" />
+	<file src="[Core]/MR-Login/images/skins/22.png" />
+	<file src="[Core]/MR-Login/images/skins/220.png" />
+	<file src="[Core]/MR-Login/images/skins/221.png" />
+	<file src="[Core]/MR-Login/images/skins/222.png" />
+	<file src="[Core]/MR-Login/images/skins/223.png" />
+	<file src="[Core]/MR-Login/images/skins/224.png" />
+	<file src="[Core]/MR-Login/images/skins/225.png" />
+	<file src="[Core]/MR-Login/images/skins/226.png" />
+	<file src="[Core]/MR-Login/images/skins/227.png" />
+	<file src="[Core]/MR-Login/images/skins/228.png" />
+	<file src="[Core]/MR-Login/images/skins/229.png" />
+	<file src="[Core]/MR-Login/images/skins/23.png" />
+	<file src="[Core]/MR-Login/images/skins/230.png" />
+	<file src="[Core]/MR-Login/images/skins/231.png" />
+	<file src="[Core]/MR-Login/images/skins/232.png" />
+	<file src="[Core]/MR-Login/images/skins/233.png" />
+	<file src="[Core]/MR-Login/images/skins/234.png" />
+	<file src="[Core]/MR-Login/images/skins/235.png" />
+	<file src="[Core]/MR-Login/images/skins/236.png" />
+	<file src="[Core]/MR-Login/images/skins/237.png" />
+	<file src="[Core]/MR-Login/images/skins/238.png" />
+	<file src="[Core]/MR-Login/images/skins/239.png" />
+	<file src="[Core]/MR-Login/images/skins/24.png" />
+	<file src="[Core]/MR-Login/images/skins/240.png" />
+	<file src="[Core]/MR-Login/images/skins/241.png" />
+	<file src="[Core]/MR-Login/images/skins/242.png" />
+	<file src="[Core]/MR-Login/images/skins/243.png" />
+	<file src="[Core]/MR-Login/images/skins/244.png" />
+	<file src="[Core]/MR-Login/images/skins/245.png" />
+	<file src="[Core]/MR-Login/images/skins/246.png" />
+	<file src="[Core]/MR-Login/images/skins/247.png" />
+	<file src="[Core]/MR-Login/images/skins/248.png" />
+	<file src="[Core]/MR-Login/images/skins/249.png" />
+	<file src="[Core]/MR-Login/images/skins/25.png" />
+	<file src="[Core]/MR-Login/images/skins/250.png" />
+	<file src="[Core]/MR-Login/images/skins/251.png" />
+	<file src="[Core]/MR-Login/images/skins/252.png" />
+	<file src="[Core]/MR-Login/images/skins/253.png" />
+	<file src="[Core]/MR-Login/images/skins/254.png" />
+	<file src="[Core]/MR-Login/images/skins/255.png" />
+	<file src="[Core]/MR-Login/images/skins/256.png" />
+	<file src="[Core]/MR-Login/images/skins/257.png" />
+	<file src="[Core]/MR-Login/images/skins/258.png" />
+	<file src="[Core]/MR-Login/images/skins/259.png" />
+	<file src="[Core]/MR-Login/images/skins/26.png" />
+	<file src="[Core]/MR-Login/images/skins/260.png" />
+	<file src="[Core]/MR-Login/images/skins/261.png" />
+	<file src="[Core]/MR-Login/images/skins/262.png" />
+	<file src="[Core]/MR-Login/images/skins/263.png" />
+	<file src="[Core]/MR-Login/images/skins/264.png" />
+	<file src="[Core]/MR-Login/images/skins/266.png" />
+	<file src="[Core]/MR-Login/images/skins/27.png" />
+	<file src="[Core]/MR-Login/images/skins/274.png" />
+	<file src="[Core]/MR-Login/images/skins/275.png" />
+	<file src="[Core]/MR-Login/images/skins/276.png" />
+	<file src="[Core]/MR-Login/images/skins/277.png" />
+	<file src="[Core]/MR-Login/images/skins/278.png" />
+	<file src="[Core]/MR-Login/images/skins/279.png" />
+	<file src="[Core]/MR-Login/images/skins/28.png" />
+	<file src="[Core]/MR-Login/images/skins/280.png" />
+	<file src="[Core]/MR-Login/images/skins/281.png" />
+	<file src="[Core]/MR-Login/images/skins/282.png" />
+	<file src="[Core]/MR-Login/images/skins/283.png" />
+	<file src="[Core]/MR-Login/images/skins/284.png" />
+	<file src="[Core]/MR-Login/images/skins/285.png" />
+	<file src="[Core]/MR-Login/images/skins/286.png" />
+	<file src="[Core]/MR-Login/images/skins/287.png" />
+	<file src="[Core]/MR-Login/images/skins/288.png" />
+	<file src="[Core]/MR-Login/images/skins/29.png" />
+	<file src="[Core]/MR-Login/images/skins/30.png" />
+	<file src="[Core]/MR-Login/images/skins/31.png" />
+	<file src="[Core]/MR-Login/images/skins/32.png" />
+	<file src="[Core]/MR-Login/images/skins/33.png" />
+	<file src="[Core]/MR-Login/images/skins/34.png" />
+	<file src="[Core]/MR-Login/images/skins/35.png" />
+	<file src="[Core]/MR-Login/images/skins/36.png" />
+	<file src="[Core]/MR-Login/images/skins/37.png" />
+	<file src="[Core]/MR-Login/images/skins/38.png" />
+	<file src="[Core]/MR-Login/images/skins/39.png" />
+	<file src="[Core]/MR-Login/images/skins/40.png" />
+	<file src="[Core]/MR-Login/images/skins/41.png" />
+	<file src="[Core]/MR-Login/images/skins/43.png" />
+	<file src="[Core]/MR-Login/images/skins/44.png" />
+	<file src="[Core]/MR-Login/images/skins/45.png" />
+	<file src="[Core]/MR-Login/images/skins/46.png" />
+	<file src="[Core]/MR-Login/images/skins/47.png" />
+	<file src="[Core]/MR-Login/images/skins/48.png" />
+	<file src="[Core]/MR-Login/images/skins/49.png" />
+	<file src="[Core]/MR-Login/images/skins/50.png" />
+	<file src="[Core]/MR-Login/images/skins/51.png" />
+	<file src="[Core]/MR-Login/images/skins/52.png" />
+	<file src="[Core]/MR-Login/images/skins/53.png" />
+	<file src="[Core]/MR-Login/images/skins/54.png" />
+	<file src="[Core]/MR-Login/images/skins/55.png" />
+	<file src="[Core]/MR-Login/images/skins/56.png" />
+	<file src="[Core]/MR-Login/images/skins/57.png" />
+	<file src="[Core]/MR-Login/images/skins/58.png" />
+	<file src="[Core]/MR-Login/images/skins/59.png" />
+	<file src="[Core]/MR-Login/images/skins/60.png" />
+	<file src="[Core]/MR-Login/images/skins/61.png" />
+	<file src="[Core]/MR-Login/images/skins/62.png" />
+	<file src="[Core]/MR-Login/images/skins/63.png" />
+	<file src="[Core]/MR-Login/images/skins/64.png" />
+	<file src="[Core]/MR-Login/images/skins/66.png" />
+	<file src="[Core]/MR-Login/images/skins/67.png" />
+	<file src="[Core]/MR-Login/images/skins/68.png" />
+	<file src="[Core]/MR-Login/images/skins/69.png" />
+	<file src="[Core]/MR-Login/images/skins/7.png" />
+	<file src="[Core]/MR-Login/images/skins/70.png" />
+	<file src="[Core]/MR-Login/images/skins/71.png" />
+	<file src="[Core]/MR-Login/images/skins/72.png" />
+	<file src="[Core]/MR-Login/images/skins/73.png" />
+	<file src="[Core]/MR-Login/images/skins/75.png" />
+	<file src="[Core]/MR-Login/images/skins/76.png" />
+	<file src="[Core]/MR-Login/images/skins/77.png" />
+	<file src="[Core]/MR-Login/images/skins/78.png" />
+	<file src="[Core]/MR-Login/images/skins/79.png" />
+	<file src="[Core]/MR-Login/images/skins/80.png" />
+	<file src="[Core]/MR-Login/images/skins/81.png" />
+	<file src="[Core]/MR-Login/images/skins/82.png" />
+	<file src="[Core]/MR-Login/images/skins/83.png" />
+	<file src="[Core]/MR-Login/images/skins/84.png" />
+	<file src="[Core]/MR-Login/images/skins/85.png" />
+	<file src="[Core]/MR-Login/images/skins/87.png" />
+	<file src="[Core]/MR-Login/images/skins/88.png" />
+	<file src="[Core]/MR-Login/images/skins/89.png" />
+	<file src="[Core]/MR-Login/images/skins/9.png" />
+	<file src="[Core]/MR-Login/images/skins/90.png" />
+	<file src="[Core]/MR-Login/images/skins/91.png" />
+	<file src="[Core]/MR-Login/images/skins/92.png" />
+	<file src="[Core]/MR-Login/images/skins/93.png" />
+	<file src="[Core]/MR-Login/images/skins/94.png" />
+	<file src="[Core]/MR-Login/images/skins/95.png" />
+	<file src="[Core]/MR-Login/images/skins/96.png" />
+	<file src="[Core]/MR-Login/images/skins/97.png" />
+	<file src="[Core]/MR-Login/images/skins/98.png" />
+	<file src="[Core]/MR-Login/images/skins/99.png" />
+	<script src="[Core]/MR-Login/sssss.lua" type="both" />
+	<script src="[Core]/MR-Login/s_MR-NewLogin.lua" type="server" />
+	<script src="[Core]/MR-Login/s_save.lua" type="server" />
+	<script src="[Core]/MR-LoginPre/cameras.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/guardarDatos.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/login_cliente.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/login_server.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/skin_selector_info/info_cliente.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/skin_selector_info/info_server.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/TestRol/testRoleplay.lua" type="both" />
+	<script src="[Core]/MR-LoginPre/TestRol/testRoleplay_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-MDVehicles/crearVehiculos/server.lua" type="server" />
+	<script src="[Core]/MR-Mecanicos/ModShopColor/colores_cliente.lua" type="both" />
+	<script src="[Core]/MR-Mecanicos/ModShopColor/colores_server.lua" type="both" />
+	<script src="[Core]/MR-Mecanicos/ModShopColor/table_colores.lua" type="both" />
+	<script src="[Core]/MR-Mecanicos/reparacion_cliente.lua" type="both" />
+	<script src="[Core]/MR-Mecanicos/reparacion_server.lua" type="both" />
+	<script src="[Core]/MR-Mecanicos/tabla_reparaciones.lua" type="both" />
+	<script src="[Core]/MR-NameTag/nametag.lua" type="both" />
+	<script src="text_c.luac" type="client" />
+	<script src="text_s.luac" type="client" />
+	<file src="[Core]/MR-PayDay/assets/img/ticket.png" />
+	<file src="[Core]/MR-PayDay/assets/sound/lvlup.mp3" />
+	<file src="[Core]/MR-PayDay/assets/sound/ticket.mp3" />
+	<script src="client.lua" type="client" />
+	<script src="[Core]/MR-PayDay/server.lua" type="server" />
+	<script src="[Core]/MR-PuertasJobs/puertas.lua" type="both" />
+	<script src="[Core]/MR-PuertasJobs/puertas_server.lua" type="both" />
+	<script src="[Core]/MR-PuertasJobs/servidor.lua" type="both" />
+	<script src="[Core]/MR-RealByDrive/driveby_client.lua" type="both" />
+	<script src="[Core]/MR-RealByDrive/driveby_server.lua" type="both" />
+	<script src="[Core]/MR-RealByDrive/exports_client.lua" type="both" />
+	<script src="[Core]/MR-RealByDrive/exports_server.lua" type="both" />
+	<script src="client_anim.lua" type="client" />
+	<script src="[Core]/MR-RealByDrive/utils/textlib.lua" type="both" />
+	<script src="[Core]/MR-RealByDrive/utils/textlib_anim.lua" type="both" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/0.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/1.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/10.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/100.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/101.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/102.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/103.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/104.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/105.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/106.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/107.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/108.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/109.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/11.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/110.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/111.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/112.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/113.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/114.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/115.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/116.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/117.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/118.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/119.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/12.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/120.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/121.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/122.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/123.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/124.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/125.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/126.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/13.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/14.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/15.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/16.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/17.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/18.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/19.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/2.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/20.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/21.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/22.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/23.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/24.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/25.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/26.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/27.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/28.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/29.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/3.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/30.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/31.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/32.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/33.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/34.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/35.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/36.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/37.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/38.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/39.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/4.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/40.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/41.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/42.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/43.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/44.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/45.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/46.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/47.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/48.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/49.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/5.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/50.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/51.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/52.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/53.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/54.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/55.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/56.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/57.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/58.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/59.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/6.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/60.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/61.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/62.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/63.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/64.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/65.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/66.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/67.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/68.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/69.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/7.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/70.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/71.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/72.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/73.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/74.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/75.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/76.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/77.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/78.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/79.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/8.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/80.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/81.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/82.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/83.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/84.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/85.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/86.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/87.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/88.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/89.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/9.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/90.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/91.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/92.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/93.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/94.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/95.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/96.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/97.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/98.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/99.png" />
+	<file src="[Core]/MR-SistemaVehiculos/COLORS/rien.png" />
+	<script src="[Core]/MR-SistemaVehiculos/consecionario.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/cseat.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/exports.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/Gasolinera/gaolineras.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/Gasolinera/gasolinera_cliente.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/Gasolinera/gasolinera_server.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/handbrake_c.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/handbrake_s.lua" type="both" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ADMIRAL.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ALPHA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/AMBULAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ANDROMADA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ARTICT1.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ARTICT2.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ARTICT3.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/AT-400.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BAGBOXA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BAGBOXB.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BAGGAGE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BANDITO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BANSHEE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BARRACKS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BEAGLE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BENSON.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BF INJECTION.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BF-400.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BIKE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BLADE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BLISTA Compact.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BLOODRING BANGER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BMX.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BOBCAT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BOXBURG.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BOXVILLE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BRAVURA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BROADWAY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BUCCANEER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BUFFALO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BULLET.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BURRITO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/BUS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CABBIE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CADRONA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CAMPER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CARGOBOB.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CEMENT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CHEETAH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CLOVER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CLUB.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/COACH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/COASTGUARD.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/COMBINE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/COMET.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/CROPDUSTER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DFT30.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DINGHY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DODO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DOZER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DUMPER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/DUNE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ELEGANT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ELEGY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/EMPEROR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ENFORCER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ESPERANTO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/EUROS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/faggio.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FARM_TR1.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FBIRANCH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FBITRUCK.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FCR-900.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FELTZER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/firetruck2.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FIRETRUK.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FLASH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FLATBED.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FORKLIFT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FORTUNE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/FREEWAY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/GLENDALE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/GOLFCART.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/GREENWOOD.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HERMES.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HOTDOG.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HOTKNIFE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HOTRINGRACER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HPV1000.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HUNTER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HUNTLEY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HUSTLER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/HYDRA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/INFERNUS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/INTRUDER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/JESTER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/Jetmax.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/jetpack.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/JOURNEY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/KART.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/LANDSTAL.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/LAUNCH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/LEVIATHAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/LINERUN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MAJESTIC.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MANANA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MARQUIS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MAVERICK.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MERIT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MESA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MONSTER 2.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MONSTER 3.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MONSTER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MOONBEAM.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/Mountain Bike.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MOWER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MRWHOOP.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/MULE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/NEBULA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/NEVADA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/News Chopper.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/NEWSVAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/NRG-500.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/OCEANIC.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PACKER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PATRIOT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PCJ-600.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PEREN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PETROL.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PETROTR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PHOENIX.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PICADOR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/pizza boy.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/pizzaboy.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/POLICE MAVERICK.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/POLICE_LA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/POLICE_SF.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/POLICE_VG.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PONY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PREDATOR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PREMIER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PREVION.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/PRIMO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/QUADBIKE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RAINDANCE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RANCHER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RANGER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RCBANDIT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RCBARON.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RCCAM.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RCGOBLIN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RCTIGER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RDTRAIN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/REEFER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/REGINA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/REMINGTON.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RHINO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/rien.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ROMERO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RUMPO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/RUSTLER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SABRE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SADLER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/sanchez.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SANDKING.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SAVANNA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SEASPARROW.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SECURICA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SENTINEL.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SHAMAL.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SKIMMER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SLAMVAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SOLAIR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SPARROW.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SPEEDER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SQUALO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/STAFFORD.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/STALLION.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/STRATUM.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/STRETCH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/STUNTPLANE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SULTAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SUNRISE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SUPER GT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SWATVAN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/SWEEPER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TAHOMA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TAMPA.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TAXI.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TOPFUN.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TORNADO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TOWTRUCK.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TRACTOR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TRASH.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TROPIC.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TUG.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/TURISMO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/URANUS.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/UTILITY.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/UTIL_TR1.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/VINCENT.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/VIRGO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/VOODOO.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/VORTEX.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/WALTON.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/WASHINGTON.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/WAYFARER.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/WILLARD.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/WINDSOR.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/YANKEE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/YOSEMITE.png" />
+	<file src="[Core]/MR-SistemaVehiculos/Png/ZR-350.png" />
+	<file src="[Core]/MR-SistemaVehiculos/sonidos/bloqueo.mp3" />
+	<file src="[Core]/MR-SistemaVehiculos/sonidos/maletero.mp3" />
+	<file src="[Core]/MR-SistemaVehiculos/sonidos/maletero2.mp3" />
+	<file src="[Core]/MR-SistemaVehiculos/sonidos/motor.mp3" />
+	<script src="[Core]/MR-SistemaVehiculos/Tablas.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/tabla_vender.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/Vehiculos_Client.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/Vehiculos_Comandos.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculos/yo.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculosPublicos/Tablas.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculosPublicos/Vehiculos_Cliente.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculosPublicos/Vehiculos_Comandos.lua" type="both" />
+	<script src="[Core]/MR-SistemaVehiculosPublicos/Vehiculos_Server.lua" type="both" />
+	<script src="[Core]/MR-SkinShop/clothes.lua" type="both" />
+	<script src="[Core]/MR-SkinShop/clothess.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Core]/MySQL/datac.lua" type="both" />
+	<script src="[Core]/MySQL/datas.lua" type="both" />
+	<script src="[Core]/MySQL/exports.lua" type="both" />
+	<script src="[Core]/MySQL/Exp_code.lua" type="both" />
+	<script src="c_prueba.lua" type="client" />
+	<script src="[Core]/prueba/g_prueba.lua" type="both" />
+	<script src="[Core]/prueba/s_prueba.lua" type="server" />
+	<script src="[Core]/[GTI]/GTIanims/animations.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIanims/c.lua" type="both" />
+	<script src="c.luac" type="client" />
+	<script src="[Core]/[GTI]/GTIanims/s.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/database.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/employment/employment_gui.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/employment/emp_panel.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/employment/emp_panel_s.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/employment.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/progress/progress_gui.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/progress/prog_panel.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/progress/prog_panel_s.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployment/progress.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployTable/jobs_table.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIemployTable/ranks_table.lua" type="both" />
+	<file src="[Core]/[GTI]/GTIhud/audio/side_miss_complete.mp3" />
+	<file src="[Core]/[GTI]/GTIhud/audio/story_miss_complete.mp3" />
+	<script src="[Core]/[GTI]/GTIhud/dm/displayMessage.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIhud/draw.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIhud/drawMissionEvent/drawMissionEvent.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIhud/drawMissionText/drawMissionText.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIhud/drawNote/drawNotification.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIhud/drawStat/drawStat.lua" type="both" />
+	<file src="[Core]/[GTI]/GTIhud/fonts/cambria.ttf" />
+	<file src="[Core]/[GTI]/GTIhud/fonts/signpainter.ttf" />
+	<file src="[Core]/[GTI]/GTIhud/fonts/verdana.ttf" />
+	<script src="[Core]/[GTI]/GTIhud/weapon_skill.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIrentals/ghostmode.lua" type="both" />
+	<script src="prices.slua" type="client" />
+	<script src="[Core]/[GTI]/GTIrentals/rent_vehicle.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIrentals/rent_weapon.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIrentalTable/vehicle_tableS.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIrentalTable/weapons_tableS.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIutil/object_lod.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIutil/Util_C.lua" type="both" />
+	<script src="[Core]/[GTI]/GTIutil/Util_S.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Core]/[LS]Administracion/comandos_staff.lua" type="both" />
+	<script src="[Core]/[LS]Administracion/jail_ooc.lua" type="both" />
+	<script src="[Core]/[LS]NewData/data.lua" type="both" />
+	<script src="[Core]/[LS]NewData/datacliente.lua" type="both" />
+	<script src="[Core]/[LS]NewData/export.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Core]/[LS]Notificaciones/dialogo/dialogo_cliente.lua" type="both" />
+	<script src="[Core]/[LS]Notificaciones/dialogo/dialogo_server.lua" type="both" />
+	<file src="[Core]/[LS]Notificaciones/files/error.png" />
+	<file src="[Core]/[LS]Notificaciones/files/info.png" />
+	<file src="[Core]/[LS]Notificaciones/files/warning.png" />
+	<script src="[Core]/[LS]Notificaciones/server.lua" type="server" />
+	<script src="[Core]/[LS]Notificaciones/text/Noti_c.lua" type="both" />
+	<script src="[Core]/[LS]Notificaciones/text/Noti_s.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/armas/armas_cliente.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/armas/armas_server.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/armas/armas_shared.lua" type="both" />
+	<file src="[Core]/[LS]Tiendas/dinero.mp3" />
+	<script src="[Core]/[LS]Tiendas/dxEditorGUI.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/dxEditorGUIS.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/llamar_server.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/save.lua" type="both" />
+	<file src="[Core]/[LS]Tiendas/sounds/LlamadaSound.mp3" />
+	<file src="[Core]/[LS]Tiendas/sounds/LlamarSound.mp3" />
+	<script src="[Core]/[LS]Tiendas/TableBuys.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/tiendas/tiendas_cliente.lua" type="both" />
+	<script src="[Core]/[LS]Tiendas/tiendas/tiendas_server.lua" type="both" />
+	<script src="[Develop]/admincam/admincam.lua" type="both" />
+	<script src="[Develop]/admincam/freecam.lua" type="both" />
+	<script src="[Develop]/admincam/freecam_server.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/button.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/checkbox.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/edit.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/gridlist.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/image.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/label.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/list.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/progressbar.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/radiobutton.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/scroll.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/scrollpane.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/switchButton.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/tab.lua" type="both" />
+	<script src="[Develop]/dxLibrary/draw/window.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/button.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/checkbox.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/edit.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/gridlist.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/image.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/label.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/list.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/progressbar.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/radiobutton.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/scroll.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/scrollpane.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/switchButton.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/tab.lua" type="both" />
+	<script src="[Develop]/dxLibrary/elements/window.lua" type="both" />
+	<script src="[Develop]/dxLibrary/examples.lua" type="both" />
+	<file src="[Develop]/dxLibrary/files/font/Basic-Regular.ttf" />
+	<file src="[Develop]/dxLibrary/files/font/Comforta_regular.ttf" />
+	<file src="[Develop]/dxLibrary/files/image/circle_mask.png" />
+	<file src="[Develop]/dxLibrary/files/image/round.png" />
+	<file src="[Develop]/dxLibrary/files/image/switch.png" />
+	<script src="[Develop]/dxLibrary/handler/element.lua" type="both" />
+	<script src="[Develop]/dxLibrary/handler/events.lua" type="both" />
+	<script src="[Develop]/dxLibrary/handler/keys.lua" type="both" />
+	<script src="[Develop]/dxLibrary/handler/themes.lua" type="both" />
+	<script src="[Develop]/dxLibrary/handler/update.lua" type="both" />
+	<script src="[Develop]/dxLibrary/handler/util.lua" type="both" />
+	<script src="[Develop]/guieditor/client/attacher.lua" type="both" />
+	<script src="[Develop]/guieditor/client/coder.lua" type="both" />
+	<script src="[Develop]/guieditor/client/code_generation.lua" type="both" />
+	<file src="[Develop]/guieditor/client/colorpicker/alpha.png" />
+	<script src="[Develop]/guieditor/client/colorpicker/colorpicker.lua" type="both" />
+	<file src="[Develop]/guieditor/client/colorpicker/palette.png" />
+	<script src="[Develop]/guieditor/client/context_bar.lua" type="both" />
+	<script src="[Develop]/guieditor/client/creator.lua" type="both" />
+	<script src="[Develop]/guieditor/client/crush.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dimensions_set.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dx_elements/dx_checkbox.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dx_elements/dx_editbox.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dx_elements/dx_elements.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dx_elements/dx_radiobutton.lua" type="both" />
+	<script src="[Develop]/guieditor/client/dx_elements/dx_slider.lua" type="both" />
+	<script src="[Develop]/guieditor/client/expanding_gridlist.lua" type="both" />
+	<script src="[Develop]/guieditor/client/extensions/gridlist.lua" type="both" />
+	<script src="[Develop]/guieditor/client/font.lua" type="both" />
+	<script src="[Develop]/guieditor/client/getters.lua" type="both" />
+	<script src="[Develop]/guieditor/client/gui_properties.lua" type="both" />
+	<script src="[Develop]/guieditor/client/help.lua" type="both" />
+	<script src="[Develop]/guieditor/client/image_picker.lua" type="both" />
+	<script src="[Develop]/guieditor/client/input.lua" type="both" />
+	<script src="[Develop]/guieditor/client/load_gui.lua" type="both" />
+	<script src="[Develop]/guieditor/client/load_gui_code.lua" type="both" />
+	<script src="[Develop]/guieditor/client/main.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menu.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/items/item_common.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/items/item_dx.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/items/item_multiple_selection.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/items/item_resolution.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/menu_common.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/menu_main.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menus/menu_manager.lua" type="both" />
+	<script src="[Develop]/guieditor/client/menu_item.lua" type="both" />
+	<script src="[Develop]/guieditor/client/message_box.lua" type="both" />
+	<script src="[Develop]/guieditor/client/mover.lua" type="both" />
+	<script src="[Develop]/guieditor/client/multiple_element.lua" type="both" />
+	<script src="[Develop]/guieditor/client/offset.lua" type="both" />
+	<script src="[Develop]/guieditor/client/output.lua" type="both" />
+	<script src="[Develop]/guieditor/client/resolution_preview.lua" type="both" />
+	<script src="[Develop]/guieditor/client/settings.lua" type="both" />
+	<script src="[Develop]/guieditor/client/sharing.lua" type="both" />
+	<script src="[Develop]/guieditor/client/sizer.lua" type="both" />
+	<script src="[Develop]/guieditor/client/snapping.lua" type="both" />
+	<script src="[Develop]/guieditor/client/titlebar_button.lua" type="both" />
+	<script src="[Develop]/guieditor/client/tutorials/tutorial.lua" type="both" />
+	<script src="[Develop]/guieditor/client/tutorials/tutorial_main.lua" type="both" />
+	<script src="[Develop]/guieditor/client/tutorials/tutorial_output_type.lua" type="both" />
+	<script src="[Develop]/guieditor/client/tutorials/tutorial_properties.lua" type="both" />
+	<script src="[Develop]/guieditor/client/undo_redo.lua" type="both" />
+	<script src="[Develop]/guieditor/client/util.lua" type="both" />
+	<script src="[Develop]/guieditor/client/variables.lua" type="both" />
+	<file src="[Develop]/guieditor/fonts/EmblemaOne.ttf" />
+	<file src="[Develop]/guieditor/fonts/PetitFormalScript.ttf" />
+	<file src="[Develop]/guieditor/images/arrow_out.png" />
+	<file src="[Develop]/guieditor/images/cross.png" />
+	<file src="[Develop]/guieditor/images/dot_white.png" />
+	<file src="[Develop]/guieditor/images/dx_elements/checkbox_tick.png" />
+	<file src="[Develop]/guieditor/images/dx_elements/radio_button.png" />
+	<file src="[Develop]/guieditor/images/dx_elements/slider_end.png" />
+	<file src="[Develop]/guieditor/images/dx_elements/slider_pointer.png" />
+	<file src="[Develop]/guieditor/images/examples/1.png" />
+	<file src="[Develop]/guieditor/images/examples/2.png" />
+	<file src="[Develop]/guieditor/images/examples/3.png" />
+	<file src="[Develop]/guieditor/images/examples/arma.png" />
+	<file src="[Develop]/guieditor/images/examples/comi.png" />
+	<file src="[Develop]/guieditor/images/examples/comi2.png" />
+	<file src="[Develop]/guieditor/images/examples/comi3 (2).png" />
+	<file src="[Develop]/guieditor/images/examples/comi3.png" />
+	<file src="[Develop]/guieditor/images/examples/comi7.png" />
+	<file src="[Develop]/guieditor/images/examples/Faccion_1.png" />
+	<file src="[Develop]/guieditor/images/examples/Faccion_2.png" />
+	<file src="[Develop]/guieditor/images/examples/mtalogo.png" />
+	<file src="[Develop]/guieditor/images/examples/old222.png" />
+	<file src="[Develop]/guieditor/images/examples/shruk.png" />
+	<file src="[Develop]/guieditor/images/plus.png" />
+	<file src="[Develop]/guieditor/images/reset.png" />
+	<script src="[Develop]/guieditor/server.lua" type="server" />
+	<script src="[Develop]/guieditor/util_common.lua" type="both" />
+	<script src="[Logs]/MR-AdminLog/global-side.lua" type="both" />
+	<script src="[Logs]/MR-AdminLog/server-side.lua" type="server" />
+	<script src="[Logs]/MR-Logs/config.lua" type="both" />
+	<script src="[Logs]/MR-Logs/sourceC.lua" type="both" />
+	<script src="[Logs]/MR-Logs/sourceS.lua" type="both" />
+	<script src="[Modelos]/Modelos/lector.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/agua/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/agua/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/Concesionario/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/Concesionario/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[LS]MapeoAyun/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[LS]MapeoAyun/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Aerpuerto/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Aerpuerto/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Ammu/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Ammu/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]BarH/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]BarH/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Basurero/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Basurero/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Basureros/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Basureros/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]CampoPD/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]CampoPD/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Carpintero/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Carpintero/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]CasasIDLE/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]CasasIDLE/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[map]cominikolay/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[map]cominikolay/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Comisaria/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Comisaria/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Comisaria/sourceC.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Comiseria_LS/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Comiseria_LS/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Concesionario/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Concesionario/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Cota/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Cota/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Decoraciones/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Decoraciones/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]DepaGanton/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]DepaGanton/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]DepositoPD/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]DepositoPD/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Desbug/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Desbug/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Doj/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Doj/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]EntrenamientoPD/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]EntrenamientoPD/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]FBI/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]FBI/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]FortCarson/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]FortCarson/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Ham/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Ham/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]InteriorComisaria/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]InteriorComisaria/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]InteriorHospital/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]InteriorHospital/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Interior_LSPD/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Interior_LSPD/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Interior_LSRD/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Interior_LSRD/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Los_Santos/mapEditorScriptingExtension_c (2).lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Los_Santos/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Los_Santos/mapEditorScriptingExtension_s (2).lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Los_Santos/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mecanico/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mecanico/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mecanicos/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mecanicos/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]MercadoN/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]MercadoN/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mercadonegro/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Mercadonegro/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Militar/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Militar/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Mirador/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Mirador/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]ParkingPizzeria/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]ParkingPizzeria/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Pizzeria/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Pizzeria/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Prision/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Prision/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Prision/replace.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]renta/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]renta/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]RestauranteLS/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]RestauranteLS/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Tiendas/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[MAP]Tiendas/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Unity/mapEditorScriptingExtension_c.lua" type="both" />
+	<script src="[Modelos]/[Mapas]/[Map]Unity/mapEditorScriptingExtension_s.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/admin_definitions.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/admin_ACL.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/admin_client.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/admin_clientprefs.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/admin_gui.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/admin_wrapper.lua" type="both" />
+	<file src="[MTASA]/[admin]/admin/client/colorpicker/blank.png" />
+	<script src="[MTASA]/[admin]/admin/client/colorpicker/colorpicker.lua" type="both" />
+	<file src="[MTASA]/[admin]/admin/client/colorpicker/cursor.png" />
+	<file src="[MTASA]/[admin]/admin/client/colorpicker/h.png" />
+	<file src="[MTASA]/[admin]/admin/client/colorpicker/sv.png" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_acl.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_ban.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_inputbox.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_interior.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_main.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_maps.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_message.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_messagebox.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_messages.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_moddetails.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_performance.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_permissions.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_report.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_screenshot.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_settings.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_skin.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_spectator.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_stats.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_team.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_vehicle.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/client/gui/admin_warp.lua" type="both" />
+	<file src="[MTASA]/[admin]/admin/client/images/colorscheme.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/dot.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/dropdown.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/empty.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/error.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ac.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ad.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ae.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/af.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ag.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ai.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/al.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/am.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/an.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ao.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/aq.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ar.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/as.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/at.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/au.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/aw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ax.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/az.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ba.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bb.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bd.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/be.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bf.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bh.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bi.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bj.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bo.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/br.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bs.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/by.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/bz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ca.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cc.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cd.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cf.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ch.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ci.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ck.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cl.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/co.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cs.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cx.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cy.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/cz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/de.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/dj.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/dk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/dm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/do.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/dz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ec.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ee.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/eg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/eh.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/er.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/es.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/et.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/eu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/fi.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/fj.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/fo.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/fr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ga.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gb.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gd.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ge.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gl.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gp.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/gy.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/hk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/hn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/hr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ht.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/hu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/id.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ie.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/il.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/in.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/iq.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ir.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/is.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/it.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ja.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/je.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/jm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/jo.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/jp.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kp.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/kz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/lb.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/lk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/lt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/lu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/lv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ly.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ma.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mc.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/md.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/me.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mh.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mil.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mx.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/my.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/mz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/nc.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ng.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ni.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/nl.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/no.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/np.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/nr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/nz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/om.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pa.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pe.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ph.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pl.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pm.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ps.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/pt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/py.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/qa.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/re.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ro.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/rs.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ru.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/rw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sa.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sc.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sd.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/se.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sg.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/si.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sj.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sl.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/so.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/sy.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/td.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/th.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tj.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/to.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tr.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tv.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/tw.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ua.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/uk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/um.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/us.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/uy.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/uz.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ve.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/vn.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/wf.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ws.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/xk.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/ye.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/yt.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/yu.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/flags/za.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/info.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/map.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/question.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/search.png" />
+	<file src="[MTASA]/[admin]/admin/client/images/warning.png" />
+	<script src="[MTASA]/[admin]/admin/server/admin_ACL.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_commands.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_ip2c.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_screenshot.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_server.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_serverjoiner.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_servermaps.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_serverprefs.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_settings.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_sync.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/admin_wizard.lua" type="both" />
+	<script src="[MTASA]/[admin]/admin/server/http/admin_http.lua" type="both" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/access.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/accounts.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/back.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/bans.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/header.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/home.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/manual.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/password.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/players.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/server.png" />
+	<file src="[MTASA]/[admin]/admin/server/http/icons/visits.png" />
+	<script src="[MTASA]/[managers]/helpmanager/helpmanager_client.lua" type="both" />
+	<script src="[MTASA]/[managers]/helpmanager/helpmanager_server.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapcycler/list_mode.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapcycler/mapcycler.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapcycler/random_mode.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapcycler/vote_mode.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapmanager/mapmanager_exports.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapmanager/mapmanager_http.lua" type="both" />
+	<script src="[MTASA]/[managers]/mapmanager/mapmanager_main.lua" type="both" />
+	<script src="[MTASA]/[managers]/spawnmanager/spawn.lua" type="both" />
+	<script src="[MTASA]/[managers]/teammanager/draw.lua" type="both" />
+	<script src="[MTASA]/[managers]/teammanager/drawdefinitions.lua" type="both" />
+	<file src="[MTASA]/[managers]/teammanager/images/backdrop.png" />
+	<file src="[MTASA]/[managers]/teammanager/images/team.png" />
+	<script src="[MTASA]/[managers]/teammanager/main.lua" type="both" />
+	<script src="[MTASA]/[managers]/teammanager/main_client.lua" type="both" />
+	<script src="[MTASA]/[managers]/votemanager/votemanager_client.lua" type="both" />
+	<script src="[MTASA]/[managers]/votemanager/votemanager_errorcodes.lua" type="both" />
+	<script src="[MTASA]/[managers]/votemanager/votemanager_polls.lua" type="both" />
+	<script src="[MTASA]/[managers]/votemanager/votemanager_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[New]/MR-Modelos/config.lua" type="both" />
+	<script src="[Plus]/MR-Agenda/agenda_cliente.lua" type="both" />
+	<script src="[Plus]/MR-Agenda/agenda_server.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="client.lua" type="client" />
+	<script src="[Plus]/MR-Anuncios/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Plus]/MR-Creditos/server.lua" type="server" />
+	<script src="client.lua" type="client" />
+	<script src="[Plus]/MR-HelpF1/server.lua" type="server" />
+	<script src="[Plus]/MR-Maximap/bigmap_c_old.lua" type="both" />
+	<script src="[Plus]/MR-Maximap/getControlState.lua" type="both" />
+	<file src="[Plus]/MR-Maximap/images/blips/0.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/1.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/10.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/11.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/12.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/13.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/14.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/15.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/16.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/17.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/18.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/19.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/2.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/20.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/21.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/22.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/23.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/24.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/25.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/26.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/27.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/28.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/29.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/3.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/30.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/31.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/32.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/33.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/34.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/35.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/36.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/37.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/38.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/39.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/4.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/40.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/41.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/42.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/43.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/44.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/45.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/46.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/47.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/48.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/49.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/5.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/50.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/51.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/52.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/53.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/54.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/55.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/56.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/57.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/58.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/59.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/6.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/60.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/61.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/62.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/63.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/7.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/8.png" />
+	<file src="[Plus]/MR-Maximap/images/blips/9.png" />
+	<file src="[Plus]/MR-Maximap/images/radar.jpg" />
+	<script src="[Plus]/MR-Maximap/maximap_c.lua" type="both" />
+	<script src="[Plus]/MR-Multas/multas_cliente.lua" type="both" />
+	<script src="[Plus]/MR-Multas/multas_server.lua" type="both" />
+	<script src="[Plus]/MR-Multas/multas_table.lua" type="both" />
+	<file src="[Plus]/MR-Notify/files/e.mp3" />
+	<file src="[Plus]/MR-Notify/files/e.png" />
+	<file src="[Plus]/MR-Notify/files/fonts/roboto.ttf" />
+	<file src="[Plus]/MR-Notify/files/i.mp3" />
+	<file src="[Plus]/MR-Notify/files/i.png" />
+	<file src="[Plus]/MR-Notify/files/s.mp3" />
+	<file src="[Plus]/MR-Notify/files/s.png" />
+	<file src="[Plus]/MR-Notify/files/w.mp3" />
+	<file src="[Plus]/MR-Notify/files/w.png" />
+	<script src="[Plus]/MR-Notify/sourceC.lua" type="both" />
+	<script src="sourceC.luac" type="client" />
+	<script src="[Plus]/MR-Notify/sourceS.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="[Plus]/MR-NuevasKills/server.lua" type="server" />
+	<script src="[Plus]/MR-NuevasKills/shared.lua" type="both" />
+	<file src="[Plus]/MR-Velocimetro/fonts/lcd.ttf" />
+	<file src="[Plus]/MR-Velocimetro/fonts/Prototype.ttf" />
+	<script src="[Plus]/MR-Velocimetro/SpeedoMeterGUI.lua" type="both" />
+	<script src="[Plus]/MR-Velocimetro/SpeedoMeterUtils.lua" type="both" />
+	<script src="[Plus]/MR-Velocimetro/SpeedoMeterVehicle.lua" type="both" />
+	<file src="[Plus]/MR-Velocimetro/textures/carState.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/carState2.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/nitroState.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerBG.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerBG2.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerGlass.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerNeedleRed.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerNeedleWhite.png" />
+	<file src="[Plus]/MR-Velocimetro/textures/speedometerOverlay.png" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Plus]/Notificaciones/dialogo/dialogo_cliente.lua" type="both" />
+	<script src="[Plus]/Notificaciones/dialogo/dialogo_server.lua" type="both" />
+	<file src="[Plus]/Notificaciones/files/error.png" />
+	<file src="[Plus]/Notificaciones/files/info.png" />
+	<file src="[Plus]/Notificaciones/files/warning.png" />
+	<script src="[Plus]/Notificaciones/server.lua" type="server" />
+	<script src="[Plus]/Notificaciones/text/Noti_c.lua" type="both" />
+	<script src="[Plus]/Notificaciones/text/Noti_s.lua" type="both" />
+	<script src="[Simple]/ajax/ajax.lua" type="both" />
+	<file src="[Simple]/cpicker/blank.png" />
+	<file src="[Simple]/cpicker/cursor.png" />
+	<file src="[Simple]/cpicker/h.png" />
+	<script src="[Simple]/cpicker/picker_client.lua" type="both" />
+	<file src="[Simple]/cpicker/sv.png" />
+	<script src="[Simple]/customblips/blipstreamer_client.lua" type="both" />
+	<script src="[Simple]/customblips/customblips.lua" type="both" />
+	<script src="[Simple]/customblips/imagelib.lua" type="both" />
+	<script src="[Simple]/customblips/radar.lua" type="both" />
+	<script src="[Simple]/customblips/utility.lua" type="both" />
+	<script src="[Simple]/defaultstats/defaultstats.lua" type="both" />
+	<script src="[Simple]/killmessages/definitions.lua" type="both" />
+	<script src="[Simple]/killmessages/gui.lua" type="both" />
+	<script src="[Simple]/killmessages/killmessages_client.lua" type="both" />
+	<script src="[Simple]/killmessages/killmessages_server.lua" type="both" />
+	<script src="[Simple]/killmessages/utils/imagelib.lua" type="both" />
+	<script src="[Simple]/killmessages/utils/textlib.lua" type="both" />
+	<script src="client_anim.lua" type="client" />
+	<script src="[Simple]/parachute/openChute.lua" type="both" />
+	<script src="[Simple]/parachute/parachute.lua" type="both" />
+	<file src="[Simple]/parachute/parachuteopen.mp3" />
+	<script src="[Simple]/parachute/parachute_cl.lua" type="both" />
+	<script src="[Simple]/parachute/skydiving_cl.lua" type="both" />
+	<script src="[Simple]/parachute/utility.lua" type="both" />
+	<script src="client.lua" type="client" />
+	<script src="client_util.lua" type="client" />
+	<script src="[Simple]/runcode/server.lua" type="server" />
+	<script src="[Simple]/runcode/server_util.lua" type="server" />
+	<script src="noblur.luac" type="client" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Trabajos]/Basurero/mision_pos.lua" type="both" />
+	<script src="[Trabajos]/Basurero/save.lua" type="both" />
+	<script src="[Trabajos]/Basurero/server.lua" type="server" />
+	<script src="[Trabajos]/Busetero/jardinero_cliente.lua" type="both" />
+	<script src="[Trabajos]/Busetero/jardinero_server.lua" type="both" />
+	<file src="[Trabajos]/Busetero/pala.mp3" />
+	<script src="[Trabajos]/Busetero/save.lua" type="both" />
+	<script src="[Trabajos]/Busetero/table_jardinero.lua" type="both" />
+	<script src="cliente.lua" type="client" />
+	<script src="[Trabajos]/Camionero/misionpos.lua" type="both" />
+	<script src="[Trabajos]/Camionero/save.lua" type="both" />
+	<script src="[Trabajos]/Camionero/server.lua" type="server" />
+	<script src="[Trabajos]/Carpintero/carp_cliente.lua" type="both" />
+	<script src="[Trabajos]/Carpintero/carp_server.lua" type="both" />
+	<script src="[Trabajos]/Carpintero/save.lua" type="both" />
+	<script src="[Trabajos]/Carpintero/table_carp.lua" type="both" />
+	<script src="[Trabajos]/Jardinero/jardinero_cliente.lua" type="both" />
+	<script src="[Trabajos]/Jardinero/jardinero_server.lua" type="both" />
+	<script src="[Trabajos]/Jardinero/save.lua" type="both" />
+	<script src="[Trabajos]/Jardinero/table_jardinero.lua" type="both" />
+	<script src="[Trabajos]/Jardinero/table_pos_mision.lua" type="both" />
+	<script src="[Trabajos]/Obrero/obrero_cliente.lua" type="both" />
+	<script src="[Trabajos]/Obrero/obrero_server.lua" type="both" />
+	<file src="[Trabajos]/Obrero/pala.mp3" />
+	<script src="[Trabajos]/Obrero/save.lua" type="both" />
+	<script src="[Trabajos]/Obrero/table_obrero.lua" type="both" />
+	<script src="[Trabajos]/Pizzero/pizzero_cliente.lua" type="both" />
+	<script src="[Trabajos]/Pizzero/pizzero_server.lua" type="both" />
+	<script src="[Trabajos]/Pizzero/save.lua" type="both" />
+	<script src="[Trabajos]/Pizzero/table_pizzero.lua" type="both" />
+	<script src="[Trabajos]/Taxista/save.lua" type="both" />
+	<script src="[Trabajos]/Taxista/table_taxista.lua" type="both" />
+	<script src="[Trabajos]/Taxista/taxista_cliente.lua" type="both" />
+	<script src="[Trabajos]/Taxista/taxista_server.lua" type="both" />
+</meta>

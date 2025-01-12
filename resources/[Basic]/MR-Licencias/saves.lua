@@ -34,13 +34,7 @@ addEventHandler("onPlayerLogin", getRootElement(), function(p, t, a)
             source:setData("Roleplay:Licencia_Pesca", 0)
         end
         -- Licencia de arma
-        local armas = t:getData("Roleplay:Licencia_Arma")
-        if (armas) then
-            local f = t:getData("Roleplay:Licencia_Arma")
-            source:setData("Roleplay:Licencia_Arma", f)
-        else
-            source:setData("Roleplay:Licencia_Arma", 0)
-        end
+       
 
         -- Guardar OriginalSkin
         local skinoriginal = t:getData("OriginalSkin")
@@ -74,8 +68,7 @@ function quitSaveLicencias(q, r, e)
             account:setData("Roleplay:Licencia_Piloto", s)
             local d = source:getData("Roleplay:Licencia_Pesca")
             account:setData("Roleplay:Licencia_Pesca", d)
-            local f = source:getData("Roleplay:Licencia_Arma")
-            account:setData("Roleplay:Licencia_Arma", f)
+
 
             -- Guardar OriginalSkin
             local skinoriginal = source:getData("OriginalSkin")

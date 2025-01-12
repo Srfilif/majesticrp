@@ -1,0 +1,26 @@
+
+GUIEditor = {
+    gridlist = {},
+    window = {},
+    button = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        GUIEditor.window[1] = guiCreateWindow((screenW - 408) / 2, (screenH - 408) / 2, 408, 408, "Inventario - Majestic Roleplay", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.gridlist[1] = guiCreateGridList(9, 53, 231, 347, false, GUIEditor.window[1])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Objecto", 0.5)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Cantidad", 0.5)
+        GUIEditor.button[1] = guiCreateButton(250, 53, 142, 21, "Utilizar", false, GUIEditor.window[1])
+        GUIEditor.label[1] = guiCreateLabel(10, 23, 388, 20, "¡Da click en el objeto para ver sus opciones!", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        GUIEditor.button[2] = guiCreateButton(250, 80, 142, 21, "Tirar", false, GUIEditor.window[1])
+        GUIEditor.button[3] = guiCreateButton(250, 107, 142, 21, "Pasar", false, GUIEditor.window[1])
+        GUIEditor.button[4] = guiCreateButton(250, 379, 142, 21, "Cerrar", false, GUIEditor.window[1])
+        guiSetProperty(GUIEditor.button[4], "NormalTextColour", "FFFF0000")
+        GUIEditor.button[5] = guiCreateButton(250, 138, 142, 21, "Accesorios", false, GUIEditor.window[1])    
+    end
+)

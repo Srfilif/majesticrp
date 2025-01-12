@@ -208,6 +208,10 @@ addCommandHandler("meg", megafono_policia)
 
 local valoresRefuerzos = {}
 local antiSpamRef = {}
+function notIsGuest(player)
+    local account = player:getAccount()
+    return not account or isGuestAccount(account)
+end
 
 addCommandHandler("ref", function(p)
 	if not notIsGuest( p ) then
@@ -244,7 +248,12 @@ addCommandHandler("ref", function(p)
 					antiSpamRef[p] = {}
 				end
 				antiSpamRef[p][1] = getTickCount()
+			else
+				p:outputChat("#ff3d3d* Debes estar en un vehiculo para poder utilizar la referencia.", 255, 255, 255, true)
+				
 			end
+		else
+			
 		end
 	end
 end)
@@ -252,7 +261,7 @@ end)
 addCommandHandler("limpref", function(p)
 	if not notIsGuest( p ) then
 		if getPlayerFaction( p, "Policia" ) then
-			p:outputChat("* Has eliminado todo los blips", 50, 150, 50, true)
+			p:outputChat("#ff3d3d* Has eliminado todo las referencias del mapa.", 50, 150, 50, true)
 			for _, vehs in ipairs(Element.getAllByType("vehicle")) do
 				p:triggerEvent("Police:destroy_blip", p, (vehs or nil))
 				if valoresRefuerzos[p] == true then
@@ -390,6 +399,54 @@ addCommandHandler("despedir", function(source, cmd, who)
 		end
 	end
 end)
+--- Renunciar
+addCommandHandler("renunciar", function(source, cmd)
+    -- Verifica que el jugador no sea invitado
+    if not notIsGuest(source) then
+        -- Verifica que el jugador pertenezca a una facción
+        if source:getData("Roleplay:faccion") ~= "" then
+            local faccionNombre = source:getData("Roleplay:faccion")
+            local esLider = source:getData("Roleplay:faccion_lider") == "Si"
+
+            -- Si el jugador es líder de la facción y la facción es "Policia"
+            if esLider and faccionNombre == "Policia" then
+                -- Actualiza la base de datos para dejar sin líder a la facción
+                update("UPDATE `Facciones` SET Lider = NULL WHERE Nombre = ?", "Policia")
+
+                -- Notifica a los jugadores de la facción que ahora está sin líder
+                for _, v in ipairs(Element.getAllByType("player")) do
+                    if v:getData("Roleplay:faccion") == "Policia" then
+                        v:outputChat("* La facción 'Policia' ahora está sin líder porque " .. source:getName() .. " ha renunciado", 255, 100, 100, true)
+                    end
+                end
+            end
+
+            -- Limpia los datos del jugador relacionados con la facción
+            source:setData("Roleplay:faccion", "")
+            source:setData("Roleplay:faccion_lider", "No")
+            source:setData("Roleplay:faccion_rango", "")
+            source:setData("Roleplay:faccion_sueldo", 0)
+            source:setData("Roleplay:faccion_division", "")
+            source:setData("Roleplay:faccion_division_lider", "No")
+
+            -- Mensaje al jugador que usó el comando
+            source:outputChat("* Has abandonado la facción '" .. faccionNombre .. "'", 150, 50, 50, true)
+
+            -- Notifica al resto de los miembros de la facción
+            for _, v in ipairs(Element.getAllByType("player")) do
+                if v:getData("Roleplay:faccion") == faccionNombre then
+                    v:outputChat("* El jugador " .. source:getName() .. " ha renunciado a la facción", 150, 50, 50, true)
+                end
+            end
+        else
+            source:outputChat("* No perteneces a ninguna facción", 150, 50, 50, true)
+        end
+    else
+        source:outputChat("* No puedes usar este comando como invitado", 150, 50, 50, true)
+    end
+end)
+
+
 ----------------------------------------- Arrestar jugadores
 
 siguimientos = {}

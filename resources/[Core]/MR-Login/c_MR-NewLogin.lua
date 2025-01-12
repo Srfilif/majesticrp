@@ -1,11 +1,11 @@
 function login()
     local screenW, screenH = guiGetScreenSize()
     login_panel =
-        guiCreateWindow((screenW - 264) / 2, (screenH - 299) / 2, 264, 299, "Majestic Roleplay - Login", false)
+        guiCreateWindow((screenW - 264) / 2, (screenH - 299) / 2, 264, 299, "GreenWood Roleplay - Login", false)
     guiWindowSetSizable(login_panel, false)
 
     login_label1 = guiCreateLabel(24, 24, 214, 30,
-        "¡Bienvenido a Majestic Roleplay!\nIntroducce tus datos de acceso abajo", false, login_panel)
+        "¡Bienvenido a Greenwood Roleplay!\nIntroducce tus datos de acceso abajo", false, login_panel)
     guiLabelSetHorizontalAlign(login_label1, "center", false)
     login_label2 = guiCreateLabel(24, 64, 214, 18, "Usuario:", false, login_panel)
     guiSetFont(login_label2, "default-bold-small")
@@ -94,7 +94,7 @@ addEventHandler("onClientResourceStart", resourceRoot, function()
     fadeCamera(true, 2) -- Fades in the camera over 1 second
 
     -- Mostrar el panel de inicio de sesión
-    triggerEvent("onShowLoginPanel", localPlayer)
+   -- triggerEvent("onShowLoginPanel", localPlayer)
     triggerEvent("removeHudPlayer", localPlayer)
     setPlayerHudComponentVisible("radar", false)
     setPlayerHudComponentVisible("all", false)
@@ -104,7 +104,7 @@ end)
 
 function registro()
     local screenW, screenH = guiGetScreenSize()
-    registro_panel = guiCreateWindow((screenW - 264) / 2, (screenH - 393) / 2, 264, 393, "Majestic Roleplay - Registro",
+    registro_panel = guiCreateWindow((screenW - 264) / 2, (screenH - 393) / 2, 264, 393, "GreenWood Roleplay - Registro",
         false)
     guiWindowSetSizable(registro_panel, false)
 
@@ -205,74 +205,79 @@ GUIEditor = {
 function showCharacterSelector(characters)
     local screenW, screenH = guiGetScreenSize()
 
+    -- Crear tablas para almacenar ventanas
+    GUIEditor = {window = {}}
+
     -- Crear ventanas para cada personaje
     for i, character in ipairs(characters) do
-        local xPos = 0.10 + (i - 1) * 0.30 -- Posición X para cada ventana (izquierda, centro, derecha)
-        GUIEditor.window[i] = guiCreateWindow(xPos, 0.30, 0.15, 0.40, "Personaje " .. i, true)
+        -- Posición y tamaño relativos
+        local xPos = 0.10 + (i - 1) * 0.30 -- Espaciado entre ventanas
+        local windowWidth, windowHeight = 0.15, 0.40
+
+        -- Crear ventana del personaje
+        GUIEditor.window[i] = guiCreateWindow(xPos * screenW, 0.30 * screenH, windowWidth * screenW, windowHeight * screenH, "Personaje " .. i, false)
         guiWindowSetSizable(GUIEditor.window[i], false)
         guiWindowSetMovable(GUIEditor.window[i], false)
-       
 
-        local skinPath = "images/skins/" .. character.Skin .. ".png"
+        -- Cargar imagen del personaje
+        local skinPath = "assets/images/skins/" .. character.Skin .. ".png"
         local imagenpj
-        
         if fileExists(skinPath) then
-            imagenpj = guiCreateStaticImage(19, 27, 255, 255, skinPath, false, GUIEditor.window[i])
+            imagenpj = guiCreateStaticImage(0.05 * screenW, 0.05 * screenH, 0.25 * windowWidth * screenW, 0.25 * windowHeight * screenH, skinPath, false, GUIEditor.window[i])
         else
-            imagenpj = guiCreateStaticImage(19, 27, 255, 255, "images/skins/0.png", false, GUIEditor.window[i])
+            imagenpj = guiCreateStaticImage(0.05 * screenW, 0.05 * screenH, 0.25 * windowWidth * screenW, 0.25 * windowHeight * screenH, "images/skins/0.png", false, GUIEditor.window[i])
         end
-        local labelName = guiCreateLabel(19, 282, 255, 26,
+
+        -- Etiqueta de nombre y nivel
+        local labelName = guiCreateLabel(0.05 * windowWidth * screenW, 0.35 * windowHeight * screenH, 0.90 * windowWidth * screenW, 0.05 * windowHeight * screenH, 
             character.nombre_apellido .. " (Nivel " .. character.nivel .. ")", false, GUIEditor.window[i])
         guiSetFont(labelName, "default-bold-small")
         guiLabelSetColor(labelName, 244, 208, 10)
         guiLabelSetHorizontalAlign(labelName, "center", false)
         guiLabelSetVerticalAlign(labelName, "center")
 
-        local labelMoney = guiCreateLabel(19, 308, 255, 60, "Salud: 50%\nChaleco: 100%\nJail OCC: NO\nPrision: NO",
-            false, GUIEditor.window[i])
-        guiLabelSetHorizontalAlign(labelMoney, "center", false)
-        guiLabelSetVerticalAlign(labelMoney, "center")
-        local selectButton = guiCreateButton(65, 385, 155, 34, "INGRESAR", false, GUIEditor.window[i])
+        -- Etiqueta de información adicional
+        local labelInfo = guiCreateLabel(0.05 * windowWidth * screenW, 0.45 * windowHeight * screenH, 0.90 * windowWidth * screenW, 0.15 * windowHeight * screenH, 
+            "Salud: 50%\nChaleco: 100%\nJail OCC: NO\nPrisión: NO", false, GUIEditor.window[i])
+        guiLabelSetHorizontalAlign(labelInfo, "center", false)
+        guiLabelSetVerticalAlign(labelInfo, "center")
+
+        -- Botón de seleccionar
+        local selectButton = guiCreateButton(0.25 * windowWidth * screenW, 0.70 * windowHeight * screenH, 0.50 * windowWidth * screenW, 0.10 * windowHeight * screenH, "INGRESAR", false, GUIEditor.window[i])
         guiSetFont(selectButton, "default-bold-small")
 
-        local title = guiCreateLabel(0.05, 0.05, 0.90, 0.10, "Selecciona tu personaje para continuar", true,
-            GUIEditor.window[i])
-        guiSetFont(title, "default-bold-small")
-        guiLabelSetHorizontalAlign(title, "center", false)
-
-        -- Mostrar información del personaje
-
-        -- Botón para seleccionar el personaje
-
-        -- Manejar clic en el botón de ingreso
+        -- Manejar clic en el botón de selección
         addEventHandler("onClientGUIClick", selectButton, function()
             triggerServerEvent("onPlayerSelectCharacter", localPlayer, character.id)
         end, false)
     end
 
-    -- Crear botón para nuevo personaje si hay menos de 4 personajes
+    -- Crear ventana para nuevo personaje si hay menos de 4 personajes
     if #characters <= 3 then
-        GUIEditor.window[4] = guiCreateWindow(0.10 + (#characters * 0.30), 0.30, 0.15, 0.40, "Nuevo Personaje", true)
+        
+        GUIEditor.window[4] = guiCreateWindow(1559, 324, 288, 432, "Personaje 1", false)
         guiWindowSetSizable(GUIEditor.window[4], false)
-
-        local createLabel = guiCreateLabel(0.05, 0.05, 0.90, 0.10, "Crear Nuevo Personaje", true, GUIEditor.window[4])
+    
+        local createLabel = guiCreateLabel(0.05, 0.05, 0.90, 0.10, "Crear Nuevo Personaje", true, GUIEditor.window[4]) -- Coordenadas relativas al padre
         guiSetFont(createLabel, "default-bold-small")
         guiLabelSetHorizontalAlign(createLabel, "center", false)
-
-        local crearpjb = guiCreateButton(0.10, 0.80, 0.80, 0.10, "Crear Personaje", true, GUIEditor.window[4])
-        -- Manejar el evento de clic del botón
+    
+        local crearpjb = guiCreateButton(0.10, 0.80, 0.80, 0.10, "Crear Personaje", true, GUIEditor.window[4]) -- Botón relativo al padre
         addEventHandler("onClientGUIClick", crearpjb, crearpj, false)
     end
-
+    
+    
+    
+    
     -- Mensaje si no hay personajes
     if #characters == 0 then
-        local noCharacterLabel = guiCreateLabel(0.05, 0.50, 0.90, 0.10, "No tienes personajes creados.", true,
-            GUIEditor.window[1])
+        GUIEditor.window[1] = guiCreateWindow(0.35 * screenW, 0.35 * screenH, 0.30 * screenW, 0.30 * screenH, "Sin personajes", false)
+        local noCharacterLabel = guiCreateLabel(0.05 * screenW, 0.50 * screenH, 0.90 * screenW, 0.10 * screenH, "No tienes personajes creados.", false, GUIEditor.window[1])
         guiLabelSetHorizontalAlign(noCharacterLabel, "center", false)
-        return
+        
     end
-    
 end
+
 local newCharacterWindow -- Variable para almacenar la ventana de creación de personajes
 local currentSkinIndex = 2 -- Índice del skin actual
 local skins = {
@@ -332,50 +337,50 @@ function crearpj()
     guiWindowSetSizable(crearpj_panel, false)
 
     -- Etiquetas y campos de entrada
-    GUIEditor.label[1] = guiCreateLabel(3, 25, 257, 23, "¡A continuación crearás tu personaje!", false, crearpj_panel)
-    guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+    crearpj_label = guiCreateLabel(3, 25, 257, 23, "¡A continuación crearás tu personaje!", false, crearpj_panel)
+    guiLabelSetHorizontalAlign(crearpj_label, "center", false)
 
-    GUIEditor.label[2] = guiCreateLabel(3, 48, 151, 23, "Nombre:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[2], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
-    GUIEditor.edit[1] = guiCreateEdit(13, 75, 131, 26, "", false, crearpj_panel)
+    crearpj_label2 = guiCreateLabel(3, 48, 151, 23, "Nombre:", false, crearpj_panel)
+    guiSetFont(crearpj_label2, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_label2, "center", false)
+    crearpj_name = guiCreateEdit(13, 75, 131, 26, "", false, crearpj_panel)
 
-    GUIEditor.label[3] = guiCreateLabel(3, 107, 257, 23, "Nacionalidad:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[3], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
-    GUIEditor.edit[2] = guiCreateEdit(13, 130, 237, 26, "", false, crearpj_panel)
+    crearpj_labelnacio = guiCreateLabel(3, 107, 257, 23, "Nacionalidad:", false, crearpj_panel)
+    guiSetFont(crearpj_labelnacio, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_labelnacio, "center", false)
+    crearpj_nacionalidad = guiCreateEdit(13, 130, 237, 26, "", false, crearpj_panel)
 
-    GUIEditor.label[4] = guiCreateLabel(3, 160, 257, 23, "Sexo:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[4], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[4], "center", false)
+    crearpj_sexo = guiCreateLabel(3, 160, 257, 23, "Sexo:", false, crearpj_panel)
+    guiSetFont(crearpj_sexo, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_sexo, "center", false)
     radiom = guiCreateRadioButton(33, 183, 96, 26, "Masculino", false, crearpj_panel)
     radiof = guiCreateRadioButton(149, 183, 111, 26, "Femenino", false, crearpj_panel)
     guiRadioButtonSetSelected(radiof, true) -- Por defecto, masculino
 
-    GUIEditor.label[5] = guiCreateLabel(154, 48, 106, 23, "Edad:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[5], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[5], "center", false)
-    GUIEditor.edit[3] = guiCreateEdit(155, 75, 105, 26, "", false, crearpj_panel)
+    crearpj_edad = guiCreateLabel(154, 48, 106, 23, "Edad:", false, crearpj_panel)
+    guiSetFont(crearpj_edad, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_edad, "center", false)
+    crearpj_edad = guiCreateEdit(155, 75, 105, 26, "", false, crearpj_panel)
 
-    GUIEditor.label[6] = guiCreateLabel(3, 209, 257, 23, "==========================", false, crearpj_panel)
-    guiLabelSetHorizontalAlign(GUIEditor.label[6], "center", false)
+    crearpj_separadorjsjs = guiCreateLabel(3, 209, 257, 23, "==========================", false, crearpj_panel)
+    guiLabelSetHorizontalAlign(crearpj_separadorjsjs, "center", false)
 
-    GUIEditor.label[7] = guiCreateLabel(3, 232, 151, 23, "Contraseña:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[7], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[7], "center", false)
-    GUIEditor.edit[4] = guiCreateEdit(13, 255, 131, 26, "", false, crearpj_panel)
-    guiEditSetMasked(GUIEditor.edit[4], true) -- Enmascarar entrada de contraseña
+    crearpj_contra = guiCreateLabel(3, 232, 151, 23, "Contraseña:", false, crearpj_panel)
+    guiSetFont(crearpj_contra, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_contra, "center", false)
+    crearpj_contra = guiCreateEdit(13, 255, 131, 26, "", false, crearpj_panel)
+    guiEditSetMasked(crearpj_contra, true) -- Enmascarar entrada de contraseña
 
-    GUIEditor.label[8] = guiCreateLabel(154, 232, 106, 23, "Repetir Contraseña:", false, crearpj_panel)
-    guiSetFont(GUIEditor.label[8], "default-bold-small")
-    guiLabelSetHorizontalAlign(GUIEditor.label[8], "center", false)
-    GUIEditor.edit[5] = guiCreateEdit(154, 255, 105, 26, "", false, crearpj_panel)
-    guiEditSetMasked(GUIEditor.edit[5], true) -- Enmascarar entrada de confirmación de contraseña
+    crearpj_repetircontra = guiCreateLabel(154, 232, 106, 23, "Repetir Contraseña:", false, crearpj_panel)
+    guiSetFont(crearpj_repetircontra, "default-bold-small")
+    guiLabelSetHorizontalAlign(crearpj_repetircontra, "center", false)
+    crearpj_repetircontra = guiCreateEdit(154, 255, 105, 26, "", false, crearpj_panel)
+    guiEditSetMasked(crearpj_repetircontra, true) -- Enmascarar entrada de confirmación de contraseña
 
     -- Botón para crear personaje
-    GUIEditor.button[1] = guiCreateButton(76, 296, 123, 39, "CREAR PERSONAJE", false, crearpj_panel)
-    guiSetFont(GUIEditor.button[1], "default-bold-small")
-    guiSetProperty(GUIEditor.button[1], "NormalTextColour", "FFFFFFFF")
+    crearpj_crearpjbtn = guiCreateButton(76, 296, 123, 39, "CREAR PERSONAJE", false, crearpj_panel)
+    guiSetFont(crearpj_crearpjbtn, "default-bold-small")
+    guiSetProperty(crearpj_crearpjbtn, "NormalTextColour", "FFFFFFFF")
      leftArrow = guiCreateButton(0.42, 0.89, 0.02, 0.04, "<", true)
      rightArrow = guiCreateButton(0.56, 0.89, 0.02, 0.04, ">", true)
     cancelButton = guiCreateButton(0.01, 0.01, 0.07, 0.03, "<-- REGRESAR", true)
@@ -394,12 +399,12 @@ function crearpj()
     setElementRotation(ped, 0, 0, 180) -- Rotar el ped hacia la izquierda (270 grados en el eje Z)
 
     
-    addEventHandler("onClientGUIClick", GUIEditor.button[1], function()
-        local name = guiGetText(GUIEditor.edit[1])
-        local nationality = guiGetText(GUIEditor.edit[2])
-        local age = tonumber(guiGetText(GUIEditor.edit[3]))
-        local password = guiGetText(GUIEditor.edit[4])
-        local confirmPassword = guiGetText(GUIEditor.edit[5])
+    addEventHandler("onClientGUIClick", crearpj_crearpjbtn, function()
+        local name = guiGetText(crearpj_name)
+        local nationality = guiGetText(crearpj_nacionalidad)
+        local age = tonumber(guiGetText(crearpj_edad))
+        local password = guiGetText(crearpj_contra)
+        local confirmPassword = guiGetText(crearpj_repetircontra)
         local genderd = guiRadioButtonGetSelected(radiof)
         
         if  guiRadioButtonGetSelected(radiof) then

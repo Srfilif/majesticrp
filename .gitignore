@@ -2,6 +2,7 @@ backups/
 databases/
 resource-cache/
 logs/
+.vscode/
 banlist.xml
 dbconmy.dll
 deathmatch.dll

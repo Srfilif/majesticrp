@@ -1,0 +1,23 @@
+
+GUIEditor = {
+    button = {},
+    window = {},
+    label = {},
+    memo = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(710, 373, 500, 422, "GreenWood Roleplay - Sistema de Reporte", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.label[1] = guiCreateLabel(15, 34, 468, 197, "¿Alguien esta antiroleando en este mismo instante? ¿Estan haciendo DM? ¿Crees que hay una banda realizando MG? ¿Estas bugeado en un interior y no te salvo el /bug?\nEntonces envia un reporte con toda la informacion necesaria (nombre de los \nusuarios y que regla incumplieron). De ser valido, un staff lo tomara.\n\nProcura no enviar reportes sobre cosas que ya pasaron y que no se pueden\nComprobar en el momento (te estafaron, te hicieron DM hace 5 minutos, alguien hizo MG pero ya no lo esta haciendo). Toda esta clase de reportes deben ser enviados\na nuestros foros con las pruebas necesarias.\n\nEsta via de comunicacion solo esta abierta para cosas que estan pasando AHORA MISMO. Todo lo que no este ocurriendo ahora deberas reportalo en\nhttps://foros.greenwoodrp.net", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", true)
+        GUIEditor.button[1] = guiCreateButton(262, 364, 217, 44, "¡Enviar el reporte!", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.button[1], "default-bold-small")
+        guiSetProperty(GUIEditor.button[1], "NormalTextColour", "FF963200")
+        GUIEditor.button[2] = guiCreateButton(20, 383, 218, 25, "Mejor en otro momento...", false, GUIEditor.window[1])
+        guiSetFont(GUIEditor.button[2], "default-bold-small")
+        guiSetProperty(GUIEditor.button[2], "NormalTextColour", "FF326400")
+        GUIEditor.memo[1] = guiCreateMemo(23, 235, 456, 115, "¡Aca tu reporte!\nRecuerda comentarnos los sucesos de los hechos, quienes fueron los implicados y que normativa estan infligiendo", false, GUIEditor.window[1])    
+    end
+)

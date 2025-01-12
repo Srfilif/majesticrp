@@ -1,55 +1,5 @@
--- Configuración de la conexión a la base de datos
-local db = dbConnect("mysql", "dbname=majestic_rp;host=localhost;charset=utf8", "root", "")
+local db = exports["MR-Gamemode"]:getDatabase()
 
-if not db then
-    outputDebugString("No se pudo conectar a la base de datos.", 1)
-else
-    outputDebugString("Conexión a la base de datos del login exitosa.", 3)
-end
--- Crear tablas si no existen
-if db then
-    dbExec(db, [[
-        CREATE TABLE IF NOT EXISTS cuentas (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            nombre VARCHAR(50) NOT NULL UNIQUE,
-            pass VARCHAR(255) NOT NULL,
-            fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
-            staff TINYINT(1) DEFAULT 0,
-            vip TINYINT(1) DEFAULT 0,
-            creditos INT DEFAULT 0,
-            email VARCHAR(50) NOT NULL
-        )
-    ]])
-
-    dbExec(db, [[
-        CREATE TABLE IF NOT EXISTS personajes (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            cuenta_id INT NOT NULL,
-            nombre_apellido VARCHAR(50) NOT NULL,
-            pass VARCHAR(255) NOT NULL,
-            fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-            dinero INT DEFAULT 0,
-            nivel INT DEFAULT 1,
-            experiencia INT DEFAULT 0,
-            ubicacion_x FLOAT DEFAULT 0,
-            ubicacion_y FLOAT DEFAULT 0,
-            ubicacion_z FLOAT DEFAULT 0,
-            salud FLOAT DEFAULT 100,
-            armadura FLOAT DEFAULT 0,
-            Sexo TEXT NOT NULL DEFAULT 'Masculino',
-            TestRoleplay TEXT NOT NULL DEFAULT 'No',
-            Nacionalidad TEXT NOT NULL,
-            Edad INT NOT NULL,
-            DNI INT NOT NULL,
-            armas TEXT DEFAULT NULL,
-            Trabajo TEXT NOT NULL,
-            Skin INT NOT NULL DEFAULT 2,
-            interior INT NOT NULL,
-            dimencion INT NOT NULL,
-            FOREIGN KEY (cuenta_id) REFERENCES cuentas(id) ON DELETE CASCADE
-        )
-    ]])
-end
 -- Manejar intento de inicio de sesión para cuentas-- Manejar intento de inicio de sesión para cuentas
 addEvent("onPlayerAttemptLogin", true)
 addEventHandler("onPlayerAttemptLogin", root, function(username, password)
@@ -75,6 +25,8 @@ addEventHandler("onPlayerAttemptLogin", root, function(username, password)
         -- Notificar inicio de sesión exitoso
         triggerClientEvent(client, "onLoginResponse", client, true, "Inicio de sesión exitoso.")
         triggerEvent("onLoginResponses", resourceRoot, accountId, client)
+        triggerClientEvent(source, "[NT]Login:closeLogin", source)
+        triggerClientEvent(source, "[NT]Login:saveXml", source, name, password)
 
       --  outputChatBox("¡" .. username .. " se ha conectado con éxito!", root, 0, 255, 0)
 
@@ -127,6 +79,7 @@ addEventHandler("onPlayerRegister", root, function(username, password, email)
     if success then
         triggerClientEvent(client, "onRegisterResponse", client, true, "Registro exitoso. Ahora puedes iniciar sesión.")
     exports["MR-Notify"]:addNotification(client, "Registro exitoso. Ahora puedes iniciar sesión.", "error")
+    
 
     else
     exports["MR-Notify"]:addNotification(client, "Error al registrar la cuenta. Intenta de nuevo.", "error")

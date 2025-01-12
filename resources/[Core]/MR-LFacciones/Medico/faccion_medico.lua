@@ -99,88 +99,143 @@ function PlayerDamageText( attacker, weapon, bodypart, loss )
 end
 addEventHandler("onPlayerDamage", getRootElement(), PlayerDamageText)
 
-function a(source)
-		if ( source and source:getType() == "player" ) then
-source:spawn(x, y, z, rz, source:getModel(), int, dim)
-end
-end
-addCommandHandler("a",a)
-function PlayerKilled( ammo, attacker, weapon, bodypart )
-cancelEvent()
-	if ( attacker and attacker:getType() == "player" and bodypart ) then
-		if ( source and source:getType() == "player" ) then
-			source:outputChat("#FF0033[ADVERTENCIA] #FFFF00Si reconnectas en pleno asesinato de tu personaje, serás sancionado.", 150, 50, 50, true)
-			source:outputChat("#FFFFFF".._getPlayerNameR(attacker).." #963200te acaba de dejar inconsciente.", 255, 255, 255, true)
-			JugadorMuerto[source] = false
-			setTimer(function(source, weapon, bodypart, attacker)
-				if isElement(source) or isElement(attacker) then
-				cancelEvent()
-				local pos = Vector3(source:getPosition())
-				local x, y, z = pos.x, pos.y, pos.z
-				local pos2 = Vector3(source:getRotation())
-				local rx, ry, rz = pos2.x, pos2.y, pos2.z
-				local int = source:getInterior()
-				local dim = source:getDimension()
-				source:spawn(x, y, z, rz, source:getModel(), int, dim)
-				--source:setFrozen(true)
-				source:setData("NoDamageKill", true)
-				setPedAnimation(source, "crack", "crckidle2", -1,true, false, false)
-				--source:setHealth(1)
-				JugadorMuerto[source] = true
-				--setControlState( source, "fire", false )
-		--		source:removeFromVehicle(source:getOccupiedVehicle())
-				--source:outputChat("#FFFFFFPuedes avisar de tu muerte con el comando #00FF00/avisarmuerte", 255, 255, 255, true)
-				source:outputChat("#000000[☠]#ff3d3d Estás inconsciente y no hay #ffffffparamédicos #ff3d3ddisponibles para vos.", 255, 255, 255, true)
-				source:outputChat("#000000[☠]#ff3d3d Luego de pasados #ffffff90 segundos #ff3d3dpodrás elegir morir.", 255, 255, 255, true)
-				source:outputChat("#000000[☠]#ffffff Podes avisar de tu muerte a las autoridades con el comando #00ff00/avisarmuerte", 255, 255, 255, true)
-	--			source:outputChat("#FFFFFFO puedes aceptar tu destino utilizando el comando #963200/aceptarmuerte", 255, 255, 255, true)
-				source:setData("yo", {"Inconsciente | Herido por "..getWeaponNameFromID ( weapon ).." en "..cuerpos[bodypart].."", 150, 50, 0})
-				ValoresTablaAsesinato[source] = attacker
-			end
-			end, 3000, 1, source, weapon, bodypart, attacker)
-		end
-	else
-		source:outputChat("#FF0033[ADVERTENCIA] #FFFF00Si reconnectas en pleno asesinato de tu personaje, serás sancionado.", 150, 50, 50, true)
-		JugadorMuerto[source] = false
-		setTimer(function(source, weapon, bodypart)
-			if isElement(source) then
-			local pos = Vector3(source:getPosition())
-			local x, y, z = pos.x, pos.y, pos.z
-			local pos2 = Vector3(source:getRotation())
-			local rx, ry, rz = pos2.x, pos2.y, pos2.z
-			local int = source:getInterior()
-			local dim = source:getDimension()
-			source:spawn(x, y, z, rz, source:getModel(), int, dim)
-		--	source:setFrozen(true)
-			setPedAnimation(source, "crack", "crckidle2", -1, true, false, false)
-			source:setHealth(100)
-			source:setData("CanRespawn", 0)
-		--	source:setData("CanRespawn", 0)
-		
-			source:setHealth(100)
-			--setControlState( source, "fire", false )
-			source:setData("NoDamageKill", true)
-			JugadorMuerto[source] = true
-		--	source:removeFromVehicle(source:getOccupiedVehicle())
-			source:outputChat("#000000[☠]#ff3d3d Estás inconsciente y no hay #ffffffparamédicos #ff3d3ddisponibles para vos.", 255, 255, 255, true)
-			source:outputChat("#000000[☠]#ff3d3d Luego de pasados #ffffff90 segundos #ff3d3dpodrás elegir morir.", 255, 255, 255, true)
-			source:outputChat("#000000[☠]#ffffff Podes avisar de tu muerte a las autoridades con el comando #00ff00/avisarmuerte", 255, 255, 255, true)
-			source:setData("yo", {"Inconsciente | Herido por caida", 150, 50, 0})
-			ValoresTablaAsesinato[source] = source
-			--source:setData("CanRespawn", 1)
-			
-			  timer = setTimer(function()
-			  source:outputChat("#000000[☠]#ffffff Usa el comando #ff3d3d/aceptarmuerte #ffffffpara respawnear.", 255, 255, 255, true)
-              source:setData("CanRespawn", 1)
-              end, 90000, 1)
 
-			--
-			
+
+function PlayerKilled(ammo, attacker, weapon, bodypart)
+    cancelEvent()
+    if not isElement(source) then return end
+
+    -- Verificar si el jugador ya estaba inconsciente
+    if JugadorMuerto[source] and JugadorMuerto[source] == true then
+        -- El jugador ya estaba inconsciente, ahora muere definitivamente
+		source:setData("Muerto", 0)
+
+		source:setData("CanRespawn", 1)
+        source:outputChat("#FF0000[☠] #FFFFFFHas muerto, los medicos te han transladado al hospital mas cercano.", 255, 255, 255, true)
+		aceptarMuerte(source)
+		if attacker then
+        source:outputChat("#FF0000[☠] #FFFFFFEl jugador #ff3d3d"..getPlayerName(attacker).." #ffFFffTe ha rematado.", 255, 255, 255, true)
 		end
-		end, 3000, 1, source, weapon, bodypart)
-	end
+		local pos = Vector3(source:getPosition())
+        local x, y, z = pos.x, pos.y, pos.z
+        local pos2 = Vector3(source:getRotation())
+        local rx, ry, rz = pos2.x, pos2.y, pos2.z
+        local int = source:getInterior()
+        local dim = source:getDimension()
+        source:spawn(x, y, z, rz, source:getModel(), int, dim)
+        source:setData("NoDamageKill", true)
+		setPedAnimation(source, "crack", "crckidle2", -1, true, false, false)
+        source:setHealth(100) -- Configurar salud en 0
+        JugadorMuerto[source] = false -- Resetear estado
+        source:setData("yo", {"Muerto | No hay regreso", 150, 0, 0})
+        return
+    end
+
+    -- Si no estaba inconsciente, continuar con el manejo normal
+    if (attacker and attacker:getType() == "player" and bodypart) then
+        if (source and source:getType() == "player") then
+            if bodypart == 9 then -- Verificar si el disparo fue a la cabeza
+				cancelEvent()
+				source:setData("Muerto", 1)
+
+                source:outputChat("#FF0033[ADVERTENCIA] #FFFF00Si reconnectas en pleno asesinato de tu personaje, serás sancionado.", 150, 50, 50, true)
+                source:outputChat("#FF0000[☠] #FFFFFFEl jugador #ffff3d".._getPlayerNameR(attacker).." #ffFFffte ha matado con un disparo a la cabeza.", 255, 255, 255, true)
+                JugadorMuerto[source] = false
+                local pos = Vector3(source:getPosition())
+                local x, y, z = pos.x, pos.y, pos.z
+                local pos2 = Vector3(source:getRotation())
+                local rx, ry, rz = pos2.x, pos2.y, pos2.z
+                local int = source:getInterior()
+                local dim = source:getDimension()
+				source:setData("NoDamageKill", true)
+                source:spawn(x, y, z, rz, source:getModel(), int, dim)
+				setPedAnimation(source, "crack", "crckidle2", -1, true, false, false)
+				JugadorMuerto[source] = true
+
+                source:setData("yo", {"Muerto | Asesinado por "..getWeaponNameFromID(weapon).." con un disparo a la cabeza", 150, 0, 0})
+                ValoresTablaAsesinato[source] = attacker
+				source:outputChat("#000000[☠]#ff3d3d Estás Muerto y no hay #ffffffparamédicos #ff3d3ddisponibles para vos.", 255, 255, 255, true)
+				source:outputChat("#000000[☠]#ff3d3d Luego de pasados #ffffff90 segundos #ff3d3dpodrás elegir reaparecer.", 255, 255, 255, true)
+				source:outputChat("#000000[☠]#ffffff Podes avisar de tu muerte a las autoridades con el comando #00ff00/avisarmuerte", 255, 255, 255, true)
+				setTimer(function() 
+					if source:getData("CanRespawn") then 
+                    source:outputChat("#000000[☠]#ffffff Usa el comando #ff3d3d/aceptarmuerte #ffffffpara respawnear.", 255, 255, 255, true)
+                    source:setData("CanRespawn", 1)
+					end
+                end, 5000, 1)
+            else
+				source:setData("Muerto", 1)
+
+                source:outputChat("#FF0033[ADVERTENCIA] #FFFF00Si reconnectas en pleno asesinato de tu personaje, serás sancionado.", 150, 50, 50, true)
+                source:outputChat("#FFFFFF".._getPlayerNameR(attacker).." #963200te acaba de dejar inconsciente.", 255, 255, 255, true)
+                JugadorMuerto[source] = true
+				source:setData("Muerto", 1)
+
+                setTimer(function(source, weapon, bodypart, attacker)
+                    if isElement(source) then
+                        local pos = Vector3(source:getPosition())
+                        local x, y, z = pos.x, pos.y, pos.z
+                        local pos2 = Vector3(source:getRotation())
+                        local rx, ry, rz = pos2.x, pos2.y, pos2.z
+                        local int = source:getInterior()
+                        local dim = source:getDimension()
+                        source:spawn(x, y, z, rz, source:getModel(), int, dim)
+                      --  source:setData("NoDamageKill", true)
+                        setPedAnimation(source, "crack", "crckidle2", -1, true, false, false)
+                        JugadorMuerto[source] = true
+                        source:outputChat("#000000[☠]#ff3d3d Estás inconsciente y no hay #ffffffparamédicos #ff3d3ddisponibles para vos.", 255, 255, 255, true)
+                        source:outputChat("#000000[☠]#ff3d3d Luego de pasados #ffffff90 segundos #ff3d3dpodrás elegir morir.", 255, 255, 255, true)
+                        source:outputChat("#000000[☠]#ffffff Podes avisar de tu muerte a las autoridades con el comando #00ff00/avisarmuerte", 255, 255, 255, true)
+                        source:setData("yo", {"Inconsciente | Herido por "..getWeaponNameFromID(weapon).." en "..cuerpos[bodypart].."", 150, 50, 0})
+                        ValoresTablaAsesinato[source] = attacker
+						setTimer(function() 
+							if source:getData("CanRespawn") then 
+							source:outputChat("#000000[☠]#ffffff Usa el comando #ff3d3d/aceptarmuerte #ffffffpara respawnear.", 255, 255, 255, true)
+							source:setData("CanRespawn", 1)
+							end
+						end, 5000, 1)
+                    end
+                end, 3000, 1, source, weapon, bodypart, attacker)
+            end
+        end
+    else
+		source:setData("Muerto", 1)
+
+        source:outputChat("#FF0033[ADVERTENCIA] #FFFF00Si reconnectas en pleno asesinato de tu personaje, serás sancionado.", 150, 50, 50, true)
+        JugadorMuerto[source] = false
+        setTimer(function(source, weapon, bodypart)
+            if isElement(source) then
+                local pos = Vector3(source:getPosition())
+                local x, y, z = pos.x, pos.y, pos.z
+                local pos2 = Vector3(source:getRotation())
+                local rx, ry, rz = pos2.x, pos2.y, pos2.z
+                local int = source:getInterior()
+                local dim = source:getDimension()
+                source:spawn(x, y, z, rz, source:getModel(), int, dim)
+                setPedAnimation(source, "crack", "crckidle2", -1, true, false, false)
+                source:setHealth(100)
+                source:setData("CanRespawn", 0)
+              --  source:setData("NoDamageKill", true)
+                JugadorMuerto[source] = true
+                source:outputChat("#000000[☠]#ff3d3d Estás inconsciente y no hay #ffffffparamédicos #ff3d3ddisponibles para vos.", 255, 255, 255, true)
+                source:outputChat("#000000[☠]#ff3d3d Luego de pasados #ffffff90 segundos #ff3d3dpodrás elegir morir.", 255, 255, 255, true)
+                source:outputChat("#000000[☠]#ffffff Podes avisar de tu muerte a las autoridades con el comando #00ff00/avisarmuerte", 255, 255, 255, true)
+                source:setData("yo", {"Inconsciente | Herido por caída", 150, 50, 0})
+                ValoresTablaAsesinato[source] = source
+                setTimer(function() 
+					if source:getData("CanRespawn") then 
+                    source:outputChat("#000000[☠]#ffffff Usa el comando #ff3d3d/aceptarmuerte #ffffffpara respawnear.", 255, 255, 255, true)
+                    source:setData("CanRespawn", 1)
+					end
+                end, 5000, 1)
+            end
+        end, 3000, 1, source, weapon, bodypart)
+    end
 end
 addEventHandler("onPlayerWasted", getRootElement(), PlayerKilled)
+
+
+
 function aceptarMuerte(player)
 	local x, y, z, rot = findNearestHostpital(player)
     local weaponType = getPedWeapon ( player )
@@ -193,6 +248,8 @@ function aceptarMuerte(player)
 			player:outputChat("#ffbcb8[HOSPITAL]#ffffff Se te descontaron #00ff00$750 dolares #ffffffPor los tratos realizados en el hospital", 150, 50, 50, true)
 		   --	player:outputChat("#ffbcb8[HOSPITAL]#ff3d3d ", 150, 50, 50, true)  
 			JugadorMuerto[player] = nil
+			source:setData("Muerto", 0)
+
 			setTimer(function(source)
 			     if isElement(source) then
 				--setControlState( source, "fire", true )
@@ -213,7 +270,7 @@ function aceptarMuerte(player)
 				player:outputChat("#ffbcb8[HOSPITAL]#ff3d3dAdemas se te confiscaron todos los objetos peligrosos", 150, 50, 50, true)
 		end
 			else
-			
+			 
 			local remaining, executesRemaining, timeInterval = getTimerDetails(timer)
 			local segundos = math.floor(remaining / 1000)
              player:outputChat("#000000[☠]#ffffff Debes esperar #ff3d3d"..segundos.." segundo(s)#ffffff antes de poder respawnear", 150, 50, 50, true)
@@ -256,51 +313,150 @@ addCommandHandler("curar", curar_medico)
 
 
 
-
 function revivirJugador(player, cmd, who)
-	if not notIsGuest(player) then
-		if permisosTotal[getACLFromPlayer(player)] == true then
-			local thePlayer = nil
-			local input = tostring(who)
-			
-			-- Verificar si la entrada es un ID o un nombre
-			if tonumber(input) then
-				thePlayer = exports["[POPLife]Login"]:getPlayerByID(tonumber(input))
-			else
-				thePlayer = getPlayerFromPartialName(who)
-			end
+    if not notIsGuest(player) then
+        -- Verificar si el jugador tiene permisos para usar el comando
+        if permisosTotal[getACLFromPlayer(player)] == true then
+            local targetPlayer = nil
+            local input = tostring(who)
 
-			if thePlayer and isElement(thePlayer) then
-				if JugadorMuerto[thePlayer] == true then
-				local pos = Vector3(thePlayer:getPosition())
-					local x, y, z = pos.x, pos.y, pos.z
-					local pos2 = Vector3(thePlayer:getRotation())
-					local rx, ry, rz = pos2.x, pos2.y, pos2.z
-					local int = thePlayer:getInterior()
-					local dim = thePlayer:getDimension()
-					JugadorMuerto[thePlayer] = nil
-					thePlayer:spawn(x, y, z, rz, thePlayer:getModel(), int, dim, nil)
-					thePlayer:setFrozen(false)
-					thePlayer:setData("NoDamageKill", nil)
-					setPedAnimation(thePlayer)
-					--setControlState( thePlayer, "fire", true )
-					thePlayer:setHealth(100)
-					thePlayer:removeFromVehicle(thePlayer:getOccupiedVehicle())
-					thePlayer:setData("yo", {"", 150, 0, 0})
-					outputDebugString("* ".._getPlayerNameR(player).." revivio al jugador: ".._getPlayerNameR(thePlayer).."", 0, 0, 150, 0)
-					player:outputChat("* Acabas de revivir al jugador: ".._getPlayerNameR(thePlayer)..".", 50, 150, 0)
-					thePlayer:outputChat("* ".._getPlayerNameR(player).." te acaba de revivir.", 50, 150, 0)
-				else
-					player:outputChat("* El jugador: ".._getPlayerNameR(thePlayer).." no está muerto.", 150, 0, 0)
-				end
-			else
-				player:outputChat("No se pudo encontrar al jugador. Por favor, asegúrate de que el nombre o ID sea válido.", 150, 0, 0)
-			end
-		end
-	end
+            -- Verificar si la entrada es un ID o un nombre completo
+            if tonumber(input) then
+                targetPlayer = getPlayerNameFromID(tonumber(input), player) -- Buscar por ID
+            else
+                targetPlayer = getPlayerFromPartialName(who) -- Buscar por nombre parcial
+            end
+
+
+            -- Validar si se encontró al jugador
+            if targetPlayer and isElement(targetPlayer) then
+                if JugadorMuerto[targetPlayer] == true then
+                    -- Obtener la posición y otros datos del jugador
+                    local pos = Vector3(targetPlayer:getPosition())
+                    local rot = Vector3(targetPlayer:getRotation())
+                    local int = targetPlayer:getInterior()
+                    local dim = targetPlayer:getDimension()
+
+                    -- Revivir al jugador
+                    JugadorMuerto[targetPlayer] = nil
+                    targetPlayer:spawn(pos.x, pos.y, pos.z, rot.z, targetPlayer:getModel(), int, dim, nil)
+                    targetPlayer:setFrozen(false)
+                    targetPlayer:setData("NoDamageKill", nil)
+                    setPedAnimation(targetPlayer)
+                    targetPlayer:setHealth(100)
+                    targetPlayer:setData("Muerto", 0)
+                    targetPlayer:setData("CanRespawn", nil)
+
+                    -- Sacar al jugador de cualquier vehículo si está en uno
+                    if targetPlayer:getOccupiedVehicle() then
+                        targetPlayer:removeFromVehicle()
+                    end
+
+                    -- Notificaciones y registros
+                    targetPlayer:setData("yo", {"", 150, 0, 0})
+                    outputDebugString("* " .. _getPlayerNameR(player) .. " revivió al jugador: " .. _getPlayerNameR(targetPlayer), 0, 0, 150, 0)
+                    player:outputChat("* Acabas de revivir al jugador: " .. _getPlayerNameR(targetPlayer), 50, 150, 0)
+                    targetPlayer:outputChat("* " .. _getPlayerNameR(player) .. " te acaba de revivir.", 50, 150, 0)
+                else
+                    -- Si el jugador no está muerto
+                    player:outputChat("#ff3d3d* El jugador: " .. _getPlayerNameR(targetPlayer) .. " no está muerto.", 150, 0, 0,true)
+                end
+            else
+                -- Si no se encuentra al jugador
+                player:outputChat("#ff3d3d* No se pudo encontrar al jugador", 150, 0, 0,true)
+            end
+        else
+            -- Si el jugador no tiene permisos
+            player:outputChat("#ff3d3d* No tienes permisos para usar este comando.", 150, 0, 0,true)
+        end
+    end
 end
 addCommandHandler("revivir", revivirJugador)
 
+-- Tabla para almacenar las emergencias activas
+local emergencias = {}
+local emergenciaID = 0 -- ID único para cada emergencia
+
+-- Comando /avisarmuerte para registrar una emergencia
+function avisarMuerteCommand(player)
+    -- Obtener la posición del jugador
+	if player:getData("Muerto") == 0 then
+		outputChatBox("#ff3d3d* No puedes avisar una emergencia si no estás muerto.", player, 255, 0, 0, true)
+		return
+	end
+    local x, y, z = getElementPosition(player)
+    local zoneName = getZoneName(x, y, z)
+
+    -- Generar un nuevo ID único para la emergencia
+    emergenciaID = emergenciaID + 1
+
+    -- Registrar la emergencia en la tabla
+    emergencias[emergenciaID] = {
+        id = emergenciaID,
+        x = x,
+        y = y,
+        z = z,
+        zone = zoneName,
+        player = getPlayerName(player)
+    }
+
+    -- Notificar al jugador que la emergencia fue registrada
+    outputChatBox("#ff1919[EMERGENCIAS]#ffFFff ¡Has aviso al equipo de emergencias, pronto llegaran!.", player, 255, 255, 0,true)
+
+    -- Notificar a los médicos conectados
+	local foundMedics = false
+
+    local message = string.format("#ff1919[EMERGENCIAS]#ffFFffNueva emergencia en %s (ID: %d, Solicitante: %s)", zoneName, emergenciaID, getPlayerName(player))
+    for _, medic in ipairs(getElementsByType("player")) do
+        if getPlayerFaction(medic, "Medico") then
+            outputChatBox(message, medic, 255, 0, 0,true)
+			foundMedics = true
+
+        end
+    end
+	if not foundMedics then
+        outputChatBox("#ff3d3d* No hay médicos conectados para atender la solicitud.", player, 255, 255, 0,true)
+    end
+end
+addCommandHandler("avisarmuerte", avisarMuerteCommand)
+
+-- Comando /emergencias para listar todas las emergencias activas
+function listarEmergenciasCommand(player)
+    if next(emergencias) == nil then
+        outputChatBox("#ff3d3d* No hay emergencias activas en este momento.", player, 255, 255, 0,true)
+        return
+    end
+
+    outputChatBox("Lista de emergencias activas:", player, 0, 255, 255)
+    for id, emergencia in pairs(emergencias) do
+        outputChatBox(string.format("ID: %d | Zona: %s | Solicitante: %s", id, emergencia.zone, emergencia.player), player, 255, 255, 255)
+    end
+end
+addCommandHandler("veremergencias", listarEmergenciasCommand)
+
+-- Comando /iremergencia [ID] para ir a una emergencia
+function irEmergenciaCommand(player, _, id)
+    id = tonumber(id)
+    if not id or not emergencias[id] then
+        outputChatBox("ID de emergencia inválido. Usa /emergencias para ver la lista.", player, 255, 0, 0)
+        return
+    end
+
+    -- Crear un blip en la ubicación de la emergencia
+    local emergencia = emergencias[id]
+    local blip = createBlip(emergencia.x, emergencia.y, emergencia.z, 41, 2, 255, 0, 0, 255, 0, 5000, player)
+
+    -- Notificar al jugador
+    outputChatBox(string.format("Blip creado para la emergencia en %s (ID: %d).", emergencia.zone, id), player, 0, 255, 0)
+
+    -- Eliminar el blip automáticamente después de 60 segundos
+    setTimer(function()
+        if isElement(blip) then
+            destroyElement(blip)
+        end
+    end, 60000, 1)
+end
+addCommandHandler("iremergencia", irEmergenciaCommand)
 
 
 
@@ -453,3 +609,16 @@ function move_back_gate2()
 	 
 end 
 addEventHandler("onMarkerLeave", marker2, move_back_gate2) 
+
+
+function getPlayerNameFromID(theID, theElement)
+    if isElement(theElement) and getElementType(theElement) == "player" and tonumber(theID) then
+        for _, v in ipairs(getElementsByType("player")) do
+            if getElementData(v, "ID") == getElementData(theElement, "ID") then
+                return v -- Devuelve el elemento del jugador
+            end
+        end
+        iprint("Player not found")
+    end
+    return nil
+end

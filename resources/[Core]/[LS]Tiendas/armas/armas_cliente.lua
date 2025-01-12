@@ -14,7 +14,32 @@ addEventHandler("abrirVen", root, AbrirV)
 
 
 
+local screenWidth, screenHeight = guiGetScreenSize()
+local screenSource	= dxCreateScreenSource(screenWidth, screenHeight)
+local darkness		= 0.5
+local radius		= 10
 
+function startVignette(state)
+	if state == true then 
+		vignetteShader = dxCreateShader("files/shader.fx")
+		if not(vignetteShader) then
+			return
+		end
+	    addEventHandler("onClientPreRender", root, renderVignette)
+	else
+		removeEventHandler("onClientPreRender", root, renderVignette)
+    end
+end
+
+function renderVignette()
+	dxUpdateScreenSource(screenSource)
+	if(vignetteShader) then
+		dxSetShaderValue(vignetteShader, "ScreenSource", screenSource)
+		dxSetShaderValue(vignetteShader, "radius", radius)
+		dxSetShaderValue(vignetteShader, "darkness", darkness)
+		dxDrawImage(0, 0, screenWidth, screenHeight, vignetteShader)
+	end
+end
 
 local function OpenWindWeapon(player)
     if not player:isInVehicle() then
@@ -118,3 +143,36 @@ function()
     local sound = playSound("dinero.mp3")
     setSoundVolume(sound, 1)
 end)
+addEventHandler("onClientRender", getRootElement(), function()
+    for _, v in ipairs(ammunations) do
+        local tx, ty, tz = v.x, v.y, v.z
+        local px, py, pz = getElementPosition(localPlayer)
+        local playerInt = getElementInterior(localPlayer)
+        local playerDim = getElementDimension(localPlayer)
+
+        -- Verificar interior y dimensión
+        if playerInt == v.int and playerDim == v.dim then
+            local dist = math.sqrt((px - tx) ^ 2 + (py - ty) ^ 2 + ((pz +1) - tz) ^ 2)
+
+            if dist < 8 then
+                if isLineOfSightClear(px, py, pz +1, tx, ty, tz, true, false, false, true, false, false, false, localPlayer) then
+                    local x, y = getScreenFromWorldPosition(tx, ty, tz)
+                    if x and y then
+                        dxDrawBorderedText(
+                            "Usa la tecla '#FDCE61F#FFFFFF' para interactuar\n#FDCE61" .. v.nombre .. "",
+                            x - 80, y - 40, x + 120, y + 20, 
+                            tocolor(255, 255, 255, 255), 1, "default-bold", 
+                            "center", "center"
+                        )
+                    end
+                end
+            end
+        end
+    end
+end)
+
+function dxDrawBorderedText(text, x, y, w, h, color, scale, font, alignX, alignY, clip, wordBreak, postGUI)
+    dxDrawText(text:gsub('#%x%x%x%x%x%x', ''), x - 1, y + 1, w - 1, h + 1, tocolor(0, 0, 0, 255), scale, font, alignX, alignY, clip, wordBreak, postGUI, true)
+    dxDrawText(text:gsub('#%x%x%x%x%x%x', ''), x + 1, y + 1, w + 1, h + 1, tocolor(0, 0, 0, 255), scale, font, alignX, alignY, clip, wordBreak, postGUI, true)
+    dxDrawText(text, x, y, w, h, color, scale, font, alignX, alignY, clip, wordBreak, postGUI, true)
+end

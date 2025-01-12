@@ -11,6 +11,9 @@
 
 local house_acl = {
 	["Andres_Angel"] = true,
+	["Amado_Camarillo"] = true,
+
+
 }
 
 function abrirCreacionCasas(source)
